@@ -14,10 +14,10 @@
         ?>
         <ul class="topFeadMenu">
             <?php $i = 1;
-            foreach ($menus as $menu) : ?>
+            foreach ($menus as $key => $val): ?>
                 <li class="liTopFeadMenu liTopFeadMenu<?php echo $i; ?>">
-                    <a class="btnliTopFeadMenu" href="<?php echo $menu['permalink']; ?>">
-                        <img src="<?php echo esc_url($menu['img_url']); ?>" alt="<?php echo esc_html($menu['text']); ?>">
+                    <a class="btnliTopFeadMenu" href="<?php echo $val['permalink']; ?>">
+                        <img src="<?php echo esc_url($val['img_url']); ?>" alt="<?php echo esc_html($val['text']); ?>">
                     </a>
                 </li>
             <?php $i++;
