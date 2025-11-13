@@ -64,7 +64,7 @@ LAYOUT
 
 .txtFloorTentyo {
     @include mi.fontSizePc(10);
-    @include mi.lineheight(10, 20);
+    @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
 }
 

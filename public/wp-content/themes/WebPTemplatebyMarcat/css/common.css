@@ -2398,7 +2398,7 @@ LAYOUT
 
 .txtFloorTentyo {
   font-size: 10px;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
@@ -2410,14 +2410,14 @@ LAYOUT
   display: block;
   width: 0;
   height: 0;
-  margin-top: calc((1 - 2) * 0.5em);
+  margin-top: calc((1 - 1.5) * 0.5em);
   content: "";
 }
 .txtFloorTentyo::after {
   display: block;
   width: 0;
   height: 0;
-  margin-bottom: calc((1 - 2) * 0.5em);
+  margin-bottom: calc((1 - 1.5) * 0.5em);
   content: "";
 }
 

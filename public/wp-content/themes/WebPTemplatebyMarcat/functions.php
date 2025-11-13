@@ -714,51 +714,6 @@ function gokomusubi_status_widget_render()
                 </select>
             </label>
         </p>
-        <p>
-            <label>カウンター席:<br>
-                <input type="number" name="gokomusubi_counter" value="<?php echo intval($data['counter']); ?>">
-            </label>
-        </p>
-        <p>
-            <label>2人テーブル席:<br>
-                <input type="number" name="gokomusubi_table2" value="<?php echo intval($data['table2']); ?>">
-            </label>
-        </p>
-        <p>
-            <label>4人テーブル席:<br>
-                <input type="number" name="gokomusubi_table4" value="<?php echo intval($data['table4']); ?>">
-            </label>
-        </p>
-
-        <p>
-            <label>チャージ時間(1):<br>
-                <input type="text" name="chargetimeth01" value="<?php if (!empty($data['chargetimeth01'])) {
-                                                                    echo $data['chargetimeth01'];
-                                                                } ?>">
-            </label>
-        </p>
-        <p>
-            <label>チャージ時間(1)金額:<br>
-                <input type="text" name="chargetimetd01" value="<?php if (!empty($data['chargetimetd01'])) {
-                                                                    echo $data['chargetimetd01'];
-                                                                } ?>">
-            </label>
-        </p>
-
-        <p>
-            <label>チャージ時間(2):<br>
-                <input type="text" name="chargetimeth02" value="<?php if (!empty($data['chargetimeth02'])) {
-                                                                    echo $data['chargetimeth02'];
-                                                                } ?>">
-            </label>
-        </p>
-        <p>
-            <label>チャージ時間(2)金額:<br>
-                <input type="text" name="chargetimetd02" value="<?php if (!empty($data['chargetimetd02'])) {
-                                                                    echo $data['chargetimetd02'];
-                                                                } ?>">
-            </label>
-        </p>
 
         <p>
             <input type="submit" class="button-primary" value="保存">
@@ -934,42 +889,16 @@ function get_unique_random_menu_price_items_with_image($limit = 12)
     $used_img_ids = []; // ←重複防止用
 
     if ($query->have_posts()) {
+        $i = 0;
         while ($query->have_posts()) {
             $query->the_post();
-            $post_id   = get_the_ID();
-            $title     = get_the_title();
-            $permalink = get_permalink();
-
-            $priceMenus = SCF::get('imgsPriceMenu', $post_id);
-
-            if (!empty($priceMenus) && is_array($priceMenus)) {
-                foreach ($priceMenus as $menu) {
-
-                    $img_id = $menu['imgPriceMenu'];
-
-                    // 画像なし → スキップ
-                    if (empty($img_id)) continue;
-
-                    // 重複画像IDならスキップ
-                    if (in_array($img_id, $used_img_ids, true)) continue;
-
-                    $img_url = wp_get_attachment_image_url($img_id, 'medium');
-
-                    // URL取得できない画像は除外
-                    if (!$img_url) continue;
-
-                    // 重複チェックリストに追加
-                    $used_img_ids[] = $img_id;
-
-                    $items[] = [
-                        'post_id'    => $post_id,
-                        'post_title' => $title,
-                        'permalink'  => $permalink,
-                        'img_id'     => $img_id,
-                        'img_url'    => $img_url,
-                        'text'       => $menu['txtPriceMenu'],
-                    ];
-                }
+            $img = get_post_thumbsdata($query->post->ID);
+            $items[$i]['permalink'] = $query->post->ID;
+            $items[$i]['img_url'] = $img[0];
+            $items[$i]['text'] = $query->post->ID;
+            $i++;
+            if ($i == 12) {
+                break;
             }
         }
     }
@@ -977,7 +906,6 @@ function get_unique_random_menu_price_items_with_image($limit = 12)
 
     if (!empty($items)) {
         shuffle($items);
-        $items = array_slice($items, 0, $limit);
     }
 
     return $items;
