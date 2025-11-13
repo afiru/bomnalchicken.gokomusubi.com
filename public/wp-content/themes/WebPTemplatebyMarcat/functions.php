@@ -893,7 +893,7 @@ function get_unique_random_menu_price_items_with_image($limit = 12)
         while ($query->have_posts()) {
             $query->the_post();
             $img = get_post_thumbsdata($query->post->ID);
-            $items[$i]['permalink'] = $query->post->ID;
+            $items[$i]['permalink'] = get_permalink($query->post->ID);
             $items[$i]['img_url'] = $img[0];
             $items[$i]['text'] = $query->post->ID;
             $i++;

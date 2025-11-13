@@ -73,7 +73,7 @@ $next = get_adjacent_custom_post(true, '', false, 'menu_category', 'menu');
         </div>
 
         <div class="t_center moreTopicsArchive">
-            <a class="cl_241A08 fw_400 txtset undernone btnMoreTopicsArchive" href="<?php echo get_category_link(1); ?>">
+            <a class="cl_241A08 fw_400 txtset undernone btnMoreTopicsArchive" href="<?php echo home_url('/menu/'); ?>">
                 <span class="maru iconMoreTopicsArchive">一覧に戻る</span>
             </a>
         </div>
