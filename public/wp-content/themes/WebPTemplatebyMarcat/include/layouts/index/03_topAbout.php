@@ -5,25 +5,25 @@
     <div class="topAboutLxn">
         <div class="d_flex j_between topAboutInfo">
             <section class="titleTopAbout">
-                <h2 class="cl_fff fw_800 h2TopAbout">どんなお店？</h2>
+                <h2 class="cl_282828 fw_800 h2TopAbout">どんなお店？</h2>
                 <div class="bg_fff brdTopAbout"></div>
-                <p class="cl_fff fw_800 en rybyTopAbout">About</p>
+                <p class="cl_282828 fw_800 en rybyTopAbout">About</p>
             </section>
-            <p class="cl_fff fw_500 text_justify txtMainAboutInfo"><?php echo scf::get('txtAboutTxt'); ?></p>
+            <p class="cl_282828 fw_500 text_justify txtMainAboutInfo"><?php echo scf::get('txtAboutTxt'); ?></p>
         </div>
 
         <div class="d_flex j_between topAboutTentyo">
             <section class="secAboutTentyo">
-                <h3 class="cl_fff fw_800 h3AboutTentyo"><?php echo scf::get('nameTentyo'); ?></h3>
-                <p class="cl_fff fw_500 text_justify txtAboutTentyo"><?php echo scf::get('txtTencho'); ?></p>
+                <h3 class="cl_282828 fw_800 h3AboutTentyo"><?php echo scf::get('nameTentyo'); ?></h3>
+                <p class="cl_282828 fw_500 text_justify txtAboutTentyo"><?php echo scf::get('txtTencho'); ?></p>
                 <?php if (!empty(scf::get('thTentyoInfo')[0])): ?>
                     <ul class="ulAboutTentyo">
                         <?php foreach (scf::get('tableTentyoInfo') as $fields): ?>
                             <?php if (!empty($fields['thTentyoInfo'])): ?>
                                 <li class="d_flex j_between liAboutTencho">
-                                    <h4 class="cl_fff fw_500 h4AboutTencho"><?php echo $fields['thTentyoInfo']; ?></h4>
-                                    <div class="cl_fff fw_500 dottoAboutTencho">：</div>
-                                    <p class="cl_fff fw_500 text_justify texAboutTencho"><?php echo $fields['tdTentyoInfo']; ?></p>
+                                    <h4 class="cl_282828 fw_500 h4AboutTencho"><?php echo $fields['thTentyoInfo']; ?></h4>
+                                    <div class="cl_282828 fw_500 dottoAboutTencho">：</div>
+                                    <p class="cl_282828 fw_500 text_justify texAboutTencho"><?php echo $fields['tdTentyoInfo']; ?></p>
                                 </li>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -64,8 +64,8 @@
 
         <div class="d_flex j_between topAboutTentyo topAboutTentyo02">
             <section class="secAboutTentyo">
-                <h3 class="cl_fff fw_800 h3AboutTentyo"><?php echo scf::get('subH3Tencho'); ?></h3>
-                <p class="cl_fff fw_500 text_justify txtAboutTentyo"><?php echo scf::get('subTxtTencho'); ?></p>
+                <h3 class="cl_282828 fw_800 h3AboutTentyo"><?php echo scf::get('subH3Tencho'); ?></h3>
+                <p class="cl_282828 fw_500 text_justify txtAboutTentyo"><?php echo scf::get('subTxtTencho'); ?></p>
             </section>
         </div>
     </div>
