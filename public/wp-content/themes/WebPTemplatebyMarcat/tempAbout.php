@@ -8,6 +8,12 @@
 <?php get_template_part('include/common/header/header'); ?>
 <main class="bg_fff mainAbout">
     <?php if (have_posts()) while (have_posts()) : the_post();  ?>
+        <?php get_template_part('include/layouts/bomcafe/01_bomcafefv'); ?>
+        <?php get_template_part('include/layouts/bomcafe/02_bomcafeAbout'); ?>
+        <?php get_template_part('include/layouts/bomcafe/03_bomcafeDate'); ?>
+        <?php get_template_part('include/layouts/bomcafe/04_bomcafePrice'); ?>
+        <?php get_template_part('include/layouts/bomcafe/05_bomcafePrace'); ?>
+        <?php get_template_part('include/layouts/bomcafe/06_bomcafeTyui'); ?>
     <?php endwhile; ?>
 </main>
 <?php get_template_part('include/layouts/index/05_topCalendar'); ?>
