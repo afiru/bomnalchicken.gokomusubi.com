@@ -9,7 +9,7 @@
             <p class="cl_282828 fw_800 en rybyTopFloor">Floor</p>
         </section>
         <figure class="iconTopFloor">
-            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconTopFloor.svg" alt="" width="" height="">
+            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconTopFloor.png" alt="" width="" height="">
         </figure>
         <div class="d_flex j_between topFloorTentyo">
             <figure class="photoFloorTentyo">

@@ -615,15 +615,10 @@ body h6 {
   font-size: 0.1em;
 }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 2022/09/08, 15:33:59
-    Author     : SPG-1105
-*/
+.bg_fff {
+  background: #FFF;
+}
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -1514,14 +1509,23 @@ LAYOUT
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 103.35px;
+  width: 76.4px;
+  animation: 3s fuwafuwa infinite;
 }
 @media screen and (max-width: 1199px) {
   .nowNewsCnt img {
-    width: 27.56%;
+    width: 20.37%;
   }
 }
 
+@keyframes fuwafuwa {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
 .topNews {
   padding-top: 60px;
   padding-bottom: 0px;
@@ -1858,7 +1862,6 @@ LAYOUT
   margin-right: 0px;
   width: 40px;
   height: 1px;
-  background: #335;
   aspect-ratio: 40/1;
 }
 @media screen and (max-width: 1199px) {
