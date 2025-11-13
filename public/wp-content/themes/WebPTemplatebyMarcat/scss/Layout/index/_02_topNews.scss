@@ -9,6 +9,8 @@ LAYOUT
 .nowNewsCnt {
     @include mi.paddingPercent(375, 24, 0, 26, 0);
     position: relative;
+    background: #A01D10;
+
 }
 
 .h2NowNewsCnt {

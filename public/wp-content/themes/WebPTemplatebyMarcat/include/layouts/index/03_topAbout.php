@@ -1,4 +1,4 @@
-<div id="about" class="bg_FBEBEC topAbout bgTopAbout">
+<div id="about" class="bg_A01D10 topAbout bgTopAbout">
     <!--
     bg:../img/bgTopAboutPc.png
     -->

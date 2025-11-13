@@ -793,6 +793,7 @@ LAYOUT
   left: 0;
   right: 0;
   margin: auto;
+  border-radius: 1px;
 }
 
 .brdmenuHeaderPc01 {
@@ -1348,6 +1349,7 @@ LAYOUT
   padding-left: 0px;
   padding-right: 0px;
   position: relative;
+  background: #A01D10;
 }
 @media screen and (max-width: 1199px) {
   .nowNewsCnt {
