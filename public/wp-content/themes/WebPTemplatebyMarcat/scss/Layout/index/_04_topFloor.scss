@@ -1,0 +1,108 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.topFloor {
+    @include mi.marginPercent(375, 0, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+
+}
+
+.topFloorLxn {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+    position: relative;
+}
+
+.titleTopFloor {}
+
+.h2TopFloor {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(22, 22);
+    @include mi.letterSpacing(0);
+    text-align: right;
+}
+
+.iconTopFloor {
+    position: absolute;
+    left: 0;
+    top: -17%;
+    @include mi.ontenerWidth(335, 94.31);
+}
+
+.brdTopFloor {
+    @include mi.ontenerWidth(335, 40);
+    height: 1px;
+    background: #B1B1B1;
+    @include mi.marginPercent(335, 8, 0, 0, auto);
+}
+
+.rybyTopFloor {
+    @include mi.marginPercent(335, 4, 0, 0, auto);
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(14, 14);
+    @include mi.letterSpacing(100);
+    text-align: right;
+}
+
+///
+.topFloorTentyo {
+    @include mi.marginPercent(335, 19, 0, 0, 0);
+}
+
+.photoFloorTentyo {
+    @include mi.ontenerWidth(335, 85);
+}
+
+.secFloorTentyo {
+    @include mi.ontenerWidth(335, 234);
+}
+
+.txtFloorTentyo {
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 20);
+    @include mi.letterSpacing(0);
+}
+
+//
+.ulFloorTentyo {
+    @include mi.marginPercent(335, 24, 0, 0, 0);
+}
+
+.liFloorTentyo {
+    @include mi.ontenerWidth(335, 106);
+    @include mi.marginPercent(335, 8, 0, 0, 0);
+
+    &:nth-child(3n+2) {
+        @include mi.marginPercent(335, 8, 8, 0, 8);
+    }
+
+}
+
+.btnFloorTentyo {
+    position: relative;
+    display: block;
+}
+
+.iconFloorTentyo {
+    @include mi.ontenerWidth(111, 18);
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

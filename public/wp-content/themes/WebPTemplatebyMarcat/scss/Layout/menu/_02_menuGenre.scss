@@ -1,0 +1,173 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+
+.menuGenre {
+    position: relative;
+}
+
+.btnMenuGenre {
+    cursor: pointer;
+    @include mi.paddingPercent(375, 12, 0, 12, 0);
+}
+
+.btnMenuGenre {
+    @include mi.ontenerWidth(375, 375);
+}
+
+.btnMenuGenreFx {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.h2btnMenuGenre {
+    @include mi.ontenerWidth(335, 320);
+}
+
+.brdBtnMenuGenre {
+    position: relative;
+    @include mi.ontenerWidth(335, 14);
+    aspect-ratio: 14 / 14;
+}
+
+.brdBtmBtnMenuGenre {
+    height: 2px;
+    width: 14px;
+    @include mi.kadomaru(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.brdBtmBtnMenuGenre01 {}
+
+.brdBtmBtnMenuGenre02 {
+    transform: rotate(90deg);
+}
+
+.btnMenuGenre.off {
+    .brdBtmBtnMenuGenre01 {}
+
+    .brdBtmBtnMenuGenre02 {
+        transform: rotate(90deg);
+    }
+}
+
+.btnMenuGenre.on {
+    .brdBtmBtnMenuGenre01 {}
+
+    .brdBtmBtnMenuGenre02 {
+        opacity: 0;
+    }
+}
+
+//
+.menuGenreLxn {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #FBEBEC;
+    z-index: 9;
+    display: none;
+}
+
+.menuGenreLxnBx {
+    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(375, 0, auto, 0, auto);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+}
+
+.ulMenuGenreLxnBx {}
+
+.liMenuGenreLxnBx {
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 40, auto, 0, auto);
+    }
+
+}
+
+.btnMenuGenreLxnBx {
+    cursor: pointer;
+}
+
+.h2BtnMenuGenreLxnBx {
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+}
+
+.brdMenuGenreLxnBx {
+    position: relative;
+    @include mi.ontenerWidth(335, 14);
+    aspect-ratio: 14 / 14;
+}
+
+.brdbrdMenuGenreLxnBx {
+    height: 2px;
+    width: 14px;
+    @include mi.kadomaru(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #282828;
+}
+
+.brdBtmBtnMenuGenre01 {}
+
+.brdBtmBtnMenuGenre02 {
+    transform: rotate(90deg);
+}
+
+.btnMenuGenreLxnBx.off {
+    .brdbrdMenuGenreLxnBx01 {}
+
+    .brdbrdMenuGenreLxnBx02 {
+        transform: rotate(90deg);
+    }
+}
+
+.btnMenuGenreLxnBx.on {
+    .brdbrdMenuGenreLxnBx01 {}
+
+    .brdbrdMenuGenreLxnBx02 {
+        opacity: 0;
+    }
+}
+
+.ulSubMenuGenreLxn {
+    display: none;
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+}
+
+.liSubMenuGenreLxn {
+    @include mi.ontenerWidth(335, 335);
+}
+
+.btnSubMenuGenreLxn {
+    width: 100%;
+    @include mi.paddingPercent(335, 8, 0, 8, 0);
+    border-bottom: 1px solid #282828;
+}
+
+.txtBtnSubMenuGenreLxn {
+    @include mi.ontenerWidth(335, 312);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+}
+
+.iconBtnSubMenuGenreLxn {
+    @include mi.ontenerWidth(335, 24);
+}

@@ -1,0 +1,148 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.access {
+    @include mi.marginPercent(375, 80, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+}
+
+.accessLxn {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.topAccessInfo {}
+
+.titleTopAccess {
+    @include mi.ontenerWidth(335, 100);
+}
+
+.h2TopAccess {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(22, 22);
+    @include mi.letterSpacing(0);
+    text-align: left;
+}
+
+.brdTopAccess {
+    @include mi.ontenerWidth(100, 40);
+    height: 1px;
+    background: #B1B1B1;
+    @include mi.marginPercent(100, 8, 0, 0, 0);
+}
+
+.rybyTopAccess {
+    @include mi.marginPercent(100, 8, 0, 0, 0);
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(14, 14);
+    @include mi.letterSpacing(100);
+    text-align: left;
+}
+
+.ulTopAccess {
+    @include mi.ontenerWidth(335, 223.92);
+}
+
+.liTopAccess {
+    @include mi.ontenerWidth(223.92, 48.98);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(255, 0, 0, 0, 8);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+//
+.secAccessMain {
+    @include mi.marginPercent(335, 48, 0, 0, 0);
+}
+
+.h2AccessMain {
+    @include mi.ontenerWidth(335, 248);
+    @include mi.fontSizePc(18);
+    @include mi.lineheight(20, 22);
+    @include mi.letterSpacing(0);
+}
+
+.addressAccessMain {
+    @include mi.marginPercent(335, 24, 0, 0, 0);
+}
+
+.liAddressAccessMain {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 16, 0, 0, 0);
+    }
+}
+
+.h3LiAddressAccessMain {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+    @include mi.ontenerWidth(335, 52);
+}
+
+.dottoLiAddressAccessMain {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+    @include mi.ontenerWidth(335, 11);
+}
+
+.txtLiAddressAccessMain {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+    @include mi.ontenerWidth(335, 265);
+}
+
+.mapAddressAccessMain {
+    @include mi.marginPercent(335, 24, 0, 0, 0);
+    @include mi.kadomaru(8px);
+    width: 100%;
+    aspect-ratio: 335 / 180;
+    position: relative;
+    overflow: hidden;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.access .btnAddressBtmNavHeadeLxn {
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+    @include mi.ontenerWidth(335, 335);
+
+    span {
+        font-weight: bold;
+    }
+
+    .btnAddressBtmNavHeade {
+        aspect-ratio: 335/48;
+        @include mi.fontSizePc(16);
+        @include mi.letterSpacing(0);
+        @include mi.kadomaru(5px);
+        text-decoration: none;
+        background: #325530;
+        color: #fff;
+    }
+}

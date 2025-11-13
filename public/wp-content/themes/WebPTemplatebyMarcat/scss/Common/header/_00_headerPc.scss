@@ -1,0 +1,335 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+
+.bgbase {
+    background: url(../img/bgbase2.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cntPageLxn {
+    width: 375px;
+    margin: 0 0 0 auto;
+
+    @include mi.mq(sp) {
+        width: 100%;
+    }
+}
+
+.h1PageTop {
+    padding: 4px 0;
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 10);
+    @include mi.letterSpacing(0);
+}
+
+.baseheader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 8px 0;
+    margin: -1px 0 0 0;
+}
+
+.headerBaseTopFxLxn {
+    width: 100%;
+}
+
+.headerBaseFx {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.logoHeaderBase {
+    @include mi.ontenerWidth(335, 251);
+}
+
+.menuHeaderPc {
+    @include mi.ontenerWidth(335, 32);
+    cursor: pointer;
+}
+
+.menuHeaderPcIn {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 40/21;
+
+}
+
+.brdmenuHeaderPc {
+    aspect-ratio: 40/3;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.brdmenuHeaderPc01 {
+    top: 0;
+    transition-duration: 0.5s;
+}
+
+.brdmenuHeaderPc02 {
+    top: 50%;
+    transition-duration: 0.5s;
+}
+
+.brdmenuHeaderPc03 {
+    top: 100%;
+    transition-duration: 0.5s;
+}
+
+.menuHeaderPc.on {
+    .brdmenuHeaderPc01 {
+        top: 50%;
+        transform: rotate(20deg);
+    }
+
+    .brdmenuHeaderPc02 {
+        top: 50%;
+        opacity: 0;
+    }
+
+    .brdmenuHeaderPc03 {
+        top: 50%;
+        transform: rotate(-20deg);
+    }
+}
+
+.txtMenuHeader {
+    @include mi.fontSizePc(10);
+    @include mi.letterSpacing(0);
+    text-align: center;
+    width: fit-content;
+    display: block;
+    margin: 18% auto 0 auto;
+    color: #fff;
+}
+
+.navHeaderBase {
+    height: 100vh;
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.navHeaderBaseLxn {
+    padding: 2.66% 0% 0% 0%;
+
+    width: 100%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 100svh;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    min-height: 100svh;
+    z-index: 999;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.ulNavHeaderBase {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.liNavHeaderBase {
+    border-bottom: 1px solid #FFF;
+
+}
+
+.btnNavHeaderBase {
+    aspect-ratio: 335/60;
+    text-decoration: none;
+}
+
+.secNavHeaderBase {
+    @include mi.ontenerWidth(335, 301);
+    margin: 0 0 0 auto;
+}
+
+.h2NavHeaderBase {
+    @include mi.fontSizePc(16);
+    line-height: 1;
+    @include mi.letterSpacing(0);
+}
+
+.rubyNavHeaderBase {
+    @include mi.marginPercent(301, 8, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    line-height: 1;
+    @include mi.letterSpacing(0);
+}
+
+.iconNavHeaderBase {
+    @include mi.ontenerWidth(335, 26);
+}
+
+.secBtmNavHeader {
+    @include mi.marginPercent(375, 24, auto, 0, auto);
+    @include mi.ontenerWidth(375, 335);
+}
+
+.secBtmNavHeader02 {
+    @include mi.marginPercent(375, 36, auto, 0, auto);
+    @include mi.paddingPercent(375, 0, auto, 140, auto);
+}
+
+.h2BtmNavHeader {
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(20, 20);
+    @include mi.letterSpacing(0);
+    font-weight: 700;
+}
+
+.addressBtmNavHeader {
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+}
+
+.liAddressBtmNavHeader {
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 8, 0, 0, 0);
+    }
+}
+
+.h3LiAddressBtmNavHeader {
+    @include mi.ontenerWidth(335, 53);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(13, 24);
+    @include mi.letterSpacing(0);
+}
+
+.dottoLiAddressBtmNavHeader {
+    @include mi.ontenerWidth(335, 16);
+    @include mi.lineheight(13, 24);
+    @include mi.fontSizePc(10);
+    @include mi.letterSpacing(0);
+}
+
+.txtLiAddressBtmNavHeader {
+    @include mi.ontenerWidth(335, 267);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(13, 24);
+    @include mi.letterSpacing(0);
+}
+
+.mapAddressBtmNavHeader {
+    @include mi.marginPercent(335, 16, auto, 0, auto);
+    @include mi.kadomaru(6px);
+    aspect-ratio: 335/171;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mapAddressBtmNavHeader iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.btnAddressBtmNavHeadeLxn {
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+    width: 100%;
+}
+
+.btnAddressBtmNavHeade {
+    aspect-ratio: 335/40;
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    @include mi.kadomaru(5px);
+    text-decoration: none;
+    background: #fff;
+    color: #241A08;
+}
+
+.snSNavHeader {
+    @include mi.marginPercent(335, 16, auto, 0, auto);
+    @include mi.ontenerWidth(335, 150);
+    display: flex;
+    justify-content: space-between;
+}
+
+.liSnSNavHeader {
+    @include mi.ontenerWidth(150, 32.81);
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.h2BtmNavHeader {
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+}
+
+//fv
+
+.cntPageLxn {
+    width: 375px;
+    margin: 0 0 0 auto;
+    background: url(../img/bgbase.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @include mi.mq(sp) {
+        width: 100%;
+    }
+}
+
+.cntPageLxn {}
+
+.fvMovie {
+    width: 100%;
+    aspect-ratio: 1080 /1350;
+    position: relative;
+    overflow: hidden;
+
+    .fvMovieLxn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        aspect-ratio: 1080 /1350;
+    }
+
+    iframe {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    video {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

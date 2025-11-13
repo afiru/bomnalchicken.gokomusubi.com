@@ -1,0 +1,96 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.menuSingle {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+}
+
+.menuDetailSingle {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.titleMenuDetailSingle {}
+
+.h2TitleMenuDetailSingle {
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.btnTitleMenuDetailSingleLxn {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.ulMenuDetailSingle {
+    @include mi.marginPercent(335, 16, auto, 0, auto);
+}
+
+.liMenuDetailSingle {
+    @include mi.paddingPercent(335, 16, 0, 16, 0);
+    border-bottom: 1px solid #282828;
+}
+
+.h3MenuDetailSingle {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.txtMenuDetailSingle {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+//
+.alertMenu {
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+//
+.photosMenuDetailSingle {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.liPhotosMenuDetailSingle {
+    width: 33.33333%;
+}
+
+.btnPhotosMenuDetailSingle {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.iconPhotosMenuDetailSingle {
+    @include mi.ontenerWidth(111.51, 18.06);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}

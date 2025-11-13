@@ -1,0 +1,212 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.booking {
+    @include mi.marginPercent(375, 80, auto, 114, auto);
+}
+
+.secBooking {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.h2Booking {
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(20, 25);
+    @include mi.letterSpacing(40);
+}
+
+.formBooking {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.formCnt {}
+
+.liFormCnt {
+    flex-flow: row wrap;
+    align-items: center;
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 16, 0, 0, 0);
+    }
+}
+
+.h3liFormCnt {
+    @include mi.ontenerWidth(335, 100);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(11, 11);
+    @include mi.letterSpacing(0);
+
+}
+
+.formInputCnt {
+    @include mi.marginPercent(335, 0, 0, 0, 0);
+    @include mi.ontenerWidth(335, 235);
+}
+
+.inputW100 {
+    width: 100%;
+    @include mi.paddingPercent(335, 8, 8, 8, 8);
+    border: 1px solid #D9D9D9;
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(12);
+    line-height: 1.5;
+    letter-spacing: 0em;
+}
+
+.selectW100 {
+    @include mi.paddingPercent(335, 8, 8, 8, 8);
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(12);
+    line-height: 1.5;
+    letter-spacing: 0em;
+}
+
+.liFormCnt:last-child {
+    @include mi.marginPercent(335, 18, 0, 0, 0);
+}
+
+.liFormCnt:last-child .h3liFormCnt {
+    width: 100%;
+}
+
+.liFormCnt:last-child .formInputCnt100 {
+    width: 100%;
+}
+
+.txtw100 {
+    width: 100%;
+    @include mi.marginPercent(335, 11, auto, 0, auto);
+    @include mi.paddingPercent(335, 8, 8, 8, 8);
+    border: 1px solid #D9D9D9;
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(12);
+    line-height: 1.5;
+    letter-spacing: 0em;
+    aspect-ratio: 335/180;
+}
+
+.btnToConfirmLxn {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+    width: 100%;
+}
+
+.btnToConfirm {
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(16, 16);
+    @include mi.letterSpacing(0);
+    aspect-ratio: 335/48;
+    width: 100%;
+    background: #325530;
+    color: #FFF;
+    border: 1px solid #325530;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+//確認
+.bookingConfirm {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+
+    .formInputCnt {
+        @include mi.fontSizePc(12);
+        line-height: 1.5;
+        letter-spacing: 0em;
+    }
+
+    .formInputCnt100 {
+        @include mi.marginPercent(335, 18, 0, 0, 0);
+    }
+}
+
+.toThankBackLxn {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+    width: 100%;
+}
+
+.toThankBackFx {}
+
+.btnBackLxn {
+    @include mi.ontenerWidth(335, 161);
+    margin: auto;
+}
+
+.btnBack {
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(16, 16);
+    @include mi.letterSpacing(0);
+    aspect-ratio: 161/40;
+    background: #FFF;
+    color: #000 !important;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.btnToThanksLxn {
+    width: 100%;
+    @include mi.marginPercent(335, 23, auto, 0, auto);
+}
+
+.btnToThanks {
+    width: 100%;
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(16, 16);
+    @include mi.letterSpacing(0);
+    aspect-ratio: 335/48;
+    background: #000000;
+    color: #FFF;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+//完了
+.txtBooking {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.txtBookingThanks {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.btnReadmoneTopThnksLoop {
+    @include mi.marginPercent(335, 80, auto, 0, auto);
+}
+
+.toTopLxn {
+    width: 100%;
+    @include mi.marginPercent(335, 23, auto, 0, auto);
+}
+
+.btnToTopLxn {
+    width: 100%;
+    @include mi.kadomaru(5px);
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(16, 16);
+    @include mi.letterSpacing(0);
+    aspect-ratio: 335/48;
+    background: #000000;
+    color: #FFF;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

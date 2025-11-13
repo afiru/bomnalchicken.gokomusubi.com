@@ -1,0 +1,173 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.nowNewsCnt {
+    @include mi.paddingPercent(375, 24, 0, 26, 0);
+    position: relative;
+}
+
+.h2NowNewsCnt {
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    line-height: 1.5;
+}
+
+.txtNowNewsCntTop {
+    @include mi.marginPercent(375, 12, 0, 0, 0);
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(0);
+    line-height: 1.5;
+}
+
+.h2NowNewsCnt02 {
+    @include mi.marginPercent(375, 24, 0, 0, 0);
+}
+
+.ulNowNewsCnt {
+    @include mi.marginPercent(375, 12, auto, 0, auto);
+    @include mi.ontenerWidth(375, 335);
+}
+
+.liNowNewsCnt {
+    width: 100%;
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(0);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 8, 0, 0, 0);
+    }
+}
+
+.h3liNowNewsCnt {
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(0);
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.txtliNowNewsCnt {
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(0);
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.txtNowNewsCnt {
+    @include mi.marginPercent(375, 8, 0, 0, 0);
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(0);
+    line-height: 1.25;
+}
+
+.nowNewsCnt img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include mi.ontenerWidth(375, 103.35);
+}
+
+.topNews {
+    @include mi.paddingPercent(375, 60, 0, 0, 0);
+}
+
+.topNewsTitle {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.h2TopNews {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(22, 22);
+    @include mi.letterSpacing(0);
+}
+
+.brdTopNews {
+    @include mi.ontenerWidth(335, 40);
+    height: 1px;
+    background: #B1B1B1;
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+}
+
+.rybyTopNews {
+    @include mi.marginPercent(335, 4, auto, 0, auto);
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(14, 14);
+    @include mi.letterSpacing(100);
+}
+
+
+.topNewsLoop {
+    @include mi.marginPercent(354, 18, auto, 0, auto);
+    @include mi.ontenerWidth(335, 335);
+}
+
+.ulTopNewsLoop {}
+
+.liTopNewsLoop {
+    @include mi.paddingPercent(354, 12, 0, 12, 0);
+    border-bottom: 1px solid #B1B1B1;
+}
+
+.btnTopNewsLoop {
+    text-decoration: none;
+    color: #241A08;
+}
+
+.iconbtnTopNewsLoop {
+    @include mi.ontenerWidth(335, 48);
+}
+
+.secBtnTopNewsLoop {
+    @include mi.ontenerWidth(335, 279);
+}
+
+.dateTopNewsLoop {}
+
+.timeTopNewsLoop {
+    @include mi.fontSizePc(10);
+    @include mi.letterSpacing(0);
+}
+
+.newTopAppivalTop {
+    @include mi.fontSizePc(10);
+    @include mi.letterSpacing(0);
+    color: #FF0004;
+    font-weight: 700;
+}
+
+.catTopNewsLoop {
+    @include mi.marginPercent(279, 0, 8, 0, 8);
+    @include mi.fontSizePc(10);
+    @include mi.letterSpacing(0);
+}
+
+.h3TopNewsLoop {
+    @include mi.marginPercent(279, 8, 0, 0, 0);
+    @include mi.fontSizePc(12);
+    @include mi.letterSpacing(0);
+    line-height: 1.25;
+}
+
+.readmoneTopNewsLoop {
+    @include mi.marginPercent(335, 26, auto, 0, auto);
+    @include mi.ontenerWidth(375, 335);
+}
+
+.btnReadmoneTopNewsLoop {
+    width: 100%;
+    @include mi.kadomaru(5px);
+    aspect-ratio: 335/48;
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    background: #325530;
+    text-decoration: none;
+    color: #fff;
+}

@@ -1,0 +1,52 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+
+.nowCharge {
+    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 16, 0, 16, 0);
+    border: 2px solid #325530;
+    @include mi.kadomaru(5px);
+}
+
+.nowChargeLxn {
+    @include mi.ontenerWidth(335, 301);
+    margin: auto;
+}
+
+.h2NowCharge {
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+}
+
+.ulNowCharge {
+    @include mi.marginPercent(375, 16, auto, 0, auto);
+}
+
+.liNowCharge {
+    @include mi.ontenerWidth(301, 129);
+}
+
+.h3liNowCharge {
+    @include mi.ontenerWidth(129, 81);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+    white-space: nowrap;
+}
+
+.intliNowCharge {
+    @include mi.ontenerWidth(129, 49);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+    text-align: right;
+    white-space: nowrap;
+}

@@ -1,0 +1,162 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.topAbout {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+}
+
+.topAboutLxn {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.topAboutInfo {}
+
+.titleTopAbout {
+    @include mi.ontenerWidth(335, 143);
+}
+
+.h2TopAbout {
+    @include mi.fontSizePc(22);
+    @include mi.letterSpacing(0);
+}
+
+.brdTopAbout {
+    @include mi.marginPercent(132, 8, 0, 0, 0);
+    width: 40px;
+    height: 1px;
+    background: #335;
+    aspect-ratio: 40/1;
+}
+
+.rybyTopAbout {
+    @include mi.marginPercent(132, 4, 0, 0, 0);
+    @include mi.fontSizePc(14);
+    @include mi.letterSpacing(100);
+}
+
+.txtMainAboutInfo {
+    @include mi.ontenerWidth(335, 200);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+
+
+.topAboutTentyo {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.topAboutTentyo02 {
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+}
+
+.photoAboutTentyo {
+    @include mi.ontenerWidth(335, 335);
+    order: 2;
+}
+
+.secAboutTentyo {
+    @include mi.ontenerWidth(335, 335);
+    order: 1;
+}
+
+.h3AboutTentyo {
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    @include mi.lineheight(10, 15);
+}
+
+.txtAboutTentyo {
+    @include mi.marginPercent(335, 12, 0, 0, 0);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(50);
+
+}
+
+.ulAboutTentyo {
+    @include mi.marginPercent(335, 24, 0, 0, 0);
+
+}
+
+.liAboutTencho {
+    width: 100%;
+    @include mi.marginPercent(335, 0, 0, 0, 0);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 12, 0, 0, 0);
+    }
+}
+
+.h4AboutTencho {
+    @include mi.ontenerWidth(335, 93);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(50);
+}
+
+.dottoAboutTencho {
+    @include mi.ontenerWidth(335, 16);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(50);
+}
+
+.texAboutTencho {
+    @include mi.ontenerWidth(335, 456);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(50);
+}
+
+.iframeTentyo {
+    @include mi.marginPercent(335, 16, 0, 0, 0);
+    position: relative;
+    aspect-ratio: 335 / 188;
+
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.ulAboutTentyo {}
+
+.liAboutTentyo {
+    @include mi.ontenerWidth(335, 105);
+    @include mi.marginPercent(335, 0, 10, 8, 0);
+
+    &:nth-child(3n) {
+        margin: 0;
+    }
+}
+
+.btnAboutTentyo {
+    position: relative;
+}
+
+.iconAboutTentyo {
+    @include mi.ontenerWidth(111, 18);
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

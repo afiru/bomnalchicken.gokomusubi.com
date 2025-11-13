@@ -1,0 +1,57 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.menuAllList {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+}
+
+.menuAllListBx {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.ulmenuAllListBx {}
+
+.limenuAllListBx {
+    @include mi.ontenerWidth(335, 335);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 40, auto, 0, auto);
+    }
+}
+
+.h2BtnmenuAllListBx {
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+}
+
+.ulSubmenuAllList {
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+}
+
+.liSubmenuAllList {
+    @include mi.ontenerWidth(335, 335);
+}
+
+.btnSubmenuAllList {
+    width: 100%;
+    @include mi.paddingPercent(335, 8, 0, 8, 0);
+    border-bottom: 1px solid #282828;
+}
+
+.txtBtnSubmenuAllList {
+    @include mi.ontenerWidth(335, 312);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(auto, auto);
+    @include mi.letterSpacing(0);
+}
+
+.iconBtnSubmenuAllList {
+    @include mi.ontenerWidth(335, 24);
+}

@@ -1,0 +1,58 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.snsFooter {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include mi.paddingPercent(375, 10, 0, 10, 0);
+    z-index: 9999;
+}
+
+.snsFooterLxn {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.btnSnsFooterLxn {
+    @include mi.ontenerWidth(375, 203);
+}
+
+.btnSnsFooter {
+    @include mi.ontenerWidth(203, 100);
+    aspect-ratio: 100 / 28;
+    @include mi.kadomaru(4px);
+    text-decoration: none;
+}
+
+
+
+.snsCheack {
+    @include mi.ontenerWidth(375, 128);
+}
+
+
+
+.ulSnsCheack {
+    @include mi.ontenerWidth(128, 128);
+}
+
+.liSnsCheack {
+    @include mi.ontenerWidth(128, 28);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(128, 0, 0, 0, 4);
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

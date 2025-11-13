@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* ==========================================================================
+Reset
+========================================================================== */
+@use 'Reset/base';
+
+/* ==========================================================================
+Rules
+========================================================================== */
+@use 'Rules/coding_guideline';
+@use 'Rules/_display.scss';
+@use 'Rules/_flexSettins.scss';
+@use 'Rules/_text.scss';
+@use 'Component/colorK';
+@use 'Component/colorM';
+@use 'Component/colorS';
+/* ==========================================================================
+Common
+========================================================================== */
+@use 'Common/header/_header';
+@use 'Common/footer/_footer';
+
+
+/* ==========================================================================
+Layout
+========================================================================== */
+@use 'Layout/index/index';
+@use 'Layout/cat/cat';
+@use 'Layout/singleNews/singleNews';
+
+@use 'Layout/menu/menu';
+/* ==========================================================================
+Component
+========================================================================== */
+@use 'Component/animate';
+
+@use 'Component/icon_arrow';
+@use 'Component/page_animete';
+@use 'Component/parallax';
+@use 'Component/slider';
+@use 'Component/lightbox.min';

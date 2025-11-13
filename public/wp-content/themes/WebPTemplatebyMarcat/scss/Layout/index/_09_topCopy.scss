@@ -1,0 +1,54 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.btnFooter {
+    bottom: 11%;
+    position: sticky;
+    right: 2%;
+    @include mi.ontenerWidth(375, 55);
+    margin: -4% 2% 0 auto;
+    transition-duration: 0.5s;
+    overflow-x: clip;
+    z-index: 999;
+
+}
+
+.btnFooter a {
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+    /* 初期値 */
+    transform: rotate(0deg) scale(1);
+
+    &:active,
+    &:hover {
+        opacity: 1;
+        transform: rotate(360deg) scale(1);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+
+
+.footer {
+    @include mi.paddingPercent(375, 12, 0, 12, 0);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+    @include mi.marginPercent(375, -40, 0, 0, 0);
+}
+
+.cntPageLxn {
+    padding: 0 0 0px 0;
+}

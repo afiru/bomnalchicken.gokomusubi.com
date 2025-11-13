@@ -1,0 +1,65 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../Functions/mixin"as mi;
+
+/* ==========================================================================
+Library
+========================================================================== */
+body {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #323232;
+    font-weight: 400;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+body {
+
+    input,
+    textarea,
+    button {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        transform: rotateZ(0.03deg);
+    }
+
+    span,
+    .btnReadmoneTopNewsLoop,
+    a,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        transform: rotateZ(0.03deg);
+    }
+}
+
+.t_center {
+    text-align: center;
+}
+
+.text_justify {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+
+.en {
+    font-family: "Fredoka", sans-serif;
+}
+
+.tj {
+    text-indent: -9999px;
+    text-align: left;
+    overflow: hidden;
+    display: block;
+    font-size: 0.1em;
+}

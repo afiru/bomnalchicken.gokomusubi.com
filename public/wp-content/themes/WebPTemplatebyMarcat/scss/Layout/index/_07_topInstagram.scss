@@ -1,0 +1,44 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.instagram {
+    @include mi.marginPercent(375, 80, auto, 0, auto);
+}
+
+.h2Instagram {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(20, 25);
+    @include mi.letterSpacing(80);
+}
+
+.instagramLxn {
+    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(375, 20, auto, 0, auto);
+}
+
+#sbi_images {
+    gap: 0 !important;
+}
+
+.instagramLxn #sb_instagram #sbi_load .sbi_load_btn {
+    @include mi.ontenerWidth(335, 335);
+    background: #325530;
+    color: #fff;
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    font-weight: 700;
+    aspect-ratio: 335 / 48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sbi_btn_text {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    transform: rotate(0.00deg);
+}
