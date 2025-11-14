@@ -4684,14 +4684,15 @@ LAYOUT
 }
 
 .btnFaq {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  cursor: pointer;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-left: 0px;
   padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .btnFaq {
-    padding: 2.38% 0% 2.38% 0%;
+    padding: 3.58% 0% 3.58% 0%;
   }
 }
 

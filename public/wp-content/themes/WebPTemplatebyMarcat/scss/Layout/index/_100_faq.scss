@@ -26,7 +26,8 @@ LAYOUT
 }
 
 .btnFaq {
-    @include mi.paddingPercent(335, 8, 0, 8, 0);
+    cursor: pointer;
+    @include mi.paddingPercent(335, 12, 0, 12, 0);
 }
 
 .btnFaqFx {
