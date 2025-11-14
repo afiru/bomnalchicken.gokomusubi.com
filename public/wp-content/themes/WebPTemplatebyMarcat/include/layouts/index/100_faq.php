@@ -20,15 +20,15 @@ $slider_posts = get_posts(array(
                 <?php foreach ($slider_posts as $post) : setup_postdata($post); ?>
                     <li class="liFaq">
                         <div class="bg_325530 btnFaq jsbtnFaq off">
-                            <section class="d_flex j_between btnFaqFx">
+                            <section class="d_flex j_between ali_center jsbtnFaqFx btnFaqFx off">
                                 <h2 class="cl_fff fw_800 h2btnFaq"><?php echo get_the_title($post->ID); ?></h2>
-                                <div class="pore brdBtnFaq">
+                                <div class="pore brdBtnFaq off">
                                     <span class="bg_fff brdBtmBtnFaq brdBtmBtnFaq01"></span>
                                     <span class="bg_fff brdBtmBtnFaq brdBtmBtnFaq02"></span>
                                 </div>
                             </section>
                         </div>
-                        <div class="FaqLxn jsFaqLxn">
+                        <div class="faqDelitleiLxn jsFaqLxn">
                             <div class="cntFaq">
                                 <?php the_content(); ?>
                             </div>

@@ -3,7 +3,7 @@
         <spna class="iconH2BomCafePrace"><?php echo scf::get('titleBomCafePrace'); ?></spna>
         <!--bg:../img/about/iconH2BomCafePrace.svg-->
     </h2>
-    <h3 class="t_center cl_467BBE fw_500 h3BomCafePrace">
+    <h3 class="t_center cl_325530 fw_800 h3BomCafePrace">
         <?php echo scf::get('txtBomCafePrace'); ?>
     </h3>
 

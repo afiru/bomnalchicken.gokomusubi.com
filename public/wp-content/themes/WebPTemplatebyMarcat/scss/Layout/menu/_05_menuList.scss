@@ -12,7 +12,7 @@ LAYOUT
 
 .menuAllListBx {
     @include mi.ontenerWidth(375, 335);
-    margin: auto;
+    @include mi.marginPercent(375, 40, auto, 0, auto);
 }
 
 .ulmenuAllListBx {}
@@ -41,16 +41,46 @@ LAYOUT
 
 .btnSubmenuAllList {
     width: 100%;
-    @include mi.paddingPercent(335, 8, 0, 8, 0);
+    @include mi.paddingPercent(335, 12, 0, 12, 0);
     border-bottom: 1px solid #282828;
 }
 
+.thumbsSubmenuAllList {
+    @include mi.ontenerWidth(335, 80);
+    position: relative;
+    aspect-ratio: 80 / 80;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.secSubmenuAllList {
+    @include mi.ontenerWidth(335, 221);
+}
+
 .txtBtnSubmenuAllList {
-    @include mi.ontenerWidth(335, 312);
-    @include mi.fontSizePc(12);
-    @include mi.lineheight(auto, auto);
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
 }
+
+.priceBtnSubmenuAllList {
+    @include mi.marginPercent(221, 8, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.tyusyakuBtnSubmenuAllList {
+    @include mi.marginPercent(221, 8, auto, 0, auto);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
 
 .iconBtnSubmenuAllList {
     @include mi.ontenerWidth(335, 24);

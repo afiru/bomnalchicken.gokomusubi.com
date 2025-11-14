@@ -6,3 +6,72 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+.menuAllListNavs {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @include mi.ontenerWidth(375, 355);
+    @include mi.marginPercent(350, 0, 0, 0, 20);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.ulMenuAllListNavs {
+    display: flex;
+    /* 横並びにする */
+    overflow-x: auto;
+    /* 横スクロールを許可 */
+    scroll-snap-type: x mandatory;
+    /* スナップスクロールにしたい場合 */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    /* 下に余白を追加 */
+    box-sizing: content-box;
+
+    /* パディングを含めない */
+    /* iOSでスムーズスクロール */
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #FBEBEC;
+        /* スクロールバーの背景 */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #A01D10;
+        /* スクロールバーの色 */
+        border-radius: 4px;
+        /* 角丸 */
+        border: 2px solid #A01D10;
+        /* 少し余白を作る */
+    }
+}
+
+.liMenuAllListNavs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+
+    /* スナップスクロール用 */
+    &:nth-child(n+2) {
+        @include mi.marginPercent(350, 0, 0, 0, 4);
+    }
+}
+
+.btnMenuAllListNavs {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(12, 14);
+    @include mi.letterSpacing(40);
+    white-space: nowrap;
+    padding: 8px 24px;
+    @include mi.kadomaru(4px);
+}
+
+
+////
+.menuAllListBx {}

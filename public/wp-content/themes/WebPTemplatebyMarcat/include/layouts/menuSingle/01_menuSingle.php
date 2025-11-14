@@ -2,9 +2,7 @@
     <?php $img = get_post_thumbsdata($post->ID); ?>
     <div class="menuSingle">
         <div class="menuDetailSingle">
-            <div class="d_flex j_between ali_center titleMenuDetailSingle">
-                <h2 class="cl_282828 fw_800 h2TitleMenuDetailSingle"><?php echo get_the_title($post->ID); ?></h2>
-            </div>
+            <h2 class="cl_282828 fw_800 h2TitleMenuDetailSingle"><?php echo get_the_title($post->ID); ?></h2>
 
             <figure class="thumbsDetailSingle">
                 <?php if (!empty($img[0])): ?>
@@ -14,19 +12,23 @@
                 <?php endif; ?>
             </figure>
 
+            <div class="cntSMenu">
+                <?php the_content(); ?>
+            </div>
+
             <?php if (!empty(scf::get('tdMenu'))): ?>
-                <p class="cl_282828 fw_400 txtset alertMenu">
+                <p class="cl_282828 fw_400 txtset alertSMenu">
                     お値段：<?php echo scf::get('tdMenu'); ?>
                 </p>
             <?php endif; ?>
 
             <?php if (!empty(scf::get('alertMenu'))): ?>
-                <p class="cl_282828 fw_400 txtset alertMenu">
+                <p class="cl_282828 fw_400 txtset alertSMenu alertSMenu02">
                     <?php echo scf::get('alertMenu'); ?>
                 </p>
             <?php endif; ?>
 
-            <?php the_content(); ?>
+
 
             <ul class="d_flex j_between row photosMenuDetailSingle">
                 <?php foreach (scf::get('imgsPriceMenu') as $fields): ?>

@@ -33,8 +33,7 @@
         <section class="secZehiBomCafe">
             <h3 class="cl_A01D10 fw_800 t_center h3ZehiBomCafe">そんな方はぜひ！</h3>
             <p class="t_center cl_A01D10 fw_800 txtZehiBomCafe">
-                <span class="bigTxtZehiBomCafe">ボムカフェ</span>
-                に！
+                <span class="bigTxtZehiBomCafe">ボムカフェ</span>に！
             </p>
         </section>
     </div>

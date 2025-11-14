@@ -84,29 +84,31 @@ LAYOUT
     @include mi.letterSpacing(0);
 
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 16, 0, 0, 0);
+        @include mi.marginPercent(335, 24, 0, 0, 0);
     }
 }
 
 .h3LiAddressAccessMain {
-    @include mi.fontSizePc(12);
+    @include mi.fontSizePc(14);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 52);
+    @include mi.ontenerWidth(335, 335);
 }
 
 .dottoLiAddressAccessMain {
+    @include mi.marginPercent(335, 4, 0, 0, 0);
     @include mi.fontSizePc(12);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 11);
+    @include mi.ontenerWidth(335, 335);
 }
 
 .txtLiAddressAccessMain {
+    @include mi.marginPercent(335, 8, 0, 0, 0);
     @include mi.fontSizePc(12);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 265);
+    @include mi.ontenerWidth(335, 335);
 }
 
 .mapAddressAccessMain {

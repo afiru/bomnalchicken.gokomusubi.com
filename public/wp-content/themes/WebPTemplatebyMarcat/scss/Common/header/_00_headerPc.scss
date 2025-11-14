@@ -202,26 +202,28 @@ LAYOUT
 
 .liAddressBtmNavHeader {
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 8, 0, 0, 0);
+        @include mi.marginPercent(335, 24, 0, 0, 0);
     }
 }
 
 .h3LiAddressBtmNavHeader {
-    @include mi.ontenerWidth(335, 53);
-    @include mi.fontSizePc(12);
+    @include mi.ontenerWidth(335, 335);
+    @include mi.fontSizePc(14);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
 }
 
 .dottoLiAddressBtmNavHeader {
-    @include mi.ontenerWidth(335, 16);
+    @include mi.marginPercent(335, 4, 0, 0, 0);
+    @include mi.ontenerWidth(335, 335);
     @include mi.lineheight(13, 24);
     @include mi.fontSizePc(10);
     @include mi.letterSpacing(0);
 }
 
 .txtLiAddressBtmNavHeader {
-    @include mi.ontenerWidth(335, 267);
+    @include mi.marginPercent(335, 8, 0, 0, 0);
+    @include mi.ontenerWidth(335, 335);
     @include mi.fontSizePc(10);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);

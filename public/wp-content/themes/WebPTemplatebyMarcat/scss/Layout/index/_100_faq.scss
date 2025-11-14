@@ -1,0 +1,99 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.faqIndex {
+    @include mi.marginPercent(375, 80, auto, 0, auto);
+}
+
+.faqIndexLxn {
+    @include mi.ontenerWidth(375, 335);
+    margin: auto;
+}
+
+.ulFaq {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.liFaq {
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 40, auto, 0, auto);
+    }
+}
+
+.btnFaq {
+    @include mi.paddingPercent(335, 8, 0, 8, 0);
+}
+
+.btnFaqFx {
+    @include mi.ontenerWidth(335, 315);
+    margin: auto;
+}
+
+.h2btnFaq {
+    @include mi.ontenerWidth(315, 295);
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.brdBtnFaq {
+    @include mi.ontenerWidth(315, 14);
+    position: relative;
+    aspect-ratio: 14 / 14;
+}
+
+.brdBtmBtnFaq {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include mi.kadomaru(2px);
+    margin: auto;
+    transition-duration: 0.5s;
+}
+
+.brdBtmBtnFaq01 {}
+
+.brdBtmBtnFaq02 {
+    transform: rotate(90deg);
+}
+
+.btnFaq.off {
+    .brdBtmBtnFaq01 {
+        opacity: 1;
+    }
+
+    .brdBtmBtnFaq02 {
+        opacity: 1;
+    }
+}
+
+.btnFaq.on {
+    .brdBtmBtnFaq01 {
+        opacity: 1;
+    }
+
+    .brdBtmBtnFaq02 {
+        opacity: 0;
+    }
+}
+
+.faqDelitleiLxn {
+    display: none;
+}
+
+.cntFaq {
+    @include mi.marginPercent(335, 12, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+
+}

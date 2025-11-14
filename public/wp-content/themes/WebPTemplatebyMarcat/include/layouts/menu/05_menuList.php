@@ -52,9 +52,11 @@
                                             <p class="cl_282828 fw_500 txtBtnSubmenuAllList">
                                                 <?php echo get_the_title($post->ID); ?>
                                             </p>
-                                            <p class="cl_282828 fw_500 priceBtnSubmenuAllList">
-                                                <?php echo scf::get('tdMenu'); ?>
-                                            </p>
+                                            <?php if (!empty(scf::get('tdMenu'))): ?>
+                                                <p class="cl_282828 fw_500 priceBtnSubmenuAllList">
+                                                    お値段：<?php echo scf::get('tdMenu'); ?>
+                                                </p>
+                                            <?php endif; ?>
                                             <p class="cl_282828 fw_500 tyusyakuBtnSubmenuAllList">
                                                 <?php echo scf::get('alertMenu'); ?>
                                             </p>

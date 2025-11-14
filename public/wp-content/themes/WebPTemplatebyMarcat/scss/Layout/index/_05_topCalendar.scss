@@ -25,7 +25,7 @@ LAYOUT
 }
 
 .title_main_sidebar_eventcalendar_lxc {
-    @include mi.ontenerWidth(375, 355);
+    @include mi.ontenerWidth(375, 335);
     justify-content: space-between;
     margin: auto;
 
@@ -60,7 +60,7 @@ LAYOUT
 
 .main_sidebar_eventcalendar_cnt {
     @include mi.marginPercent(375, 16, auto, 0, auto);
-    @include mi.ontenerWidth(375, 355);
+    @include mi.ontenerWidth(375, 335);
 }
 
 .main_sidebar_eventcalendar {
@@ -97,7 +97,7 @@ LAYOUT
 
             .titleCalendarPosts {
                 @include mi.marginPercent(50.7142857143, 4, auto, 0, auto);
-                @include mi.fontSizePc(9);
+                @include mi.fontSizePc(10);
                 @include mi.lineheight(20, 25);
                 @include mi.letterSpacing(0);
                 font-weight: 700;
@@ -172,7 +172,7 @@ LAYOUT
 }
 
 .txtCalendarLxnBtm {
-    @include mi.ontenerWidth(375, 355);
+    @include mi.ontenerWidth(375, 335);
     @include mi.marginPercent(375, 18, auto, 0, auto);
     @include mi.fontSizePc(10);
     @include mi.lineheight(20, 25);

@@ -24,20 +24,20 @@
             <div class="d_flex j_center ali_center timeBomCafePrice">
                 <section class="secTdeBomCafePrice">
                     <?php if (!empty($fields['timeBaseTitle'])): ?>
-                        <p class="cl_282828 fw_500 t_center mainTdeBomCafePrice"><?php echo $fields['coseBaseTitle']; ?></p>
+                        <p class="cl_282828 fw_500 t_center mainTdeBomCafePrice"><?php echo $fields['timeBaseTitle']; ?></p>
                     <?php endif; ?>
                     <?php if (!empty($fields['timeSubBaseSubTitle'])): ?>
-                        <p class="cl_282828 fw_500 t_center subTdeBomCafePrice"><?php echo $fields['coseBaseSubTitle']; ?></p>
+                        <p class="cl_282828 fw_500 t_center subTdeBomCafePrice"><?php echo $fields['timeSubBaseSubTitle']; ?></p>
                     <?php endif; ?>
                 </section>
             </div>
             <div class="d_flex j_center ali_center enBomCafePrice">
                 <section class="secTdeBomCafePrice">
                     <?php if (!empty($fields['priceMain'])): ?>
-                        <p class="cl_282828 fw_500 t_center mainTdeBomCafePrice"><?php echo $fields['coseBaseTitle']; ?></p>
+                        <p class="cl_282828 fw_500 t_center mainTdeBomCafePrice"><?php echo $fields['priceMain']; ?></p>
                     <?php endif; ?>
                     <?php if (!empty($fields['priceSub'])): ?>
-                        <p class="cl_282828 fw_500 t_center subTdeBomCafePrice"><?php echo $fields['coseBaseSubTitle']; ?></p>
+                        <p class="cl_282828 fw_500 t_center subTdeBomCafePrice"><?php echo $fields['priceSub']; ?></p>
                     <?php endif; ?>
                 </section>
             </div>

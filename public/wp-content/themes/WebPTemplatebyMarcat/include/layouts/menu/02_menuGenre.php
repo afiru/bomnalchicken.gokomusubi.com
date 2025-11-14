@@ -47,7 +47,7 @@
                                     <li class="liSubMenuGenreLxn">
                                         <a class="d_flex j_between ali_center undernone btnSubMenuGenreLxn" href="<?php echo get_permalink($post->ID); ?>">
                                             <p class="cl_282828 fw_500 txtBtnSubMenuGenreLxn">
-                                                -&nbsp;<?php echo get_the_title($post->ID); ?>
+                                                -&nbsp;<?php echo get_the_title($post->ID); ?>&nbsp;<?php echo scf::get('tdMenu'); ?>
                                             </p>
                                             <figure class="iconBtnSubMenuGenreLxn">
                                                 <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconBtnSubMenuGenreLxn.svg" alt="" width="24" height="24">

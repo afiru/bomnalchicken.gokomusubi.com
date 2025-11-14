@@ -153,13 +153,12 @@ if (is_home() or is_front_page()) {
 
             <section class="secBtmNavHeader">
                 <h2 class="kaisei cl_fff h2BtmNavHeader">
-                    <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/logoHeaderBase.svg" alt="<?php bloginfo('name'); ?>" width="250" height="36">
+                    <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
                 </h2>
                 <ul class="addressBtmNavHeader">
                     <?php foreach (scf::get('tableAccess', 32) as $fields): ?>
-                        <li class="d_flex j_between liAddressBtmNavHeader">
+                        <li class="d_flex j_between row liAddressBtmNavHeader">
                             <h3 class="cl_fff fw_500 maru h3LiAddressBtmNavHeader"><?php echo $fields['thAccess']; ?></h3>
-                            <div class="cl_fff fw_500 maru dottoLiAddressBtmNavHeader">：</div>
                             <p class="cl_fff fw_500 maru txtLiAddressBtmNavHeader"><?php echo $fields['tdAccess']; ?></p>
                         </li>
                     <?php endforeach; ?>

@@ -1,0 +1,21 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.pointBomCafePrace {
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+}
+
+.liPointBomCafePrace {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 16, auto, 0, auto);
+    }
+}

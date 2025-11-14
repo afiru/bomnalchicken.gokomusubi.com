@@ -27,9 +27,8 @@
             </h2>
             <ul class="addressAccessMain">
                 <?php foreach (scf::get('tableAccess', 32) as $fields): ?>
-                    <li class="d_flex j_between liAddressAccessMain">
+                    <li class="d_flex j_between row liAddressAccessMain">
                         <h3 class="cl_282828 fw_500 maru h3LiAddressAccessMain"><?php echo $fields['thAccess']; ?></h3>
-                        <div class="cl_282828 fw_500 maru dottoLiAddressAccessMain">：</div>
                         <p class="cl_282828 fw_500 maru txtLiAddressAccessMain"><?php echo $fields['tdAccess']; ?></p>
                     </li>
                 <?php endforeach; ?>

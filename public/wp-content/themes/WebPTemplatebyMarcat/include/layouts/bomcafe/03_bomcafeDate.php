@@ -5,7 +5,7 @@
     </h2>
     <h3 class="t_center cl_325530 fw_800 h3BomCafeDate">
         <span class="littleBomCafeDate">開催は</span>
-        <span class="BigBomCafeDate"><?php echo scf::get('kikanDateBomCafe'); ?></span>
+        <span class="bigBomCafeDate"><?php echo scf::get('kikanDateBomCafe'); ?></span>
         <span class="littleBomCafeDate">です。</span>
     </h3>
     <p class="cl_282828 fw_500 text_justify txtBomCafeDate">

@@ -22,7 +22,13 @@ LAYOUT
 }
 
 .formBooking {
-    @include mi.marginPercent(335, 40, auto, 0, auto);
+    @include mi.marginPercent(335, 24, auto, 0, auto);
+}
+
+.txtFormBookings {
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
 }
 
 .formCnt {}

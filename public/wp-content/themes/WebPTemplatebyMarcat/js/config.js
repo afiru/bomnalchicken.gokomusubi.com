@@ -217,6 +217,15 @@ $(function () {
             $(this).removeClass('on').addClass('off');
         }
     });
+
+    $(document).on('click', '.jsbtnFaq', function () {
+        $(this).next('.jsFaqLxn').slideToggle();
+        if ($(this).hasClass('off')) {
+            $(this).removeClass('off').addClass('on');
+        } else {
+            $(this).removeClass('on').addClass('off');
+        }
+    });
 });
 
 //スライダー

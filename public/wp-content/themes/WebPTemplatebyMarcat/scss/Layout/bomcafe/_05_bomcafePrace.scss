@@ -1,0 +1,57 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.secBomCafePrace {
+    @include mi.marginPercent(375, 64, auto, 0, auto);
+    @include mi.ontenerWidth(375, 335);
+}
+
+.h2BomCafePrace {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(22, 22);
+    @include mi.letterSpacing(0);
+}
+
+.iconH2BomCafePrace {
+    @include mi.paddingPercent(335, 0, 0, 0, 28);
+    background: url(../img/about/iconH2BomCafePrace.svg) no-repeat left center;
+    background-size: auto 100%;
+}
+
+.h3BomCafePrace {
+    @include mi.marginPercent(335, 20, auto, 0, auto);
+    @include mi.fontSizePc(16);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.ggmapBomCafePrace {
+    @include mi.marginPercent(335, 10, auto, 0, auto);
+    aspect-ratio: 335 / 160;
+    @include mi.kadomaru(4px);
+    overflow: hidden;
+    position: relative;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+    }
+}
+
+.txtBomCafePrace {
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}

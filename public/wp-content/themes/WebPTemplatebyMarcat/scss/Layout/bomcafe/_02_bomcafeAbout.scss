@@ -1,0 +1,91 @@
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+@use "../../Functions/mixin"as mi;
+
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.secAboutBomCafe {
+    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.h2AboutBomCafe {
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(-20);
+}
+
+.h3AboutBomCafe {
+    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+//
+.pointAboutBomCafe {
+    @include mi.marginPercent(335, 40, auto, 0, auto);
+}
+
+.liPointAboutBomCafe {
+    &:nth-child(n+2) {
+        @include mi.marginPercent(335, 12, auto, 0, auto);
+    }
+}
+
+.iconPointAboutBomCafe {
+    @include mi.ontenerWidth(335, 60);
+}
+
+.txtPointAboutBomCafe {
+    @include mi.ontenerWidth(335, 264);
+    @include mi.fontSizePc(12);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.zehiBomCafe {
+    @include mi.marginPercent(335, 20, auto, 0, auto);
+    @include mi.paddingPercent(335, 24, 0, 24, 0);
+    position: relative;
+    border: 1px solid #D9D9D9;
+    @include mi.kadomaru(10px);
+}
+
+.iconPointAboutBomCafeLT {
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include mi.ontenerWidth(335, 12.56);
+}
+
+.iconPointAboutBomCafeRB {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include mi.ontenerWidth(335, 12.56);
+}
+
+.secZehiBomCafe {
+    width: 100%;
+}
+
+.h3ZehiBomCafe {
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.txtZehiBomCafe {
+    @include mi.marginPercent(335, 16, auto, 0, auto);
+    @include mi.fontSizePc(20);
+    @include mi.lineheight(10, 15);
+    @include mi.letterSpacing(0);
+}
+
+.bigTxtZehiBomCafe {
+    @include mi.fontSizePc(30);
+    @include mi.letterSpacing(0);
+}
