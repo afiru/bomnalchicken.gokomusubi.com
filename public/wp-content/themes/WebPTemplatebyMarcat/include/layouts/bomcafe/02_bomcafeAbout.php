@@ -25,11 +25,9 @@
 
     <div class="pore d_flex j_center ali_center zehiBomCafe">
         <figure class="poab iconPointAboutBomCafeLT">
-            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/about/iconPointAboutBomCafeLT.svg" alt="" width="12.56" height="12.56">
         </figure>
         <figure class="poab iconPointAboutBomCafeRB">
-            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/about/iconPointAboutBomCafeRb.svg" alt="" width="12.56" height="12.56">
-        </figure>
+           </figure>
         <section class="secZehiBomCafe">
             <h3 class="cl_A01D10 fw_800 t_center h3ZehiBomCafe">そんな方はぜひ！</h3>
             <p class="t_center cl_A01D10 fw_800 txtZehiBomCafe">

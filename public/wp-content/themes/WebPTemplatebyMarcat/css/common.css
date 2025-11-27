@@ -7093,13 +7093,14 @@ LAYOUT
   padding-left: 0px;
   padding-right: 0px;
   position: relative;
-  border: 1px solid #D9D9D9;
   border-radius: 10px;
   /* CSS3草案 */
   -webkit-border-radius: 10px;
   /* Safari,Google Chrome用 */
   -moz-border-radius: 10px;
   /* Firefox用 */
+  overflow: hidden;
+  z-index: 0;
 }
 @media screen and (max-width: 1199px) {
   .zehiBomCafe {
@@ -7116,27 +7117,43 @@ LAYOUT
 }
 
 .iconPointAboutBomCafeLT {
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  width: 12.56px;
-}
-@media screen and (max-width: 1199px) {
-  .iconPointAboutBomCafeLT {
-    width: 3.74%;
-  }
+  padding: 1px;
+  border-radius: 10px;
+  /* CSS3草案 */
+  -webkit-border-radius: 10px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 10px;
+  /* Firefox用 */
+  background: linear-gradient(135deg, transparent 0%, transparent 3%, #D9D9D9 3%, #D9D9D9 97%, transparent 97%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
 }
 
 .iconPointAboutBomCafeRB {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 12.56px;
-}
-@media screen and (max-width: 1199px) {
-  .iconPointAboutBomCafeRB {
-    width: 3.74%;
-  }
+  left: 0;
+  top: 0;
+  padding: 1px;
+  border-radius: 10px;
+  /* CSS3草案 */
+  -webkit-border-radius: 10px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 10px;
+  /* Firefox用 */
+  background: linear-gradient(135deg, #A01D10 0%, #A01D10 3%, transparent 3%, transparent 97%, #A01D10 97%, #A01D10 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
 }
 
 .secZehiBomCafe {
