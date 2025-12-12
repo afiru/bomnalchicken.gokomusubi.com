@@ -3,12 +3,12 @@
     bg:../img/catFv.jpg
     -->
     <section class="secCatFv">
-        <h2 class="cl_282828 fw_800 h2SecCatFv">ボムカフェについて</h2>
-        <div class="bg_282828 brdSecCatFv"></div>
-        <h3 class="cl_282828 fw_800 en h3SecCatFv">ABOUT</h3>
+        <h2 class="cl_fff fw_800 h2SecCatFv">ボムカフェについて</h2>
+        <div class="bg_fff brdSecCatFv"></div>
+        <h3 class="cl_fff fw_800 en h3SecCatFv">ABOUT</h3>
     </section>
     <figure class="iconCatFv">
-        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconCatFv.svg" alt="" width="74" height="60">
+        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconCatFv.png" alt="" width="74" height="60">
     </figure>
 </div>
 
