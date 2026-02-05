@@ -1,18 +1,174 @@
 <?php
+// ============================
+// Google Fonts 読み込み（preconnect付き）
+// ============================
+function theme_enqueue_google_fonts()
+{
+    // preconnect
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 
-add_filter('big_image_size_threshold', '__return_false');
-//jetpackで読まれているCSSを削除
+    // フォント本体
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_head', 'theme_enqueue_google_fonts', 1); // headに先に出力
+// ============================
+// CSS 読み込み
+// ============================
+function theme_enqueue_styles()
+{
+
+    // jQuery UI CSS
+    wp_enqueue_style(
+        'jquery-ui-css',
+        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css',
+        [],
+        '1.12.1'
+    );
+
+    // Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css',
+        [],
+        '8'
+    );
+
+    // テーマCSS
+    wp_enqueue_style(
+        'theme-common',
+        get_template_directory_uri() . '/css/common.css',
+        [],
+        filemtime(get_template_directory() . '/css/common.css')
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+
+// ============================
+// JS 読み込み
+// ============================
+function theme_enqueue_scripts()
+{
+    // WordPress同梱の jQuery を使用
+    wp_enqueue_script('jquery');
+
+    // jQuery UI
+    wp_enqueue_script(
+        'jquery-ui',
+        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
+        ['jquery'],
+        '1.12.1',
+        true
+    );
+
+    wp_enqueue_script(
+        'jquery-ui-i18n',
+        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js',
+        ['jquery-ui'],
+        '1.12.1',
+        true
+    );
+
+    // Lenis スクロール
+    wp_enqueue_script(
+        'lenis',
+        'https://unpkg.com/lenis@1.2.3/dist/lenis.min.js',
+        [],
+        '1.2.3',
+        true
+    );
+
+    // Swiper
+    wp_enqueue_script(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
+        [],
+        '8',
+        true
+    );
+
+    // アニメーション用テーマJS
+    wp_enqueue_script(
+        'animsition',
+        get_template_directory_uri() . '/js/animsition.min.js',
+        ['jquery'],
+        filemtime(get_template_directory() . '/js/animsition.min.js'),
+        true
+    );
+
+    wp_enqueue_script(
+        'config',
+        get_template_directory_uri() . '/js/config.js',
+        ['jquery'],
+        filemtime(get_template_directory() . '/js/config.js'),
+        true
+    );
+
+    // Footer用 JS（非同期）
+    wp_enqueue_script(
+        'lightbox',
+        get_template_directory_uri() . '/js/lightbox.min.js',
+        [],
+        filemtime(get_template_directory() . '/js/lightbox.min.js'),
+        true
+    );
+
+    wp_enqueue_script(
+        'inview',
+        get_template_directory_uri() . '/js/inview.min.js',
+        [],
+        filemtime(get_template_directory() . '/js/inview.min.js'),
+        true
+    );
+
+    wp_enqueue_script(
+        'inview-setting',
+        get_template_directory_uri() . '/js/inview_setting.js',
+        ['inview'],
+        filemtime(get_template_directory() . '/js/inview_setting.js'),
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
+
+// ============================
+// Footer JS を async に
+// ============================
+function add_async_attribute($tag, $handle)
+{
+    $async_scripts = ['lightbox', 'inview', 'inview-setting'];
+    if (in_array($handle, $async_scripts)) {
+        return str_replace(' src', ' async src', $tag);
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
+
+// ============================
+// 不要 CSS・インライン削除
+// ============================
+// Jetpack CSS 削除
 add_filter('jetpack_implode_frontend_css', '__return_false');
 
-/* インラインスタイル削除 */
-
+// Recent Comments ウィジェットのインラインCSS削除
 function remove_recent_comments_style()
 {
     global $wp_widget_factory;
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
-
 add_action('widgets_init', 'remove_recent_comments_style');
+
+// WordPress 5.3+ の big image サイズ自動縮小無効
+add_filter('big_image_size_threshold', '__return_false');
+
 add_theme_support('post-thumbnails'); //サムネイルをサポートさせる。
 
 //勝手に読み込まれるJSを削除

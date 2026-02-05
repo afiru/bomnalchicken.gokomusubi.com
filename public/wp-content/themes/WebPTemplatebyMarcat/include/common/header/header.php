@@ -28,6 +28,7 @@
 -->
   <?php //タイトルの設定。【トップページ】カスタマイザーのSEOタイトル　【下層】ページタイトル｜カスタマイザーのSEOタイトル　
   ?>
+  <?php wp_head(); ?>
   <title><?php echo get_the_site_title(get_php_customzer('seo_title')); ?></title>
 
   <?php if (is_single()): ?>
@@ -75,7 +76,7 @@
   <?php endif; ?>
 
 
-  <?php wp_head(); ?>
+
   <script>
     var home_url = "<?php echo home_url('/'); ?>";
     var theme_url = "<?php echo get_bloginfo('template_url'); ?>";
@@ -93,25 +94,15 @@
       var holiday = [""];
     <?php endif; ?>
   </script>
-  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-  <script src="//unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-  <script src="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script type='text/javascript' src="<?php echo get_bloginfo('template_url'); ?>/js/animsition.min.js?ver=<?php echo date('YmdHis'); ?>"></script>
-  <script type="text/javascript" src='<?php echo get_bloginfo('template_url'); ?>/js/config.js?ver=<?php echo date('YmdHis'); ?>'> </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" id='def_set_css' type="text/css" href="<?php echo get_bloginfo('template_url'); ?>/css/common.css?ver=<?php echo date('YmdHis'); ?>" media="all">
 </head>
 
 <body id="body">
   <div id="scrolltop" class="bgbase wap">
     <div class="wapper pageWap">
-      <div class="cntPageLxn">
+      <div class="cntPageLxn bgCntPageLxn">
+        <!--
+      bg:../bgCntPageLxn.png
+    -->
         <h1 class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</h1>
         <header id="scrolltop" class="bg_A01D10 baseheader" data-lenis-prevent>
           <?php get_template_part('include/common/header/00_header'); ?>
