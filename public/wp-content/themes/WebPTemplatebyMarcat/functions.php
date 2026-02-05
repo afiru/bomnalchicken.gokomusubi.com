@@ -1,6 +1,6 @@
 <?php
 // ============================
-// Google Fonts 読み込み（preconnect付き）
+// Google Fonts 読み込み（preconnect & enqueue）
 // ============================
 function theme_enqueue_google_fonts()
 {
@@ -11,18 +11,18 @@ function theme_enqueue_google_fonts()
     // フォント本体
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
         [],
         null
     );
 }
-add_action('wp_head', 'theme_enqueue_google_fonts', 1); // headに先に出力
+add_action('wp_head', 'theme_enqueue_google_fonts', 1); // head に先出し
+
 // ============================
 // CSS 読み込み
 // ============================
 function theme_enqueue_styles()
 {
-
     // jQuery UI CSS
     wp_enqueue_style(
         'jquery-ui-css',
@@ -39,7 +39,7 @@ function theme_enqueue_styles()
         '8'
     );
 
-    // テーマCSS
+    // テーマ共通 CSS
     wp_enqueue_style(
         'theme-common',
         get_template_directory_uri() . '/css/common.css',
@@ -49,13 +49,12 @@ function theme_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
-
 // ============================
 // JS 読み込み
 // ============================
 function theme_enqueue_scripts()
 {
-    // WordPress同梱の jQuery を使用
+    // jQuery
     wp_enqueue_script('jquery');
 
     // jQuery UI
@@ -67,6 +66,7 @@ function theme_enqueue_scripts()
         true
     );
 
+    // jQuery UI 日本語化
     wp_enqueue_script(
         'jquery-ui-i18n',
         'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js',
@@ -93,7 +93,7 @@ function theme_enqueue_scripts()
         true
     );
 
-    // アニメーション用テーマJS
+    // アニメーション用テーマ JS
     wp_enqueue_script(
         'animsition',
         get_template_directory_uri() . '/js/animsition.min.js',
@@ -102,6 +102,7 @@ function theme_enqueue_scripts()
         true
     );
 
+    // 設定 JS
     wp_enqueue_script(
         'config',
         get_template_directory_uri() . '/js/config.js',
@@ -110,7 +111,7 @@ function theme_enqueue_scripts()
         true
     );
 
-    // Footer用 JS（非同期）
+    // Footer 用 JS（依存関係を保ったまま defer）
     wp_enqueue_script(
         'lightbox',
         get_template_directory_uri() . '/js/lightbox.min.js',
@@ -137,19 +138,19 @@ function theme_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
-
 // ============================
-// Footer JS を async に
+// Footer JS を async に（依存関係を考慮して defer 推奨）
 // ============================
-function add_async_attribute($tag, $handle)
+function add_defer_attribute($tag, $handle)
 {
-    $async_scripts = ['lightbox', 'inview', 'inview-setting'];
-    if (in_array($handle, $async_scripts)) {
-        return str_replace(' src', ' async src', $tag);
+    $defer_scripts = ['lightbox', 'inview', 'inview-setting'];
+    if (in_array($handle, $defer_scripts)) {
+        return str_replace(' src', ' defer src', $tag);
     }
     return $tag;
 }
-add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
+
 
 
 // ============================
