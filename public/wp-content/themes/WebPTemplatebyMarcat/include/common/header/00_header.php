@@ -8,7 +8,7 @@ if (is_home() or is_front_page()) {
     <div class="headerBaseTopFxLxn">
         <div class="d_flex j_between ali_center headerBaseFx">
             <a class="logoHeaderBase" href="<?php echo home_url('/'); ?>">
-                <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
+                <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
             </a>
             <div class="menuHeaderPc jsmenuHeaderPc off">
                 <div class="menuHeaderPcIn">
@@ -132,7 +132,7 @@ if (is_home() or is_front_page()) {
 
             <section class="secBtmNavHeader">
                 <h2 class="Mochiy cl_fff h2BtmNavHeader">
-                    <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
+                    <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
                 </h2>
                 <ul class="addressBtmNavHeader">
                     <?php foreach (scf::get('tableAccess', 32) as $fields): ?>
