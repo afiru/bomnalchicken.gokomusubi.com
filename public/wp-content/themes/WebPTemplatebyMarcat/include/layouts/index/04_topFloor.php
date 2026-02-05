@@ -3,7 +3,7 @@
         <section class="titleTopFloor">
             <h2 class="cl_EE952D t_right fw_800 h2TopFloor"><?php echo esc_html('こんな雰囲気です!'); ?></h2>
             <div class="bg_F4DB17 brdTopFloor"></div>
-            <p class="cl_282828 t_right fw_800 en rybyTopFloor"><?php echo esc_html('Floor'); ?></p>
+            <p class="cl_E9483E t_right fw_800 en ryshyadow rybyTopFloor"><?php echo esc_html('Floor'); ?></p>
         </section>
 
         <div class="d_flex j_between topFloorTentyo">

@@ -9,7 +9,7 @@ LAYOUT
 .nowNewsCnt {
     @include mi.paddingPercent(375, 24, 0, 26, 0);
     position: relative;
-    background: #A01D10;
+    background: #FFF;
 
 }
 
@@ -86,45 +86,59 @@ LAYOUT
 }
 
 .topNews {
-    @include mi.paddingPercent(375, 60, 0, 0, 0);
+    @include mi.paddingPercent(375, 40, 0, 34, 0);
+    @include mi.marginPercent(375, 40,auto ,0 ,auto );
+    @include mi.ontenerWidth( 375, 355 );
+    @include mi.kadomaru(8px);
 }
 
 .topNewsTitle {
-    @include mi.ontenerWidth(375, 335);
-    margin: auto;
 }
 
 .h2TopNews {
     @include mi.fontSizePc(22);
     @include mi.lineheight(22, 22);
     @include mi.letterSpacing(0);
+    color: #EE952D;
+    font-weight: 500;
 }
 
 .brdTopNews {
-    @include mi.ontenerWidth(335, 40);
-    height: 1px;
-    background: #B1B1B1;
-    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.ontenerWidth(355, 81);
+    height: 2px;
+    background: #F4DB17;
+    @include mi.marginPercent(355, 8, auto, 0, auto);
 }
 
 .rybyTopNews {
-    @include mi.marginPercent(335, 4, auto, 0, auto);
+    @include mi.marginPercent(355, 4, auto, 0, auto);
     @include mi.fontSizePc(14);
     @include mi.lineheight(14, 14);
     @include mi.letterSpacing(100);
+    text-shadow: 0 0 3px #E9483E;
 }
 
 
 .topNewsLoop {
-    @include mi.marginPercent(354, 18, auto, 0, auto);
-    @include mi.ontenerWidth(335, 335);
+    @include mi.marginPercent(355, 24, auto, 0, auto);
+    @include mi.ontenerWidth(355, 335);
 }
 
-.ulTopNewsLoop {}
+.ulTopNewsLoop {
+    width: 100%;
+}
 
 .liTopNewsLoop {
-    @include mi.paddingPercent(354, 12, 0, 12, 0);
-    border-bottom: 1px solid #B1B1B1;
+    @include mi.paddingPercent(335, 11, 0, 0, 0);
+    &:after{
+        @include mi.marginPercent(335, 11,auto ,0 ,auto );
+        content:"";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right, #f7e22b, #f5a14d, #e65d91, #df7a66);
+    }
+
 }
 
 .btnTopNewsLoop {
@@ -178,7 +192,7 @@ LAYOUT
     aspect-ratio: 335/48;
     @include mi.fontSizePc(16);
     @include mi.letterSpacing(0);
-    background: #325530;
+    background: #FBEBEC;
     text-decoration: none;
-    color: #fff;
+    color: #EB53A2;
 }

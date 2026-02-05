@@ -45,7 +45,7 @@ LAYOUT
 
 ///
 .ulTopNewsLoop {
-    @include mi.ontenerWidth(375, 335);
+    width: 100%;
     @include mi.marginPercent(375, 40, auto, 0, auto);
 }
 
