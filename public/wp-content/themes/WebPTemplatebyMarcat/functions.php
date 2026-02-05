@@ -130,20 +130,7 @@ if (is_admin()) {
     add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
 }
 
-//レンダリングをブロックするのを止めましょう。
-if (!(is_admin())) {
-
-    function add_defer_to_enqueue_script($url)
-    {
-        if (FALSE === strpos($url, '.js'))
-            return $url;
-        if (strpos($url, 'jquery.min.js'))
-            return $url;
-        return "$url' defer charset='UTF-8";
-    }
-
-    add_filter('clean_url', 'add_defer_to_enqueue_script', 11, 1);
-}
+// 注意: defer 属性は script_loader_tag フィルターで正しく適用済み（69-83行目）
 
 remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_discovery_links');
