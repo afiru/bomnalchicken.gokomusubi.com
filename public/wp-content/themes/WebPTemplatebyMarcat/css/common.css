@@ -3013,14 +3013,38 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .price {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 0px;
   padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+}
+@media screen and (max-width: 1199px) {
+  .price {
+    margin-top: 10.66%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (max-width: 1199px) {
   .price {
     padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .price {
+    width: 94.66%;
   }
 }
 
@@ -3031,12 +3055,12 @@ LAYOUT
 }
 
 .priceLxn {
-  width: 335px;
+  width: 333px;
   margin: auto;
 }
 @media screen and (max-width: 1199px) {
   .priceLxn {
-    width: 89.33%;
+    width: 93.8%;
   }
 }
 
@@ -3053,6 +3077,7 @@ LAYOUT
   font-size: 22px;
   line-height: 1;
   letter-spacing: 0em;
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .h2TopPrice {
@@ -3104,6 +3129,7 @@ LAYOUT
   font-size: 14px;
   line-height: 1;
   letter-spacing: 0.1em;
+  text-align: center;
 }
 @media screen and (max-width: 1199px) {
   .rybyTopPrice {

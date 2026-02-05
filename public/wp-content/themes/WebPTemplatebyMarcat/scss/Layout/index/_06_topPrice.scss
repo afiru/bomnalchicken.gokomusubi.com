@@ -7,7 +7,10 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .price {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
+    @include mi.ontenerWidth(375 ,355 );
+    @include mi.kadomaru(8px);
 }
 
 .bgPrice {
@@ -17,7 +20,7 @@ LAYOUT
 }
 
 .priceLxn {
-    @include mi.ontenerWidth(375, 335);
+    @include mi.ontenerWidth(355 ,333 );
     margin: auto;
 }
 
@@ -29,6 +32,7 @@ LAYOUT
     @include mi.fontSizePc(22);
     @include mi.lineheight(22, 22);
     @include mi.letterSpacing(0);
+    text-align: center;
 }
 
 .brdTopPrice {
@@ -42,6 +46,7 @@ LAYOUT
     @include mi.fontSizePc(14);
     @include mi.lineheight(14, 14);
     @include mi.letterSpacing(100);
+    text-align: center;
 }
 
 .txtMainPriceInfo {
