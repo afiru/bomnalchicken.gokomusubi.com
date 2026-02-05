@@ -8,6 +8,6 @@
         <h3 class="cl_fff fw_800 en h3SecCatFv">NEWS</h3>
     </section>
     <figure class="iconCatFv">
-        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconCatFv.png" alt="" width="74" height="60">
+        <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/iconCatFv.png" alt="" width="74" height="60">
     </figure>
 </div>

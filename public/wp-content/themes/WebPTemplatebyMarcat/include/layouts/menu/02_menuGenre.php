@@ -50,7 +50,7 @@
                                                 -&nbsp;<?php echo get_the_title($post->ID); ?>&nbsp;<?php echo scf::get('tdMenu'); ?>
                                             </p>
                                             <figure class="iconBtnSubMenuGenreLxn">
-                                                <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconBtnSubMenuGenreLxn.svg" alt="" width="24" height="24">
+                                                <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/iconBtnSubMenuGenreLxn.svg" alt="" width="24" height="24">
                                             </figure>
                                         </a>
                                     </li>

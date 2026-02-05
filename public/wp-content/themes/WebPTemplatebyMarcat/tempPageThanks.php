@@ -17,7 +17,7 @@
             <h3 class="cl_282828 fw_800 en h3SecCatFv">BOOKING</h3>
         </section>
         <figure class="iconCatFv">
-            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconCatFv.svg" alt="" width="74" height="60">
+            <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/iconCatFv.svg" alt="" width="74" height="60">
         </figure>
     </div>
     <?php if (have_posts()) while (have_posts()) : the_post();  ?>
