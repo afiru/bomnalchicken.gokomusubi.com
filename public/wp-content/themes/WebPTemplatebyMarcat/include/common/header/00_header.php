@@ -8,7 +8,7 @@ if (is_home() or is_front_page()) {
     <div class="headerBaseTopFxLxn">
         <div class="d_flex j_between ali_center headerBaseFx">
             <a class="logoHeaderBase" href="<?php echo home_url('/'); ?>">
-                <img loading="lazy" src="<?php echo <?php echo esc_url(get_bloginfo('template_url')); ?> ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
+                <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
             </a>
             <div class="menuHeaderPc jsmenuHeaderPc off">
                 <div class="menuHeaderPcIn">
@@ -132,14 +132,14 @@ if (is_home() or is_front_page()) {
 
             <section class="secBtmNavHeader">
                 <h2 class="Mochiy cl_fff h2BtmNavHeader">
-                    <img loading="lazy" src="<?php echo <?php echo esc_url(get_bloginfo('template_url')); ?> ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
+                    <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/logoHeaderBase.png" alt="<?php bloginfo('name'); ?>" width="250" height="36">
                 </h2>
                 <ul class="addressBtmNavHeader">
                     <?php foreach (scf::get('tableAccess', 32) as $fields): ?>
-                    <li class="d_flex j_between row liAddressBtmNavHeader">
-                        <h3 class="cl_fff fw_500 maru h3LiAddressBtmNavHeader"><?php echo $fields['thAccess']; ?></h3>
-                        <p class="cl_fff fw_500 maru txtLiAddressBtmNavHeader"><?php echo $fields['tdAccess']; ?></p>
-                    </li>
+                        <li class="d_flex j_between row liAddressBtmNavHeader">
+                            <h3 class="cl_fff fw_500 maru h3LiAddressBtmNavHeader"><?php echo $fields['thAccess']; ?></h3>
+                            <p class="cl_fff fw_500 maru txtLiAddressBtmNavHeader"><?php echo $fields['tdAccess']; ?></p>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
 
@@ -158,12 +158,12 @@ if (is_home() or is_front_page()) {
                 <h2 class="Mochiy cl_fff t_center h2BtmNavHeader">最新の情報をSNSでもチェック！</h2>
                 <ul class="snSNavHeader">
                     <?php foreach (scf::get('snsLinks', 32) as $fields): ?>
-                    <?php $img = get_scf_img_loop_url_id($fields['imgSns']); ?>
-                    <li class="liSnSNavHeader">
-                        <a class="undernone d_block btnSnSNavHeader" href="<?php echo $fields['urlSns']; ?> " target="_blank">
-                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
-                        </a>
-                    </li>
+                        <?php $img = get_scf_img_loop_url_id($fields['imgSns']); ?>
+                        <li class="liSnSNavHeader">
+                            <a class="undernone d_block btnSnSNavHeader" href="<?php echo $fields['urlSns']; ?> " target="_blank">
+                                <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                            </a>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </section>
