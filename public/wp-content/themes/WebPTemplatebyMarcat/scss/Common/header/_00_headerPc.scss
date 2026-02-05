@@ -27,6 +27,8 @@ LAYOUT
     @include mi.fontSizePc(10);
     @include mi.lineheight(10, 10);
     @include mi.letterSpacing(0);
+    background: #fff;
+    color: #848484;
 }
 
 .baseheader {
@@ -36,6 +38,7 @@ LAYOUT
     z-index: 999;
     padding: 8px 0;
     margin: -1px 0 0 0;
+    background:#FBEBEC ;
 }
 
 .headerBaseTopFxLxn {
@@ -64,8 +67,8 @@ LAYOUT
 }
 
 .brdmenuHeaderPc {
-    aspect-ratio: 40/3;
-    background: #fff;
+    aspect-ratio: 33/3;
+    background: #EB53A2;
     position: absolute;
     left: 0;
     right: 0;
@@ -112,7 +115,7 @@ LAYOUT
     width: fit-content;
     display: block;
     margin: 18% auto 0 auto;
-    color: #fff;
+    color: #EB53A2;
 }
 
 .navHeaderBase {
