@@ -1,16 +1,25 @@
-//■慣性スクロール
-const lenis = new Lenis({
-    smooth: true
-})
+// config.js
+window.addEventListener('load', () => { // DOMContentLoaded から load に変更
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            autoRaf: true, // 最近のLenisならこれだけでRAFが動く場合があります
+        });
 
-function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-}
+        // もし autoRaf が効かない旧バージョンの場合は以下を継続
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
 
-requestAnimationFrame(raf)
+        console.log('Lenis initialized!');
+    } else {
+        // ここでエラーが出るなら、そもそも lenis.min.js の読み込み自体に失敗しています
+        console.error('Lenis is not defined. Check your script tags.');
+    }
+});
 
-$(function () {
+(function ($) {
     $('.jsmenuHeaderPc').on('click', function () {
         $('.navHeaderBase').slideToggle();
         if ($(this).hasClass('off')) {
@@ -63,12 +72,12 @@ $(function () {
         });
     });
 
-});
+})(jQuery);
 
 
 //カレンダー
 
-$(function () {
+(function ($) {
     parseInt(calendar_y);
     parseInt(calendar_m);
     get_calendar(calendar_y, calendar_m);
@@ -123,12 +132,12 @@ $(function () {
     $(document).on('click', '.jsCloseCalendar', function () {
         $('.jsbgCalendarLxn').fadeOut();
     });
-});
+})(jQuery);
 
 
 
 //緊急お知らせ
-$(function () {
+(function ($) {
     let counterText;
     let table2Text;
     let table4Text;
@@ -164,40 +173,9 @@ $(function () {
     function setNowNews() {
         setRestCnt();
     }
-});
+})(jQuery);
 
-$(function () {
-
-    $('#date').datepicker({
-        beforeShowDay: function (date) {
-            //定休日の中に､選ばれた日付が含まれているとき
-            if (holiday.indexOf(formatDay(date)) !== -1) {
-                return [false, "ui-state-disabled"];
-            } else {
-                return [true, ""];
-            }
-        }
-    });
-    $("#date").on("change", function () {
-        console.log(holiday);
-        //内容を取得
-        let val = $(this).val();
-        //整形
-        let date = new Date(val);
-        //定休日の中に､選ばれた日付が含まれているとき
-        if (holiday.indexOf(formatDay(date)) !== -1) {
-            //アラート
-            alert("その日は選択できません｡");
-            //inputを空に
-            $(this).val("");
-        }
-    });
-
-    function formatDay(dt) {
-        var m = ('0' + (dt.getMonth() + 1)).slice(-2);
-        var d = ('0' + dt.getDate()).slice(-2);
-        return (m + d);
-    }
+(function ($) {
 
 
     //トリガーメニュー
@@ -226,7 +204,7 @@ $(function () {
             $(this).removeClass('on').addClass('off');
         }
     });
-});
+})(jQuery);
 
 //スライダー
 window.addEventListener('load', function () {
