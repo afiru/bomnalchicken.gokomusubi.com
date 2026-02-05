@@ -1,5 +1,5 @@
 <div class="bg_fff aboutBom">
-    <h2 class="t_center cl_EB53A2 Mochiy fw_800 h2AboutBomCafe">
+    <h2 class="t_center cl_EB53A2 Mochiy fw_400 h2AboutBomCafe">
         <?php echo esc_html(scf::get('titleBomCafe')); ?>
     </h2>
 

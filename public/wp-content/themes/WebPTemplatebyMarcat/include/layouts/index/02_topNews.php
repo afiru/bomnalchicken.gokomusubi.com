@@ -36,7 +36,7 @@ $query1 = new WP_Query($args);
 <?php if ($query1->have_posts()): ?>
     <div id="news" class="bg_fff topNews">
         <section class="topNewsTitle">
-            <h2 class="t_center cl_EE952D Mochiy fw_800 h2TopNews"><?php echo esc_html('新着情報'); ?></h2>
+            <h2 class="t_center cl_EE952D Mochiy fw_400 h2TopNews"><?php echo esc_html('新着情報'); ?></h2>
             <div class="bg_B1B1B1 brdTopNews"></div>
             <p class="t_center cl_E9483E fw_800 en rybyTopNews"><?php echo esc_html('NEWS'); ?></p>
         </section>
