@@ -6,7 +6,7 @@
     </section>
 
     <figure class="poab iconInstagram">
-        <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url'); ?>/img/iconInstagram.svg" alt="" width="87" height="87">
+        <img loading="lazy" src="<?php echo <?php echo esc_url(get_bloginfo('template_url')); ?> ?>/img/iconInstagram.svg" alt="" width="87" height="87">
     </figure>
 
 
