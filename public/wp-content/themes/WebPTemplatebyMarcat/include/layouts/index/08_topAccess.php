@@ -35,7 +35,7 @@
             </ul>
 
             <div class="mapAddressAccessMain">
-                <?php echo wp_kses_post(scf::get('googlemapIframe', 32)); ?>
+                <?php echo scf::get('googlemapIframe', 32); ?>
             </div>
 
             <div class="btnAddressBtmNavHeadeLxn">
