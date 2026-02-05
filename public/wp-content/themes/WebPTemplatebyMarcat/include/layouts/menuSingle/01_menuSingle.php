@@ -6,9 +6,9 @@
 
             <figure class="thumbsDetailSingle">
                 <?php if (!empty($img[0])): ?>
-                    <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                    <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                 <?php else: ?>
-                    <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/nonthumbs.svg" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                    <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/nonthumbs.svg" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                 <?php endif; ?>
             </figure>
 
@@ -35,8 +35,8 @@
                     <?php $img = get_scf_img_loop_url_id($fields['imgPriceMenu']); ?>
                     <?php if (!empty($img[0])): ?>
                         <li class="liPhotosMenuDetailSingle">
-                            <a class="btnPhotosMenuDetailSingle" href="<?php echo $img[0]; ?>" data-lightbox="image-1" data-title="<?php echo $fields['txtPriceMenu']; ?> ">
-                                <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo $fields['txtPriceMenu']; ?>についての画像" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                            <a class="btnPhotosMenuDetailSingle" href="<?php echo esc_url($img[0]); ?>" data-lightbox="image-1" data-title="<?php echo $fields['txtPriceMenu']; ?> ">
+                                <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo $fields['txtPriceMenu']; ?>についての画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                                 <figure class="iconPhotosMenuDetailSingle">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="mask0_1320_1840" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">

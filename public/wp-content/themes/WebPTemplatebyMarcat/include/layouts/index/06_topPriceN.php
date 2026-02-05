@@ -24,7 +24,7 @@
             endforeach; ?>
         </ul>
         <div class="readmoneTopNewsLoop">
-            <a class="d_flex j_center ali_center fw_500 cl_fff bg_000 kaisei btnReadmoneTopNewsLoop" href="<?php echo home_url('/menu/'); ?>">もっとメニューを見る！</a>
+            <a class="d_flex j_center ali_center fw_500 cl_fff bg_000 Mochiy btnReadmoneTopNewsLoop" href="<?php echo home_url('/menu/'); ?>">もっとメニューを見る！</a>
         </div>
     </div>
 </div>

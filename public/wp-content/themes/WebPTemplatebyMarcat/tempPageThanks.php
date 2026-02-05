@@ -29,7 +29,7 @@
                     いただきましたご予約を確認し、返答させていただきますので今しばらくお待ちください。
                 </p>
                 <div class="readmoneTopNewsLoop">
-                    <a class="d_flex j_center ali_center fw_700 cl_fff bg_000 kaisei btnReadmoneTopNewsLoop btnReadmoneTopThnksLoop" href="<?php echo home_url('/'); ?>">トップページに戻る</a>
+                    <a class="d_flex j_center ali_center fw_700 cl_fff bg_000 Mochiy btnReadmoneTopNewsLoop btnReadmoneTopThnksLoop" href="<?php echo home_url('/'); ?>">トップページに戻る</a>
                 </div>
                 <div class="formBooking">
                     <?php the_content(); ?>

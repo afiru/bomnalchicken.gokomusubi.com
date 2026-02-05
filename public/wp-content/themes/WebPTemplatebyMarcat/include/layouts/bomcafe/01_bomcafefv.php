@@ -15,6 +15,6 @@
 <?php $img = get_scf_img_url('bomcafefv'); ?>
 <?php if (!empty($img[0])): ?>
     <figure class="photoBomcafefv">
-        <img loading="lazy" src="<?php echo $img[0]; ?>" alt="" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
     </figure>
 <?php endif; ?>

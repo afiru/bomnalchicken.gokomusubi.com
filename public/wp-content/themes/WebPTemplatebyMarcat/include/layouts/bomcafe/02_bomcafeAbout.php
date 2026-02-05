@@ -12,7 +12,7 @@
                 <li class="d_flex j_between ali_center liPointAboutBomCafe">
                     <figure class="iconPointAboutBomCafe">
                         <?php $img = get_scf_img_loop_url_id($fields['imgPointsBomCafe']); ?>
-                        <img loading="lazy" src="<?php echo $img[0]; ?>" alt="" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                     </figure>
                     <p class="cl_282828 fw_500 text_justify txtPointAboutBomCafe">
                         <?php echo $fields['txtPointsBomCafe']; ?>
@@ -27,7 +27,7 @@
         <figure class="poab iconPointAboutBomCafeLT">
         </figure>
         <figure class="poab iconPointAboutBomCafeRB">
-           </figure>
+        </figure>
         <section class="secZehiBomCafe">
             <h3 class="cl_A01D10 fw_800 t_center h3ZehiBomCafe">そんな方はぜひ！</h3>
             <p class="t_center cl_A01D10 fw_800 txtZehiBomCafe">

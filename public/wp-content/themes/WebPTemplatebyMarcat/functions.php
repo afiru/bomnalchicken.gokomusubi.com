@@ -11,7 +11,7 @@ function theme_enqueue_google_fonts()
     // フォント本体
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
         [],
         null
     );

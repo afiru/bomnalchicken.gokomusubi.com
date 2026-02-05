@@ -13,6 +13,6 @@
     </section>
 
     <div class="readmoneTopNewsLoop">
-        <a class="d_flex j_center ali_center fw_800 cl_fff bg_000 kaisei btnReadmoneTopNewsLoop" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer" target="_blank">LINEでご予約！</a>
+        <a class="d_flex j_center ali_center fw_800 cl_fff bg_000 Mochiy btnReadmoneTopNewsLoop" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer" target="_blank">LINEでご予約！</a>
     </div>
 </div>

@@ -1,29 +1,46 @@
-<div id="about" class="bg_FBEBEC topAbout bgTopAbout">
-    <!--
-    bg:../img/bgTopAboutPc.png
-    -->
+<div id="about" class="bg_fff topAbout bgTopAbout">
     <div class="topAboutLxn">
         <div class="d_flex j_between topAboutInfo">
             <section class="titleTopAbout">
-                <h2 class="cl_282828 fw_800 h2TopAbout">どんなお店？</h2>
-                <div class="bg_fff brdTopAbout"></div>
-                <p class="cl_282828 fw_800 en rybyTopAbout">About</p>
+                <h2 class="cl_EE952D Mochiy fw_800 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h2>
+                <div class="bg_F4DB17 brdTopAbout"></div>
+                <p class="cl_E9483E fw_800 en rybyTopAbout"><?php echo esc_html('About'); ?></p>
             </section>
-            <p class="cl_282828 fw_500 text_justify txtMainAboutInfo"><?php echo scf::get('txtAboutTxt'); ?></p>
+            <p class="cl_282828 fw_500 text_justify txtMainAboutInfo">
+                <?php echo nl2br(esc_html(scf::get('txtAboutTxt'))); ?>
+            </p>
         </div>
 
         <div class="d_flex j_between topAboutTentyo">
             <section class="secAboutTentyo">
-                <h3 class="cl_282828 fw_800 h3AboutTentyo"><?php echo scf::get('nameTentyo'); ?></h3>
-                <p class="cl_282828 fw_500 text_justify txtAboutTentyo"><?php echo scf::get('txtTencho'); ?></p>
-                <?php if (!empty(scf::get('thTentyoInfo')[0])): ?>
+                <h3 class="cl_282828 fw_800 Mochiy h3AboutTentyo"><?php echo esc_html(scf::get('nameTentyo')); ?></h3>
+                <p class="cl_282828 fw_500 Mochiy text_justify txtAboutTentyo"><?php echo nl2br(esc_html(scf::get('txtTencho'))); ?></p>
+
+                <?php if (! empty($iframe = scf::get('iframeTentyo'))): ?>
+                    <div class="pore iframeTentyo">
+                        <?php
+                        // iframeのみ許可して出力
+                        echo wp_kses($iframe, [
+                            'iframe' => [
+                                'src' => [],
+                                'width' => [],
+                                'height' => [],
+                                'frameborder' => [],
+                                'allowfullscreen' => [],
+                            ]
+                        ]);
+                        ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (! empty(scf::get('thTentyoInfo')[0])): ?>
                     <ul class="ulAboutTentyo">
                         <?php foreach (scf::get('tableTentyoInfo') as $fields): ?>
-                            <?php if (!empty($fields['thTentyoInfo'])): ?>
+                            <?php if (! empty($fields['thTentyoInfo'])): ?>
                                 <li class="d_flex j_between liAboutTencho">
-                                    <h4 class="cl_282828 fw_500 h4AboutTencho"><?php echo $fields['thTentyoInfo']; ?></h4>
+                                    <h4 class="cl_282828 fw_500 h4AboutTencho"><?php echo esc_html($fields['thTentyoInfo']); ?></h4>
                                     <div class="cl_282828 fw_500 dottoAboutTencho">：</div>
-                                    <p class="cl_282828 fw_500 text_justify texAboutTencho"><?php echo $fields['tdTentyoInfo']; ?></p>
+                                    <p class="cl_282828 fw_500 text_justify texAboutTencho"><?php echo esc_html($fields['tdTentyoInfo']); ?></p>
                                 </li>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -32,19 +49,13 @@
             </section>
         </div>
 
-        <?php if (!empty(scf::get('iframeTentyo'))): ?>
-            <div class="pore iframeTentyo">
-                <?php echo scf::get('iframeTentyo'); ?>
-            </div>
-        <?php endif; ?>
-
         <ul class="d_flex j_start row ulAboutTentyo">
             <?php foreach (scf::get('shopSaff') as $fields): ?>
                 <?php $img = get_scf_img_loop_url_id($fields['imgStaffs']); ?>
-                <?php if (!empty($img[0])): ?>
+                <?php if (! empty($img[0])): ?>
                     <li class="liAboutTentyo">
-                        <a class="btnAboutTentyo" href="<?php echo $img[0]; ?>" data-lightbox="image-1" data-title="<?php echo $fields['nameStaff']; ?> ">
-                            <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo $fields['nameStaff']; ?>についての画像" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                        <a class="btnAboutTentyo" href="<?php echo esc_url($img[0]); ?>" data-lightbox="image-1" data-title="<?php echo esc_attr($fields['nameStaff']); ?>">
+                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr($fields['nameStaff']); ?>についての画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                             <figure class="iconAboutTentyo">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_1320_1840" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
@@ -64,8 +75,8 @@
 
         <div class="d_flex j_between topAboutTentyo topAboutTentyo02">
             <section class="secAboutTentyo">
-                <h3 class="cl_282828 fw_800 h3AboutTentyo"><?php echo scf::get('subH3Tencho'); ?></h3>
-                <p class="cl_282828 fw_500 text_justify txtAboutTentyo"><?php echo scf::get('subTxtTencho'); ?></p>
+                <h3 class="cl_282828 Mochiy fw_400 h3AboutTentyo"><?php echo esc_html(scf::get('subH3Tencho')); ?></h3>
+                <p class="cl_282828 Mochiy fw_400 text_justify txtAboutTentyo"><?php echo nl2br(esc_html(scf::get('subTxtTencho'))); ?></p>
             </section>
         </div>
     </div>

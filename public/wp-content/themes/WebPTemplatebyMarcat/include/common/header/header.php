@@ -55,11 +55,11 @@
         "description": "<?php echo $the_content; ?>",
         "author": {
           "@type": "Person",
-          "name": "<?php echo bloginfo('name'); ?>"
+          "name": "<?php echo esc_html(get_bloginfo('name')); ?>"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "<?php echo bloginfo('name'); ?>",
+          "name": "<?php echo esc_html(get_bloginfo('name')); ?>",
           "logo": {
             "@type": "ImageObject",
             "url": "<?php echo $ogthumbs; ?>"

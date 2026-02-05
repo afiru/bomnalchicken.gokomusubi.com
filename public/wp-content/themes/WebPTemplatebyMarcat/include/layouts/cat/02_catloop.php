@@ -43,9 +43,9 @@ $query1 = new WP_Query($args);
             <a class="d_flex j_between undernone btnTopNewsLoop" href="<?php echo get_the_permalink($post->ID); ?>">
                 <figure class="iconbtnTopNewsLoop">
                     <?php if (!empty($img[0])): ?>
-                        <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                     <?php else: ?>
-                        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/nonthumbs.svg" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/nonthumbs.svg" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                     <?php endif; ?>
                 </figure>
 

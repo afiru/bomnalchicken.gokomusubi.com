@@ -151,7 +151,7 @@ $(function () {
             $('.jsnowNewsCnt').append('\
             <h2 class="t_center fw_800 cl_fff fw_800 h2NowNewsCnt">今日のおすすめメニュー</h2>\n\
             <p class="t_center fw_400 cl_fff fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + '</p>\n\
-            <h2 class="t_center fw_800 cl_fff fw_800 h2NowNewsCnt h2NowNewsCnt02">現在お店は　' + results['status'] + '　です!</h2>\n\
+            <h2 class="t_center fw_800 cl_fff fw_800 Mochiy h2NowNewsCnt h2NowNewsCnt02">現在お店は　<span class="cl_E9483E">' + results['status'] + '</span>　です!</h2>\n\
             <img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">\n\
             ');
         });
