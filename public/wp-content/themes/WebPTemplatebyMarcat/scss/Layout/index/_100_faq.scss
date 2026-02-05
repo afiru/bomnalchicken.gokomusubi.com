@@ -7,11 +7,15 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .faqIndex {
-    @include mi.marginPercent(375, 80, auto, 0, auto);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+     @include mi.ontenerWidth(375 ,355 );
+    @include mi.kadomaru(8px);
+    background: #FFF;
 }
 
 .faqIndexLxn {
-    @include mi.ontenerWidth(375, 335);
+   @include mi.ontenerWidth(355 ,333 );
     margin: auto;
 }
 
@@ -50,7 +54,7 @@ LAYOUT
 
 .brdBtmBtnFaq {
     position: absolute;
-    height: 2px;
+    height: 3px;
     width: 100%;
     top: 0;
     bottom: 0;

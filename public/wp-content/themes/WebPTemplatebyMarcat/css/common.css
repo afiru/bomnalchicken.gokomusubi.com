@@ -1330,9 +1330,12 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+.bgCntPageLxn {
+  background: linear-gradient(to right, #e8c6d9, #f5e3bc);
+}
+
 .mainIndex {
   overflow-x: clip;
-  background: linear-gradient(to right, #e8c6d9, #f5e3bc);
 }
 
 .swiper-slide {
@@ -2565,18 +2568,49 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .calendarLxn {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  aspect-ratio: 1080/1350;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
 }
 @media screen and (max-width: 1199px) {
   .calendarLxn {
-    margin-top: 21.33%;
-    margin-bottom: 21.33%;
+    margin-top: 10.66%;
+    margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .calendarLxn {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .calendarLxn {
+    width: 94.66%;
+  }
+}
+
+.calendarLxnL {
+  width: 333px;
+  margin: auto;
+  position: relative;
+}
+@media screen and (max-width: 1199px) {
+  .calendarLxnL {
+    width: 93.8%;
   }
 }
 
@@ -3003,6 +3037,48 @@ LAYOUT
   content: "";
 }
 
+.btnMenuTopLxn {
+  margin-top: 26px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 335px;
+}
+@media screen and (max-width: 1199px) {
+  .btnMenuTopLxn {
+    margin-top: 7.76%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .btnMenuTopLxn {
+    width: 100%;
+  }
+}
+
+.btnbtnMenuTop {
+  width: 100%;
+  border-radius: 5px;
+  /* CSS3草案 */
+  -webkit-border-radius: 5px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 5px;
+  /* Firefox用 */
+  aspect-ratio: 335/48;
+  font-size: 16px;
+  letter-spacing: 0em;
+  background: #FBEBEC;
+  text-decoration: none;
+  color: #EB53A2;
+}
+@media screen and (max-width: 767px) {
+  .btnbtnMenuTop {
+    font-size: 4.2666666667vw;
+  }
+}
+
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
@@ -3359,17 +3435,39 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .instagram {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  background: #FFF;
 }
 @media screen and (max-width: 1199px) {
   .instagram {
-    margin-top: 21.33%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .instagram {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .instagram {
+    width: 94.66%;
   }
 }
 
@@ -3425,8 +3523,8 @@ LAYOUT
 
 .instagramLxn #sb_instagram #sbi_load .sbi_load_btn {
   width: 335px;
-  background: #325530;
-  color: #fff;
+  background: #FBEBEC;
+  color: #EB53A2;
   font-size: 16px;
   letter-spacing: 0em;
   font-weight: 700;
@@ -3461,7 +3559,7 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .access {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -3469,10 +3567,11 @@ LAYOUT
   padding-bottom: 40px;
   padding-left: 0px;
   padding-right: 0px;
+  border-radius: 8px 8px 0 0;
 }
 @media screen and (max-width: 1199px) {
   .access {
-    margin-top: 21.33%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -3852,7 +3951,7 @@ LAYOUT
 }
 
 .access .btnAddressBtmNavHeadeLxn {
-  margin-top: 24px;
+  margin-top: 26px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -3860,7 +3959,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .access .btnAddressBtmNavHeadeLxn {
-    margin-top: 7.16%;
+    margin-top: 7.76%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -3875,23 +3974,34 @@ LAYOUT
   font-weight: bold;
 }
 .access .btnAddressBtmNavHeadeLxn .btnAddressBtmNavHeade {
-  aspect-ratio: 335/48;
-  font-size: 16px;
-  letter-spacing: 0em;
+  width: 100%;
   border-radius: 5px;
   /* CSS3草案 */
   -webkit-border-radius: 5px;
   /* Safari,Google Chrome用 */
   -moz-border-radius: 5px;
   /* Firefox用 */
+  aspect-ratio: 335/48;
+  font-size: 16px;
+  letter-spacing: 0em;
+  background: #FBEBEC;
   text-decoration: none;
-  background: #325530;
-  color: #fff;
+  color: #EB53A2;
 }
 @media screen and (max-width: 767px) {
   .access .btnAddressBtmNavHeadeLxn .btnAddressBtmNavHeade {
     font-size: 4.2666666667vw;
   }
+}
+
+.iconBtnAddressBtmNavHeade {
+  background-size: auto 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 0 0 0 6%;
+  background: url(../img/iconBtnAccess.svg) no-repeat center left;
+  background-size: auto 100%;
 }
 
 /* ==========================================================================
@@ -4025,7 +4135,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .btnSnsFooterLxn {
-    width: 54.13%;
+    width: 60.77%;
   }
 }
 
@@ -4051,12 +4161,13 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .snsCheack {
-    width: 34.13%;
+    width: 38.32%;
   }
 }
 
 .ulSnsCheack {
   width: 128px;
+  gap: 4px;
 }
 @media screen and (max-width: 1199px) {
   .ulSnsCheack {
@@ -4070,17 +4181,6 @@ LAYOUT
 @media screen and (max-width: 1199px) {
   .liSnsCheack {
     width: 21.87%;
-  }
-}
-.liSnsCheack:nth-child(n+2) {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 4px;
-  margin-right: 0px;
-}
-@media screen and (max-width: 1199px) {
-  .liSnsCheack:nth-child(n+2) {
-    margin: 0% 0% 0% 3.12%;
   }
 }
 .liSnsCheack svg {
@@ -4099,27 +4199,49 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .booking {
-  margin-top: 80px;
-  margin-bottom: 114px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  background: #FFF;
 }
 @media screen and (max-width: 1199px) {
   .booking {
-    margin-top: 21.33%;
-    margin-bottom: 30.4%;
+    margin-top: 10.66%;
+    margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
+@media screen and (max-width: 1199px) {
+  .booking {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .booking {
+    width: 94.66%;
+  }
+}
 
 .secBooking {
-  width: 335px;
+  width: 333px;
   margin: auto;
 }
 @media screen and (max-width: 1199px) {
   .secBooking {
-    width: 89.33%;
+    width: 93.8%;
   }
 }
 
@@ -4704,27 +4826,49 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .faqIndex {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  background: #FFF;
 }
 @media screen and (max-width: 1199px) {
   .faqIndex {
-    margin-top: 21.33%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
+@media screen and (max-width: 1199px) {
+  .faqIndex {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .faqIndex {
+    width: 94.66%;
+  }
+}
 
 .faqIndexLxn {
-  width: 335px;
+  width: 333px;
   margin: auto;
 }
 @media screen and (max-width: 1199px) {
   .faqIndexLxn {
-    width: 89.33%;
+    width: 93.8%;
   }
 }
 
@@ -4825,7 +4969,7 @@ LAYOUT
 
 .brdBtmBtnFaq {
   position: absolute;
-  height: 2px;
+  height: 3px;
   width: 100%;
   top: 0;
   bottom: 0;

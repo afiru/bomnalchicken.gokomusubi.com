@@ -7,10 +7,16 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .calendarLxn {
-    @include mi.marginPercent(375, 80, auto, 80, auto);
-    aspect-ratio: 1080 / 1350;
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+     @include mi.ontenerWidth(375 ,355 );
+    @include mi.kadomaru(8px);
 }
-
+.calendarLxnL{
+     @include mi.ontenerWidth(355 ,333 );
+    margin: auto;
+    position: relative;
+}
 
 
 .h2Calendar {
@@ -177,4 +183,20 @@ LAYOUT
     @include mi.fontSizePc(10);
     @include mi.lineheight(20, 25);
     @include mi.letterSpacing(0);
+}
+
+//ボタン
+.btnMenuTopLxn{
+    @include mi.marginPercent(335, 26, auto, 0, auto);
+    @include mi.ontenerWidth(335, 335);
+}
+.btnbtnMenuTop{
+    width: 100%;
+    @include mi.kadomaru(5px);
+    aspect-ratio: 335/48;
+    @include mi.fontSizePc(16);
+    @include mi.letterSpacing(0);
+    background: #FBEBEC;
+    text-decoration: none;
+    color: #EB53A2;
 }
