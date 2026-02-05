@@ -1,7 +1,7 @@
 <div class="bg_fff d_flex j_center ali_center catFv">
     <!-- bg:../img/catFv.png -->
     <section class="secCatFv">
-        <h1 class="cl_EE952D Mochiy t_center fw_800 h2SecCatFv">
+        <h1 class="cl_EE952D Mochiy t_center fw_400 h2SecCatFv">
             <?php echo esc_html('メニュー'); ?>
         </h1>
         <div class="bg_fff brdSecCatFv"></div>
