@@ -2,7 +2,7 @@
     <div class="topAboutLxn">
         <div class="d_flex j_between topAboutInfo">
             <section class="titleTopAbout">
-                <h2 class="cl_EE952D Mochiy fw_800 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h2>
+                <h1 class="cl_EE952D Mochiy fw_800 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h1>
                 <div class="bg_F4DB17 brdTopAbout"></div>
                 <p class="cl_E9483E fw_800 en rybyTopAbout"><?php echo esc_html('About'); ?></p>
             </section>

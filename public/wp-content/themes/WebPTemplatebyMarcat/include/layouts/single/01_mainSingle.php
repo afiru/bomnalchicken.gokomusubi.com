@@ -16,9 +16,9 @@
                     <?php get_new_flug(get_the_date('Y-m-d')); ?>
                 </div>
 
-                <h3 class="cl_241A08 Mochiy fw_500 h3CatNewsLoop">
+                <h1 class="cl_241A08 Mochiy fw_500 h3CatNewsLoop">
                     <?php echo esc_html(get_the_title()); ?>
-                </h3>
+                </h1>
 
                 <div class="brdSingleCat"></div>
 
