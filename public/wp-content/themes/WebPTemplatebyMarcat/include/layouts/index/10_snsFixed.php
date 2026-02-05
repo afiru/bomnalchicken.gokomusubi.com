@@ -1,10 +1,10 @@
 <div class="bg_EB53A2 snsFooter" data-lenis-prevent>
     <div class="d_flex j_between ali_center snsFooterLxn">
         <div class="d_flex j_between btnSnsFooterLxn">
-            <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 fw_800 Mochiy btnSnsFooter" href="<?php echo esc_url(scf::get('urlGoogleMap', 32)); ?>" target="_blank" rel="noopener noreferrer">
+            <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 Mochiy fw_400 btnSnsFooter" href="<?php echo esc_url(scf::get('urlGoogleMap', 32)); ?>" target="_blank" rel="noopener noreferrer">
                 <?php echo esc_html('ナビを起動'); ?>
             </a>
-            <a class="cl_EB53A2 bg_FBEBEC d_flex j_center ali_center fw_800 Mochiy btnSnsFooter" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer" target="_blank" rel="noopener noreferrer">
+            <a class="cl_EB53A2 bg_FBEBEC d_flex j_center ali_center Mochiy fw_400 btnSnsFooter" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer" target="_blank" rel="noopener noreferrer">
                 <?php echo esc_html('ご予約'); ?>
             </a>
         </div>

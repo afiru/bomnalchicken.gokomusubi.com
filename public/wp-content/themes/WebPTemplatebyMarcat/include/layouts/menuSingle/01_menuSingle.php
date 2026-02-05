@@ -11,7 +11,7 @@
                         <figure class="iconSignleMenu">
                             <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/iconSignleMenuTop.svg'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
                         </figure>
-                        <h1 class="cl_282828 fw_800 Mochiy h2TitleMenuDetailSingle"><?php echo esc_html(get_the_title()); ?></h1>
+                        <h1 class="cl_282828 Mochiy fw_400 h2TitleMenuDetailSingle"><?php echo esc_html(get_the_title()); ?></h1>
                     </div>
 
                     <figure class="thumbsDetailSingle">

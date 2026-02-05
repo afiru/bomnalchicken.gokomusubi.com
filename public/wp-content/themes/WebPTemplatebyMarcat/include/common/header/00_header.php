@@ -86,7 +86,7 @@ if (is_home() or is_front_page()) {
                     <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo home_url('/menu/'); ?>">
                             <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_800 h2NavHeaderBase">メニュー</h2>
+                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">メニュー</h2>
                                 <p class="en cl_282828 fw_500 rubyNavHeaderBase">MENU</p>
                             </section>
                         </a>
@@ -95,7 +95,7 @@ if (is_home() or is_front_page()) {
                     <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo get_permalink(352); ?>">
                             <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_800 h2NavHeaderBase">ボムカフェについて</h2>
+                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">ボムカフェについて</h2>
                                 <p class="en cl_282828 fw_500 rubyNavHeaderBase">BomCafe</p>
                             </section>
                         </a>
@@ -104,7 +104,7 @@ if (is_home() or is_front_page()) {
                     <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer" target="_blank">
                             <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_800 h2NavHeaderBase">ご予約</h2>
+                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">ご予約</h2>
                                 <p class="en cl_282828 fw_500 rubyNavHeaderBase">BOOKING</p>
                             </section>
                         </a>
@@ -113,7 +113,7 @@ if (is_home() or is_front_page()) {
                     <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo $homeurl; ?>#access">
                             <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_800 h2NavHeaderBase">アクセス</h2>
+                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">アクセス</h2>
                                 <p class="en cl_282828 fw_500 rubyNavHeaderBase">Access</p>
                             </section>
                         </a>
@@ -121,7 +121,7 @@ if (is_home() or is_front_page()) {
                     <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo $homeurl; ?>#faq">
                             <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_800 h2NavHeaderBase">よくあるご質問</h2>
+                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">よくあるご質問</h2>
                                 <p class="en cl_282828 fw_500 rubyNavHeaderBase">FAQ</p>
                             </section>
                         </a>
@@ -148,7 +148,7 @@ if (is_home() or is_front_page()) {
                 </div>
 
                 <div class="btnAddressBtmNavHeadeLxn">
-                    <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 fw_800 Mochiy btnAddressBtmNavHeade" href="<?php echo scf::get('urlGoogleMap', 32); ?>" target="_blank">
+                    <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 Mochiy fw_400 btnAddressBtmNavHeade" href="<?php echo scf::get('urlGoogleMap', 32); ?>" target="_blank">
                         <span class="fw_800 iconBtnAddressBtmNavHeade">店舗までの経路はこちら</span>
                     </a>
                 </div>

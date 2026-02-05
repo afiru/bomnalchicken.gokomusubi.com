@@ -3,7 +3,7 @@
     <div class="accessLxn">
         <div class="d_flex j_between topAccessInfo">
             <section class="titleTopAccess">
-                <h2 class="cl_EE952D Mochiy fw_800 h2TopAccess"><?php echo esc_html('店舗情報'); ?></h2>
+                <h2 class="cl_EE952D Mochiy fw_400 h2TopAccess"><?php echo esc_html('店舗情報'); ?></h2>
                 <div class="bg_F4DB17 brdTopAccess"></div>
                 <p class="cl_E9483E fw_800 en rybyTopAccess"><?php echo esc_html('Access'); ?></p>
             </section>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="btnAddressBtmNavHeadeLxn">
-                <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 fw_800 Mochiy btnAddressBtmNavHeade" href="<?php echo esc_url(scf::get('urlGoogleMap', 32)); ?>" target="_blank" rel="noopener noreferrer">
+                <a class="d_flex j_center ali_center bg_FBEBEC cl_EB53A2 Mochiy fw_400 btnAddressBtmNavHeade" href="<?php echo esc_url(scf::get('urlGoogleMap', 32)); ?>" target="_blank" rel="noopener noreferrer">
                     <span class="iconBtnAddressBtmNavHeade"><?php echo esc_html('店舗までの経路はこちら'); ?></span>
                 </a>
             </div>

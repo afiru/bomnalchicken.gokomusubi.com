@@ -2,7 +2,7 @@
     <div class="topAboutLxn">
         <div class="d_flex j_between topAboutInfo">
             <section class="titleTopAbout">
-                <h1 class="cl_EE952D Mochiy fw_800 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h1>
+                <h1 class="cl_EE952D Mochiy fw_400 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h1>
                 <div class="bg_F4DB17 brdTopAbout"></div>
                 <p class="cl_E9483E fw_800 en ryshyadow rybyTopAbout"><?php echo esc_html('About'); ?></p>
             </section>
@@ -13,7 +13,7 @@
 
         <div class="d_flex j_between topAboutTentyo">
             <section class="secAboutTentyo">
-                <h3 class="cl_282828 fw_800 Mochiy h3AboutTentyo"><?php echo esc_html(scf::get('nameTentyo')); ?></h3>
+                <h3 class="cl_282828 Mochiy fw_400 h3AboutTentyo"><?php echo esc_html(scf::get('nameTentyo')); ?></h3>
                 <p class="cl_282828 fw_500 Mochiy text_justify txtAboutTentyo"><?php echo nl2br(esc_html(scf::get('txtTencho'))); ?></p>
 
                 <?php if (! empty($iframe = scf::get('iframeTentyo'))): ?>
