@@ -16,7 +16,7 @@ if (is_home() or is_front_page()) {
                     <span class="brdmenuHeaderPc brdmenuHeaderPc02"></span>
                     <span class="brdmenuHeaderPc brdmenuHeaderPc03"></span>
                 </div>
-                <span class="en txtMenuHeader">MENU</span>
+                <span class="en txtMenuHeader fw_800">MENU</span>
             </div>
         </div>
     </div>

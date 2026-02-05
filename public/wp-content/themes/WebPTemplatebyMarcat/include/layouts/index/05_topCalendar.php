@@ -3,7 +3,7 @@
         <section class="titleTopPrice">
             <h2 class="cl_EE952D Mochiy fw-800 h2TopPrice"><?php echo esc_html('人気メニュー'); ?></h2>
             <div class="bg_F4DB17 brdTopPrice"></div>
-            <p class="cl_E9483E fw-800 en rybyTopPrice"><?php echo esc_html('MENU'); ?></p>
+            <p class="cl_E9483E fw-800 en ryshyadow rybyTopPrice"><?php echo esc_html('MENU'); ?></p>
         </section>
 
         <?php

@@ -4,7 +4,7 @@
             <section class="titleTopAbout">
                 <h2 class="cl_EE952D Mochiy fw_800 h2TopAbout"><?php echo esc_html('どんなお店？'); ?></h2>
                 <div class="bg_F4DB17 brdTopAbout"></div>
-                <p class="cl_E9483E fw_800 en rybyTopAbout"><?php echo esc_html('About'); ?></p>
+                <p class="cl_E9483E fw_800 en ryshyadow rybyTopAbout"><?php echo esc_html('About'); ?></p>
             </section>
             <p class="cl_282828 fw_500 text_justify txtMainAboutInfo">
                 <?php echo nl2br(esc_html(scf::get('txtAboutTxt'))); ?>
