@@ -3994,6 +3994,16 @@ LAYOUT
   }
 }
 
+.iconBtnAddressBtmNavHeade {
+  background-size: auto 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 0 0 0 6%;
+  background: url(../img/iconBtnAccess.svg) no-repeat center left;
+  background-size: auto 100%;
+}
+
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
@@ -4125,7 +4135,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .btnSnsFooterLxn {
-    width: 54.13%;
+    width: 60.77%;
   }
 }
 
@@ -4151,12 +4161,13 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .snsCheack {
-    width: 34.13%;
+    width: 38.32%;
   }
 }
 
 .ulSnsCheack {
   width: 128px;
+  gap: 4px;
 }
 @media screen and (max-width: 1199px) {
   .ulSnsCheack {
@@ -4170,17 +4181,6 @@ LAYOUT
 @media screen and (max-width: 1199px) {
   .liSnsCheack {
     width: 21.87%;
-  }
-}
-.liSnsCheack:nth-child(n+2) {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 4px;
-  margin-right: 0px;
-}
-@media screen and (max-width: 1199px) {
-  .liSnsCheack:nth-child(n+2) {
-    margin: 0% 0% 0% 3.12%;
   }
 }
 .liSnsCheack svg {
