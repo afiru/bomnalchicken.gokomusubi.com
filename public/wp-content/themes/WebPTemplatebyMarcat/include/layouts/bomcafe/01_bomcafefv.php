@@ -1,20 +1,8 @@
 <div class="d_flex j_center ali_center catFv">
-    <!--
-    bg:../img/catFv.jpg
-    -->
+    <!-- bg:../img/catFv.png -->
     <section class="secCatFv">
-        <h2 class="cl_fff fw_800 h2SecCatFv">ボムカフェについて</h2>
+        <h1 class="cl_EE952D Mochiy t_center fw_800 h2SecCatFv"><?php echo esc_html('ボムカフェについて'); ?></h1>
         <div class="bg_fff brdSecCatFv"></div>
-        <h3 class="cl_fff fw_800 en h3SecCatFv">ABOUT</h3>
+        <h3 class="cl_E9483E t_center fw_800 en h3SecCatFv"><?php echo esc_html('BomCafe'); ?></h3>
     </section>
-    <figure class="iconCatFv">
-        <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/iconCatFv.png" alt="" width="74" height="60">
-    </figure>
 </div>
-
-<?php $img = get_scf_img_url('bomcafefv'); ?>
-<?php if (!empty($img[0])): ?>
-    <figure class="photoBomcafefv">
-        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
-    </figure>
-<?php endif; ?>

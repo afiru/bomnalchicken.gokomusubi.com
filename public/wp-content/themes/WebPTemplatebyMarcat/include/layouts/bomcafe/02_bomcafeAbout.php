@@ -1,38 +1,35 @@
-<section class="secAboutBomCafe">
-    <h2 class="t_center cl_265278 fw_800 h2AboutBomCafe">
-        <?php echo scf::get('titleBomCafe'); ?>
+<div class="bg_fff aboutBom">
+    <h2 class="t_center cl_EB53A2 Mochiy fw_800 h2AboutBomCafe">
+        <?php echo esc_html(scf::get('titleBomCafe')); ?>
     </h2>
-    <h3 class="t_center cl_467BBE fw_500 h3AboutBomCafe">
-        <?php echo scf::get('enTitleBomCafe'); ?>
-    </h3>
 
-    <ul class="pointAboutBomCafe">
+    <ul class="d_flex j_between row pointAboutBomCafe">
         <?php foreach (scf::get('pointsBomCafe') as $fields): ?>
             <?php if (!empty($fields['txtPointsBomCafe'])): ?>
-                <li class="d_flex j_between ali_center liPointAboutBomCafe">
+                <li class="liPointAboutBomCafe">
                     <figure class="iconPointAboutBomCafe">
-                        <?php $img = get_scf_img_loop_url_id($fields['imgPointsBomCafe']); ?>
-                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                        <?php
+                        $img = get_scf_img_loop_url_id($fields['imgPointsBomCafe']);
+                        if (!empty($img[0])):
+                        ?>
+                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr($fields['txtPointsBomCafe']); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                        <?php endif; ?>
                     </figure>
                     <p class="cl_282828 fw_500 text_justify txtPointAboutBomCafe">
-                        <?php echo $fields['txtPointsBomCafe']; ?>
+                        <?php echo esc_html($fields['txtPointsBomCafe']); ?>
                     </p>
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
 
-
-    <div class="pore d_flex j_center ali_center zehiBomCafe">
-        <figure class="poab iconPointAboutBomCafeLT">
-        </figure>
-        <figure class="poab iconPointAboutBomCafeRB">
-        </figure>
-        <section class="secZehiBomCafe">
-            <h3 class="cl_A01D10 fw_800 t_center h3ZehiBomCafe">そんな方はぜひ！</h3>
-            <p class="t_center cl_A01D10 fw_800 txtZehiBomCafe">
-                <span class="bigTxtZehiBomCafe">ボムカフェ</span>に！
-            </p>
-        </section>
-    </div>
-</section>
+    <section class="secZehiBomCafe">
+        <h3 class="cl_E9483E fw_800 t_center h3ZehiBomCafe">
+            <?php echo esc_html('そんな方はぜひ！'); ?>
+        </h3>
+        <p class="d_flex j_center ali_center cl_E9483E fw_800 txtZehiBomCafe">
+            <span class="bigTxtZehiBomCafe"><?php echo esc_html('ボムカフェ'); ?></span>
+            <span class="littleTxtZehiBomCafe"><?php echo esc_html('に！'); ?></span>
+        </p>
+    </section>
+</div>

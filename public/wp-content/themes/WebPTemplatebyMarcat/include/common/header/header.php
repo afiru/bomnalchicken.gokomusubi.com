@@ -103,7 +103,7 @@
         <!--
       bg:../bgCntPageLxn.png
     -->
-        <h1 class="Mochiy t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</h1>
+        <p class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</p>
         <header id="scrolltop" class="bg_A01D10 baseheader" data-lenis-prevent>
           <?php get_template_part('include/common/header/00_header'); ?>
         </header>
