@@ -1,7 +1,7 @@
 <div id="booking" class="bg_fff booking">
     <section class="secBooking">
         <section class="titleTopPrice">
-            <h2 class="cl_EE952D Mochiy fw-800 h2TopPrice"><?php echo esc_html('ご予約'); ?></h2>
+            <h2 class="cl_EE952D Mochiy fw_400 h2TopPrice"><?php echo esc_html('ご予約'); ?></h2>
             <div class="bg_F4DB17 brdTopPrice"></div>
             <p class="cl_E9483E fw-800 en rybyTopPrice"><?php echo esc_html('BOOKING'); ?></p>
         </section>

@@ -13,7 +13,7 @@ $faq_posts = get_posts([
         <!--bg:../img/faq.png-->
         <div class="priceLxn faqIndexLxn">
             <section class="titleTopPrice">
-                <h2 class="cl_EE952D Mochiy fw-800 h2TopPrice"><?php echo esc_html('よくあるご質問'); ?></h2>
+                <h2 class="cl_EE952D Mochiy fw_400 h2TopPrice"><?php echo esc_html('よくあるご質問'); ?></h2>
                 <div class="bg_F4DB17 brdTopPrice"></div>
                 <p class="cl_E9483E fw-800 en rybyTopPrice"><?php echo esc_html('FAQ'); ?></p>
             </section>
