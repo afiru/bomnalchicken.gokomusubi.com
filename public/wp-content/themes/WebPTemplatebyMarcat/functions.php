@@ -1267,3 +1267,65 @@ function show_menu_price_column($column, $post_id)
     }
 }
 add_action('manage_menu_posts_custom_column', 'show_menu_price_column', 10, 2);
+
+// menu 投稿一覧の列の並びを変更
+// menu 投稿一覧の列を並び替え＆追加
+function reorder_menu_columns($columns)
+{
+
+    $new_columns = array();
+
+    // チェックボックス
+    if (isset($columns['cb'])) {
+        $new_columns['cb'] = $columns['cb'];
+    }
+
+    // サムネイル（存在する場合）
+    if (isset($columns['thumbnail'])) {
+        $new_columns['thumbnail'] = $columns['thumbnail'];
+    }
+
+    // カスタム分類 menu_category
+    $new_columns['menu_category'] = 'カテゴリー';
+
+    // タイトル
+    $new_columns['title'] = 'タイトル';
+
+    // 価格
+    $new_columns['tdMenu_price'] = '価格';
+
+    // 日付
+    $new_columns['date'] = $columns['date'];
+
+    return $new_columns;
+}
+add_filter('manage_menu_posts_columns', 'reorder_menu_columns', 20);
+
+// menu_category と 価格 の表示内容
+function show_menu_custom_columns($column, $post_id)
+{
+
+    // カテゴリー表示
+    if ($column === 'menu_category') {
+        $terms = get_the_terms($post_id, 'menu_category');
+
+        if (!empty($terms) && !is_wp_error($terms)) {
+            $term_names = wp_list_pluck($terms, 'name');
+            echo esc_html(implode(', ', $term_names));
+        } else {
+            echo '—';
+        }
+    }
+
+    // 価格表示
+    if ($column === 'tdMenu_price') {
+        $price = get_post_meta($post_id, 'tdMenu', true);
+
+        if ($price !== '') {
+            echo esc_html($price) . ' 円';
+        } else {
+            echo '—';
+        }
+    }
+}
+add_action('manage_menu_posts_custom_column', 'show_menu_custom_columns', 10, 2);
