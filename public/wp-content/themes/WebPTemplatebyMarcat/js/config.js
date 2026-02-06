@@ -1,9 +1,9 @@
 // config.js
 window.addEventListener('load', () => { // DOMContentLoaded から load に変更
     if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
-            autoRaf: true, // 最近のLenisならこれだけでRAFが動く場合があります
-        });
+    lenis = new Lenis({
+        autoRaf: true,
+    });
 
         // もし autoRaf が効かない旧バージョンの場合は以下を継続
         function raf(time) {
@@ -51,9 +51,11 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
 
         // ページ読み込み時にハッシュがある場合
         if (urlHash && $(urlHash).length) {
-            lenis.scrollTo($(urlHash).offset().top - headerHeight - 16, {
-                duration: 1.2
-            });
+            if (lenis) {
+                lenis.scrollTo($(urlHash).offset().top - headerHeight - 16, {
+                    duration: 1.2
+                });
+            }
         }
 
         // ページ内リンククリック時
