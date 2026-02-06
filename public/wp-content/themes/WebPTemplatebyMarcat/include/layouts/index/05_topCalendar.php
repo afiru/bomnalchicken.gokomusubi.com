@@ -1,9 +1,9 @@
-<div id="price" class="bg_fff price">
+<div id="event" class="bg_fff price">
     <div class="priceLxn">
         <section class="titleTopPrice">
             <h2 class="cl_EE952D Mochiy fw_400 h2TopPrice"><?php echo esc_html('人気メニュー'); ?></h2>
             <div class="bg_F4DB17 brdTopPrice"></div>
-            <p class="cl_E9483E fw-800 en ryshyadow rybyTopPrice"><?php echo esc_html('MENU'); ?></p>
+            <p class="cl_E9483E fw_800 en ryshyadow rybyTopPrice"><?php echo esc_html('MENU'); ?></p>
         </section>
 
         <?php
@@ -12,11 +12,11 @@
         <ul class="topFeadMenu">
             <?php $i = 1;
             foreach ($menus as $key => $val): ?>
-                <li class="liTopFeadMenu liTopFeadMenu<?php echo $i; ?>">
-                    <a class="btnliTopFeadMenu" href="<?php echo $val['permalink']; ?>">
-                        <img src="<?php echo esc_url($val['img_url']); ?>" alt="<?php echo esc_html($val['text']); ?>">
-                    </a>
-                </li>
+            <li class="liTopFeadMenu liTopFeadMenu<?php echo $i; ?>">
+                <a class="btnliTopFeadMenu" href="<?php echo $val['permalink']; ?>">
+                    <img src="<?php echo esc_url($val['img_url']); ?>" alt="<?php echo esc_html($val['text']); ?>">
+                </a>
+            </li>
             <?php $i++;
             endforeach; ?>
         </ul>
@@ -35,7 +35,7 @@
         <section class="titleTopPrice">
             <h2 class="cl_EE952D Mochiy fw_400 h2TopPrice"><?php echo esc_html('カレンダー'); ?></h2>
             <div class="bg_F4DB17 brdTopPrice"></div>
-            <p class="cl_E9483E fw-800 en rybyTopPrice"><?php echo esc_html('CALENDAR'); ?></p>
+            <p class="cl_E9483E fw_800 en ryshyadow rybyTopPrice"><?php echo esc_html('CALENDAR'); ?></p>
         </section>
 
         <div class="main_sidebar_eventcalendar_lxc">

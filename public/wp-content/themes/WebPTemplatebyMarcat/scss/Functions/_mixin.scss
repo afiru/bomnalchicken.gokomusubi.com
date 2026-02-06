@@ -580,6 +580,16 @@ _lineHeight
 
 }
 
+@mixin lineheightP($fontsize) {
+    @if $fontsize==auto {
+        line-height: normal;
+    }
+
+    @else {
+        line-height: $fontsize + 0%;
+    }
+}
+
 @mixin lineHeightCrop($fontsize, $lineheight) {
     &::before {
         display: block;

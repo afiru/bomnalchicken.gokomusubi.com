@@ -6,10 +6,11 @@
             <!--bg:../img/about/iconH2BomCafeDate.svg-->
         </h2>
         <h3 class="t_center cl_EE952D fw_800 h3BomCafeDate">
-            <?php
-            $kikan = scf::get('kikanDateBomCafe');
-            echo esc_html("開催は {$kikan} です。");
-            ?>
+            <?php echo esc_html('開催は'); ?>
+            <span class="bigBomCafeDate">
+                <?php echo esc_html(scf::get('kikanDateBomCafe')); ?>
+            </span>
+            <?php echo esc_html('です。'); ?>
         </h3>
         <p class="cl_282828 fw_500 text_justify txtBomCafeDate">
             <?php echo esc_html(scf::get('annaiDateBomCafe')); ?>

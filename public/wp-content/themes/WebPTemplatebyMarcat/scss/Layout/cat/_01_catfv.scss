@@ -36,8 +36,7 @@ LAYOUT
 .brdSecCatFv {
     @include mi.ontenerWidth(375, 30);
     @include mi.marginPercent(375, 12, auto, 6, auto);
-    height: 1px;
-    background: #A4A4A4;
+    height: 2px;
 }
 
 .h3SecCatFv {

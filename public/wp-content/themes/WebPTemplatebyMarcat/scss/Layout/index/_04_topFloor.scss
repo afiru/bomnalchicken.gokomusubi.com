@@ -75,7 +75,7 @@ LAYOUT
 }
 
 .liFloorTentyo {
-    @include mi.ontenerWidth(335, 106);
+    @include mi.ontenerWidth(335, 105);
     @include mi.marginPercent(335, 8, 0, 0, 0);
 
     &:nth-child(3n+2) {

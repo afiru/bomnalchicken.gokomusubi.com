@@ -16,6 +16,9 @@ LAYOUT
 .cntPageLxn {
     width: 375px;
     margin: 0 0 0 auto;
+    background: url(../img/bgbase.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
 
     @include mi.mq(sp) {
         width: 100%;
@@ -36,13 +39,18 @@ LAYOUT
     top: 0;
     left: 0;
     z-index: 999;
-    padding: 8px 0;
     margin: -1px 0 0 0;
-    background:#FBEBEC ;
+
+}
+.header{
+
 }
 
 .headerBaseTopFxLxn {
     width: 100%;
+    padding: 8px 0;
+    aspect-ratio: 375/55;
+    background: #FBEBEC;
 }
 
 .headerBaseFx {
@@ -51,18 +59,19 @@ LAYOUT
 }
 
 .logoHeaderBase {
-    @include mi.ontenerWidth(335, 251);
+    @include mi.ontenerWidth(335, 265);
 }
 
 .menuHeaderPc {
     @include mi.ontenerWidth(335, 32);
     cursor: pointer;
+    aspect-ratio: 40/40;
 }
 
 .menuHeaderPcIn {
     width: 100%;
     position: relative;
-    aspect-ratio: 40/21;
+    aspect-ratio: 40/23;
 
 }
 
@@ -114,23 +123,17 @@ LAYOUT
     text-align: center;
     width: fit-content;
     display: block;
-    margin: 18% auto 0 auto;
+    margin: 18% auto 5% auto;
     color: #EB53A2;
 }
 
 .navHeaderBase {
+    @include mi.paddingPercent(375, 16, 0, 16, 0);
     height: 100vh;
     display: none;
     position: absolute;
     width: 100%;
-}
-
-.navHeaderBaseLxn {
-    padding: 2.66% 0% 0% 0%;
-
-    width: 100%;
-    right: 0;
-    left: 0;
+    background: linear-gradient(to right, #e8c6d9, #f5e3bc);
     margin: auto;
     height: 100svh;
     overflow: auto;
@@ -145,23 +148,55 @@ LAYOUT
     }
 }
 
+.navHeaderBaseLxn {
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+    @include mi.ontenerWidth(375, 354);
+    margin: auto;
+    @include mi.kadomaru(8px);
+    background-image: url(../img/bgTopAbout.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: #FFF;
+    animation: bgMove 2s linear infinite alternate;
+}
+
+@keyframes bgMoveMenu {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0px 8px;
+    }
+}
+
 .ulNavHeaderBase {
-    @include mi.ontenerWidth(375, 335);
+    @include mi.ontenerWidth(354, 337);
     margin: auto;
 }
 
 .liNavHeaderBase {
-    border-bottom: 1px solid #FFF;
+    @include mi.paddingPercent(337, 0, 0, 0, 0);
 
+    &:after {
+        @include mi.marginPercent(337, 0, auto, 0, auto);
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right, #f7e22b, #f5a14d, #e65d91, #df7a66);
+    }
 }
 
 .btnNavHeaderBase {
     aspect-ratio: 335/60;
     text-decoration: none;
+    background: url(../img/iconBtmInfoReadMore.svg)no-repeat 96% center;
+    background-size: auto 20%;
 }
 
 .secNavHeaderBase {
-    @include mi.ontenerWidth(335, 301);
+    @include mi.ontenerWidth(335, 335);
     margin: 0 0 0 auto;
 }
 
@@ -183,20 +218,21 @@ LAYOUT
 }
 
 .secBtmNavHeader {
-    @include mi.marginPercent(375, 24, auto, 0, auto);
-    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(354, 40, auto, 0, auto);
+    @include mi.ontenerWidth(354, 335);
 }
 
 .secBtmNavHeader02 {
-    @include mi.marginPercent(375, 36, auto, 0, auto);
-    @include mi.paddingPercent(375, 0, auto, 140, auto);
+    @include mi.marginPercent(354, 36, auto, 0, auto);
+    @include mi.paddingPercent(354, 0, 0, 83, 0);
 }
 
 .h2BtmNavHeader {
-    @include mi.fontSizePc(20);
-    @include mi.lineheight(20, 20);
+    @include mi.fontSizePc(13);
+    @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
-    font-weight: 700;
+    font-weight: 400;
+    @include mi.ontenerWidth(336, 53);
 }
 
 .addressBtmNavHeader {
@@ -205,28 +241,27 @@ LAYOUT
 
 .liAddressBtmNavHeader {
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 24, 0, 0, 0);
+        @include mi.marginPercent(335, 12, 0, 0, 0);
     }
 }
 
 .h3LiAddressBtmNavHeader {
-    @include mi.ontenerWidth(335, 335);
-    @include mi.fontSizePc(14);
+    width: 25%;
+    @include mi.fontSizePc(10);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
 }
 
-.dottoLiAddressBtmNavHeader {
+.coron {
     @include mi.marginPercent(335, 4, 0, 0, 0);
-    @include mi.ontenerWidth(335, 335);
-    @include mi.lineheight(13, 24);
+    width: 5%;
     @include mi.fontSizePc(10);
     @include mi.letterSpacing(0);
 }
 
+
 .txtLiAddressBtmNavHeader {
-    @include mi.marginPercent(335, 8, 0, 0, 0);
-    @include mi.ontenerWidth(335, 335);
+    width: 70%;
     @include mi.fontSizePc(10);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
@@ -253,29 +288,39 @@ LAYOUT
 }
 
 .btnAddressBtmNavHeadeLxn {
-    @include mi.marginPercent(335, 24, auto, 0, auto);
-    width: 100%;
+    @include mi.marginPercent(335, 26, auto, 0, auto);
+    @include mi.ontenerWidth(335, 335);
 }
 
 .btnAddressBtmNavHeade {
-    aspect-ratio: 335/40;
+    width: 100%;
+    @include mi.kadomaru(5px);
+    aspect-ratio: 335/48;
     @include mi.fontSizePc(16);
     @include mi.letterSpacing(0);
-    @include mi.kadomaru(5px);
+    background: #FBEBEC;
     text-decoration: none;
-    background: #fff;
-    color: #241A08;
+    color: #EB53A2;
+}
+
+.iconBtnAddressBtmNavHeade {
+    background-size: auto 100%;
+    width: fit-content;
+    margin: auto;
+    padding: 0 0 0 6%;
+    background: url(../img/iconBtnAccess.svg) no-repeat center left;
+    background-size: auto 100%;
 }
 
 .snSNavHeader {
-    @include mi.marginPercent(335, 16, auto, 0, auto);
-    @include mi.ontenerWidth(335, 150);
+    @include mi.marginPercent(335, 26, auto, 0, auto);
+    @include mi.ontenerWidth(335, 224);
     display: flex;
     justify-content: space-between;
 }
 
 .liSnSNavHeader {
-    @include mi.ontenerWidth(150, 32.81);
+    @include mi.ontenerWidth(224, 49);
 
     img {
         width: 100%;
@@ -284,25 +329,13 @@ LAYOUT
 }
 
 .h2BtmNavHeader {
+    width: 100%;
     @include mi.fontSizePc(16);
     @include mi.letterSpacing(0);
+    text-align: center;
 }
 
 //fv
-
-.cntPageLxn {
-    width: 375px;
-    margin: 0 0 0 auto;
-    background: url(../img/bgbase.jpg) no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-
-    @include mi.mq(sp) {
-        width: 100%;
-    }
-}
-
-.cntPageLxn {}
 
 .fvMovie {
     width: 100%;

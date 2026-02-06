@@ -12,7 +12,13 @@ LAYOUT
     @include mi.ontenerWidth(375 ,355 );
     @include mi.kadomaru(8px);
 }
-
+.bgTopAbout{
+    background-image: url(../img/bgTopAbout.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    background-color: #FFF;
+}
 
 .topAboutLxn {
     @include mi.ontenerWidth(355 ,333 );

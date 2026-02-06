@@ -6,23 +6,29 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-.menuAllList {
-    @include mi.marginPercent(375, 40, auto, 0, auto);
-}
+.menuAllList {}
 
 .menuAllListBx {
-    @include mi.ontenerWidth(375, 335);
-    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.marginPercent(375, 20, auto, 0, auto);
+
 }
 
 .ulmenuAllListBx {}
 
 .limenuAllListBx {
-    @include mi.ontenerWidth(335, 335);
+    @include mi.kadomaru(8px);
+    @include mi.ontenerWidth(375, 355);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+    margin: 0 auto;
 
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 40, auto, 0, auto);
+        @include mi.marginPercent(335, 24, auto, 0, auto);
     }
+}
+
+.seclimenuAllListBx {
+    @include mi.ontenerWidth(355, 335);
+    margin: auto;
 }
 
 .h2BtnmenuAllListBx {
@@ -37,12 +43,18 @@ LAYOUT
 
 .liSubmenuAllList {
     @include mi.ontenerWidth(335, 335);
+    border-bottom: 1px solid #B1B1B1;
+
+    &:last-child {
+        border-bottom: none;
+        ;
+    }
 }
 
 .btnSubmenuAllList {
     width: 100%;
     @include mi.paddingPercent(335, 12, 0, 12, 0);
-    border-bottom: 1px solid #282828;
+    text-decoration: none;
 }
 
 .thumbsSubmenuAllList {
@@ -58,7 +70,7 @@ LAYOUT
 }
 
 .secSubmenuAllList {
-    @include mi.ontenerWidth(335, 221);
+    @include mi.ontenerWidth(335, 211);
 }
 
 .txtBtnSubmenuAllList {

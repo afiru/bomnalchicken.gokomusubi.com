@@ -12,6 +12,7 @@ LAYOUT
      @include mi.ontenerWidth(375 ,355 );
     @include mi.kadomaru(8px);
     background: #FFF;
+    position: relative;
 }
 
 .h2Instagram {
@@ -45,4 +46,12 @@ LAYOUT
 .sbi_btn_text {
     font-family: 'Rounded Mplus 1c', sans-serif;
     transform: rotate(0.00deg);
+}
+
+.iconInstagram{
+    @include mi.ontenerWidth(335 , 87 );
+    position: absolute;
+    right: 3%;
+    top: 2vw;
+
 }

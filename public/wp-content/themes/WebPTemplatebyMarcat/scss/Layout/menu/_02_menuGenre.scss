@@ -9,19 +9,29 @@ LAYOUT
 
 .menuGenre {
     position: relative;
+    @include mi.marginPercent(375, 10, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
+
 }
 
 .btnMenuGenre {
     cursor: pointer;
-    @include mi.paddingPercent(375, 12, 0, 12, 0);
+    @include mi.paddingPercent(355, 12, 0, 12, 0);
+    @include mi.kadomaru(8px);
+    transition-duration: 0.5s;
+}
+
+.btnMenuGenre.on {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .btnMenuGenre {
-    @include mi.ontenerWidth(375, 375);
+    @include mi.ontenerWidth(355, 355);
 }
 
 .btnMenuGenreFx {
-    @include mi.ontenerWidth(375, 335);
+    @include mi.ontenerWidth(355, 335);
     margin: auto;
 }
 
@@ -36,7 +46,7 @@ LAYOUT
 }
 
 .brdBtmBtnMenuGenre {
-    height: 2px;
+    height: 3px;
     width: 14px;
     @include mi.kadomaru(3px);
     position: absolute;
@@ -45,7 +55,8 @@ LAYOUT
     right: 0;
     bottom: 0;
     margin: auto;
-    background: #fff;
+    background: #EB53A2;
+    @include mi.kadomaru(1px);
 }
 
 .brdBtmBtnMenuGenre01 {}
@@ -78,19 +89,27 @@ LAYOUT
     background: #FBEBEC;
     z-index: 9;
     display: none;
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .menuGenreLxnBx {
-    @include mi.ontenerWidth(375, 335);
+    @include mi.ontenerWidth(355, 335);
     @include mi.marginPercent(375, 0, auto, 0, auto);
     @include mi.paddingPercent(375, 20, 0, 20, 0);
+    background: #fff;
+    @include mi.kadomaru(8px);
 }
 
-.ulMenuGenreLxnBx {}
+.ulMenuGenreLxnBx {
+    @include mi.ontenerWidth(335, 315);
+    margin: auto;
+}
 
 .liMenuGenreLxnBx {
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 40, auto, 0, auto);
+        @include mi.marginPercent(315, 24, auto, 0, auto);
     }
 
 }
@@ -107,12 +126,12 @@ LAYOUT
 
 .brdMenuGenreLxnBx {
     position: relative;
-    @include mi.ontenerWidth(335, 14);
+    @include mi.ontenerWidth(315, 14);
     aspect-ratio: 14 / 14;
 }
 
 .brdbrdMenuGenreLxnBx {
-    height: 2px;
+    height: 3px;
     width: 14px;
     @include mi.kadomaru(3px);
     position: absolute;
@@ -121,7 +140,7 @@ LAYOUT
     right: 0;
     bottom: 0;
     margin: auto;
-    background: #282828;
+    background: #EE952D;
 }
 
 .brdBtmBtnMenuGenre01 {}
@@ -146,28 +165,33 @@ LAYOUT
     }
 }
 
-.ulSubMenuGenreLxn {
+.navSubMenuGenreLxn {
     display: none;
-    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.marginPercent(315, 0, auto, 0, auto);
 }
 
 .liSubMenuGenreLxn {
-    @include mi.ontenerWidth(335, 335);
+    @include mi.ontenerWidth(315, 155);
 }
 
 .btnSubMenuGenreLxn {
     width: 100%;
-    @include mi.paddingPercent(335, 8, 0, 8, 0);
+    @include mi.paddingPercent(151, 8, 0, 8, 0);
     border-bottom: 1px solid #282828;
+    text-decoration: none;
 }
 
 .txtBtnSubMenuGenreLxn {
-    @include mi.ontenerWidth(335, 312);
-    @include mi.fontSizePc(12);
+    @include mi.ontenerWidth(151, 126);
+    @include mi.fontSizePc(10);
     @include mi.lineheight(auto, auto);
     @include mi.letterSpacing(0);
 }
 
 .iconBtnSubMenuGenreLxn {
-    @include mi.ontenerWidth(335, 24);
+    @include mi.ontenerWidth(335, 36);
+}
+
+.menuGenre+.nowNewsCnt {
+    @include mi.marginPercent(315, 10, auto, 0, auto);
 }

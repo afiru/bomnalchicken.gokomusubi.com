@@ -11,7 +11,7 @@ LAYOUT
     -ms-overflow-style: none;
     scrollbar-width: none;
     @include mi.ontenerWidth(375, 355);
-    @include mi.marginPercent(350, 0, 0, 0, 20);
+    @include mi.marginPercent(350, 20, 0, 0, 10);
 
     &::-webkit-scrollbar {
         display: none;
@@ -42,11 +42,11 @@ LAYOUT
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: #A01D10;
+        background-color: #EB53A2;
         /* スクロールバーの色 */
         border-radius: 4px;
         /* 角丸 */
-        border: 2px solid #A01D10;
+        border: 2px solid #EB53A2;
         /* 少し余白を作る */
     }
 }
@@ -68,8 +68,9 @@ LAYOUT
     @include mi.lineheight(12, 14);
     @include mi.letterSpacing(40);
     white-space: nowrap;
-    padding: 8px 24px;
+    padding: 12px 24px;
     @include mi.kadomaru(4px);
+    text-decoration: none;
 }
 
 

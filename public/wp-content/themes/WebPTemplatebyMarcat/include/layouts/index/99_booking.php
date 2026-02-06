@@ -3,7 +3,7 @@
         <section class="titleTopPrice">
             <h2 class="cl_EE952D Mochiy fw_400 h2TopPrice"><?php echo esc_html('ご予約'); ?></h2>
             <div class="bg_F4DB17 brdTopPrice"></div>
-            <p class="cl_E9483E fw-800 en rybyTopPrice"><?php echo esc_html('BOOKING'); ?></p>
+            <p class="cl_E9483E fw_800 en ryshyadow rybyTopPrice"><?php echo esc_html('BOOKING'); ?></p>
         </section>
 
         <div class="formBooking">
@@ -15,7 +15,7 @@
     </section>
 
     <div class="readmoneTopNewsLoop">
-        <a class="d_flex j_center ali_center fw-800 cl_EB53A2 bg_FBEBEC Mochiy btnReadmoneTopNewsLoop" href="<?php echo esc_url('https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer'); ?>" target="_blank" rel="noopener noreferrer">
+        <a class="d_flex j_center ali_center fw_800 cl_EB53A2 bg_FBEBEC Mochiy btnReadmoneTopNewsLoop" href="<?php echo esc_url('https://liff.line.me/1645278921-kWRPP32q/?accountId=048mzzer'); ?>" target="_blank" rel="noopener noreferrer">
             <?php echo esc_html('LINEでご予約！'); ?>
         </a>
     </div>

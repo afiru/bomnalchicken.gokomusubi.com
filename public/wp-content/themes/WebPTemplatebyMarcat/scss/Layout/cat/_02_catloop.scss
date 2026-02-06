@@ -7,16 +7,16 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .newsTab {
-    @include mi.ontenerWidth(375, 335);
-    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
+    @include mi.marginPercent(375, 20, auto, 0, auto);
 }
 
 .liNewsTab01 {
-    @include mi.ontenerWidth(335, 80);
+    @include mi.ontenerWidth(355, 80);
 }
 
 .liNewsTab02 {
-    @include mi.ontenerWidth(335, 80);
+    @include mi.ontenerWidth(355, 80);
 }
 
 .btnliNewsTab {
@@ -32,21 +32,28 @@ LAYOUT
     text-decoration: none;
     padding: 8px 0;
     @include mi.kadomaru(4px);
-    background: #A01D10;
+    background: #EB53A2;
     color: #fff;
-    border: 2px solid #A01D10;
+    border: 2px solid #EB53A2;
 }
 
 .btnliNewsTab.active {
     background: #fff;
-    color: #A01D10;
-    border: 2px solid #A01D10;
+    color: #EB53A2;
+    border: 2px solid #EB53A2;
 }
 
 ///
-.ulTopNewsLoop {
-    width: 100%;
+.catNewsLxn {
     @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.kadomaru(8px);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+    @include mi.ontenerWidth(375, 355);
+}
+
+.ulTopNewsLoop {
+    @include mi.ontenerWidth(355, 335);
+    margin: auto;
 }
 
 .liCatNewsLoop {
@@ -121,18 +128,18 @@ LAYOUT
         }
 
         span {
-            border: 1px solid #FBEBEC;
-            background: #FBEBEC;
-            color: #3A3E46;
+            border: 1px solid #EE952D;
+            background: #EE952D;
+            color: #FFF;
         }
 
         .nextpostslink,
         .previouspostslink {
             @include mi.ontenerWidth(335, 36);
             @include mi.kadomaru(30px);
-            border: 1px solid #325530;
-            background: #325530;
-            color: #fff;
+            border: 1px solid #FBEBEC;
+            background: #FBEBEC;
+            color: #EB53A2;
         }
     }
 

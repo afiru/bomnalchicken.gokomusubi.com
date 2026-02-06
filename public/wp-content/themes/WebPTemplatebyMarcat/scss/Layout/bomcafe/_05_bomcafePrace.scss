@@ -7,8 +7,15 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .secBomCafePrace {
-    @include mi.marginPercent(375, 64, auto, 0, auto);
-    @include mi.ontenerWidth(375, 335);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
+    @include mi.kadomaru(8px);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+}
+
+.secBomCafePraceLxn {
+    @include mi.ontenerWidth(355, 335);
+    margin: auto;
 }
 
 .h2BomCafePrace {
@@ -24,14 +31,14 @@ LAYOUT
 }
 
 .h3BomCafePrace {
-    @include mi.marginPercent(335, 20, auto, 0, auto);
+    @include mi.marginPercent(335, 10, auto, 0, auto);
     @include mi.fontSizePc(16);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
 }
 
 .ggmapBomCafePrace {
-    @include mi.marginPercent(335, 10, auto, 0, auto);
+    @include mi.marginPercent(335, 16, auto, 0, auto);
     aspect-ratio: 335 / 160;
     @include mi.kadomaru(4px);
     overflow: hidden;
@@ -50,7 +57,7 @@ LAYOUT
 }
 
 .txtBomCafePrace {
-    @include mi.marginPercent(335, 8, auto, 0, auto);
+    @include mi.marginPercent(335, 12, auto, 0, auto);
     @include mi.fontSizePc(12);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);

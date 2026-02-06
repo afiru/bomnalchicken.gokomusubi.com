@@ -6,8 +6,20 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+.secBomCafePrace {
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
+    @include mi.kadomaru(8px);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
+}
+
+.secBomCafePraceLxn {
+    @include mi.ontenerWidth(355, 335);
+    margin: auto;
+}
+
 .pointBomCafePrace {
-    @include mi.marginPercent(335, 24, auto, 0, auto);
+    @include mi.marginPercent(335, 20, auto, 0, auto);
 }
 
 .liPointBomCafePrace {
@@ -16,6 +28,6 @@ LAYOUT
     @include mi.letterSpacing(0);
 
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 16, auto, 0, auto);
+        @include mi.marginPercent(335, 20, auto, 0, auto);
     }
 }

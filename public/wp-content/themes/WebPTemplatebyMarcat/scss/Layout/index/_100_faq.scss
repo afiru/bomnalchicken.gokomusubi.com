@@ -25,7 +25,7 @@ LAYOUT
 
 .liFaq {
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 40, auto, 0, auto);
+        @include mi.marginPercent(335, 20, auto, 0, auto);
     }
 }
 

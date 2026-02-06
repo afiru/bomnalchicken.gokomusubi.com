@@ -80,36 +80,41 @@ LAYOUT
 }
 
 .liAddressAccessMain {
-    @include mi.fontSizePc(12);
+    @include mi.fontSizePc(10);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
 
     &:nth-child(n+2) {
-        @include mi.marginPercent(335, 24, 0, 0, 0);
+        @include mi.marginPercent(335, 16, 0, 0, 0);
     }
 }
 
 .h3LiAddressAccessMain {
-    @include mi.fontSizePc(14);
-    @include mi.lineheight(10, 15);
+    width: 27%;
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 335);
 }
 
 .dottoLiAddressAccessMain {
     @include mi.marginPercent(335, 4, 0, 0, 0);
-    @include mi.fontSizePc(12);
+    width: 3%;
+    @include mi.fontSizePc(10);
     @include mi.lineheight(10, 15);
-    @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 335);
+}
+
+.kugiriLiAddressAccessMain {
+    @include mi.marginPercent(335, -3, 0, 0, 0);
+    width: 3%;
+    @include mi.fontSizePc(10);
+    @include mi.lineheight(10, 15);
 }
 
 .txtLiAddressAccessMain {
-    @include mi.marginPercent(335, 8, 0, 0, 0);
-    @include mi.fontSizePc(12);
+    width: 68%;
+    @include mi.fontSizePc(10);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
-    @include mi.ontenerWidth(335, 335);
 }
 
 .mapAddressAccessMain {
@@ -136,7 +141,7 @@ LAYOUT
     @include mi.ontenerWidth(335, 335);
 
     span {
-        font-weight: bold;
+        font-weight: 400;
     }
 
     .btnAddressBtmNavHeade {
@@ -150,7 +155,8 @@ LAYOUT
         color: #EB53A2;
     }
 }
-.iconBtnAddressBtmNavHeade{
+
+.iconBtnAddressBtmNavHeade {
     background-size: auto 100%;
     width: fit-content;
     margin: auto;

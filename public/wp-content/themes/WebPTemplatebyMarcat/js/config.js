@@ -158,9 +158,9 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
             table2Text = results.table2 == 0 ? "満席" : `残り<span class="fw_800">${results.table2}</span>卓`;
             table4Text = results.table4 == 0 ? "満席" : `残り<span class="fw_800">${results.table4}</span>卓`;
             $('.jsnowNewsCnt').append('\
-            <h2 class="t_center fw_800 cl_fff fw_800 h2NowNewsCnt">今日のおすすめメニュー</h2>\n\
-            <p class="t_center fw_400 cl_fff fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + '</p>\n\
-            <h2 class="t_center fw_800 cl_fff Mochiy fw_400 h2NowNewsCnt h2NowNewsCnt02">現在お店は　<span class="cl_E9483E">' + results['status'] + '</span>　です!</h2>\n\
+            <h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2>\n\
+            <p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + '</p>\n\
+            <h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt02">現在お店は　<span class="gigh2NowNewsCnt02 cl_E9483E">' + results['status'] + '</span>　です!</h2>\n\
             <img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">\n\
             ');
         });

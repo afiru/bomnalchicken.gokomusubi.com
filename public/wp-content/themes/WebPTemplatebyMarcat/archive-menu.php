@@ -1,5 +1,5 @@
 <?php get_template_part('include/common/header/header'); ?>
-<main class="bg_fff mainIndex">
+<main class="mainIndex">
     <?php get_template_part('include/layouts/menu/01_menufv'); ?>
     <?php get_template_part('include/layouts/menu/02_menuGenre'); ?>
     <?php get_template_part('include/layouts/menu/03_nowlist'); ?>

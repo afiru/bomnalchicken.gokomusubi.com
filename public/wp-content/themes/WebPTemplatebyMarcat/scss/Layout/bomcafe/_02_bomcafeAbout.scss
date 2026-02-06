@@ -6,107 +6,61 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-.secAboutBomCafe {
-    @include mi.ontenerWidth(375, 335);
-    @include mi.marginPercent(335, 40, auto, 0, auto);
+.aboutBom {
+    @include mi.ontenerWidth(375, 355);
+    @include mi.marginPercent(375, 20, auto, 0, auto);
+    @include mi.kadomaru(8px);
+    @include mi.paddingPercent(375, 20, 0, 20, 0);
 }
 
-.h2AboutBomCafe {
-    @include mi.fontSizePc(20);
-    @include mi.lineheight(10, 15);
-    @include mi.letterSpacing(-20);
+.aboutBomLxn {
+    @include mi.ontenerWidth(355, 335);
+    margin: auto;
 }
 
-.h3AboutBomCafe {
-    @include mi.marginPercent(335, 8, auto, 0, auto);
-    @include mi.fontSizePc(10);
-    @include mi.lineheight(10, 15);
-    @include mi.letterSpacing(0);
-}
-
-//
 .pointAboutBomCafe {
-    @include mi.marginPercent(335, 40, auto, 0, auto);
+    @include mi.marginPercent(335, 24, auto, 0, auto);
 }
 
 .liPointAboutBomCafe {
-    &:nth-child(n+2) {
-        @include mi.marginPercent(335, 12, auto, 0, auto);
+    @include mi.ontenerWidth(335, 162);
+
+    &:nth-child(n+3) {
+        @include mi.marginPercent(335, 40, auto, 0, auto);
     }
 }
 
-.iconPointAboutBomCafe {
-    @include mi.ontenerWidth(335, 60);
-}
+.iconPointAboutBomCafe {}
 
 .txtPointAboutBomCafe {
-    @include mi.ontenerWidth(335, 264);
+    @include mi.marginPercent(162, 8, auto, 0, auto);
     @include mi.fontSizePc(12);
-    @include mi.lineheight(10, 15);
+    @include mi.lineheightP(150);
     @include mi.letterSpacing(0);
 }
 
-.zehiBomCafe {
-    @include mi.marginPercent(335, 20, auto, 0, auto);
-    @include mi.paddingPercent(335, 24, 0, 24, 0);
-    position: relative;
-    @include mi.kadomaru(10px);
-    overflow: hidden;
-    z-index: 0;
-}
-
-.iconPointAboutBomCafeLT {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 1px;
-     @include mi.kadomaru(10px);
-  background: linear-gradient(135deg, transparent 0%, transparent 3%, #D9D9D9 3%, #D9D9D9 97%, transparent 97%, transparent 100%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          z-index: 1;
-}
-
-.iconPointAboutBomCafeRB {
-   width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 1px;
-     @include mi.kadomaru(10px);
-  background: linear-gradient(135deg, #A01D10 0%, #A01D10 3%, transparent 3%, transparent 97%, #A01D10 97%, #A01D10 100%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          z-index: 2;
-}
-
 .secZehiBomCafe {
-    width: 100%;
+    @include mi.marginPercent(335, 36, auto, 0, auto);
 }
 
 .h3ZehiBomCafe {
     @include mi.fontSizePc(20);
-    @include mi.lineheight(10, 15);
+    @include mi.lineheightP(175);
     @include mi.letterSpacing(0);
 }
 
 .txtZehiBomCafe {
-    @include mi.marginPercent(335, 16, auto, 0, auto);
-    @include mi.fontSizePc(20);
-    @include mi.lineheight(10, 15);
-    @include mi.letterSpacing(0);
+    @include mi.marginPercent(335, 6, auto, 0, auto);
 }
 
 .bigTxtZehiBomCafe {
     @include mi.fontSizePc(30);
+    @include mi.lineheightP(175);
+    @include mi.letterSpacing(0);
+}
+
+.littleTxtZehiBomCafe {
+    @include mi.fontSizePc(20);
+    @include mi.lineheightP(175);
     @include mi.letterSpacing(0);
 }

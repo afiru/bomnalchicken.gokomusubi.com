@@ -10,12 +10,12 @@
 
             <ul class="d_flex j_end row ulTopAccess">
                 <?php foreach (scf::get('snsLinks', 32) as $fields): ?>
-                    <?php $img = get_scf_img_loop_url_id($fields['imgSns']); ?>
-                    <li class="liTopAccess">
-                        <a class="undernone d_block btnTopAccess" href="<?php echo esc_url($fields['urlSns']); ?>" target="_blank" rel="noopener noreferrer">
-                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
-                        </a>
-                    </li>
+                <?php $img = get_scf_img_loop_url_id($fields['imgSns']); ?>
+                <li class="liTopAccess">
+                    <a class="undernone d_block btnTopAccess" href="<?php echo esc_url($fields['urlSns']); ?>" target="_blank" rel="noopener noreferrer">
+                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                    </a>
+                </li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -27,10 +27,11 @@
 
             <ul class="addressAccessMain">
                 <?php foreach (scf::get('tableAccess', 32) as $fields): ?>
-                    <li class="d_flex j_between row liAddressAccessMain">
-                        <h3 class="cl_282828 fw_500 maru h3LiAddressAccessMain"><?php echo esc_html($fields['thAccess']); ?></h3>
-                        <p class="cl_282828 fw_500 maru txtLiAddressAccessMain"><?php echo esc_html($fields['tdAccess']); ?></p>
-                    </li>
+                <li class="d_flex j_between row liAddressAccessMain">
+                    <h3 class="cl_282828 fw_500 maru h3LiAddressAccessMain"><?php echo esc_html($fields['thAccess']); ?></h3>
+                    <p class="cl_282828 fw_500 maru kugiriLiAddressAccessMain">：</p>
+                    <p class="cl_282828 fw_500 maru txtLiAddressAccessMain"><?php echo nl2br(esc_html($fields['tdAccess'])); ?></p>
+                </li>
                 <?php endforeach; ?>
             </ul>
 

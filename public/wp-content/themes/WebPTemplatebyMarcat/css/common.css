@@ -656,6 +656,10 @@ and open the template in the editor.
   background: #F4DB17;
 }
 
+.bg_EF1A79 {
+  background: #EF1A79;
+}
+
 .bg_EB53A2 {
   background: #EB53A2;
 }
@@ -666,6 +670,14 @@ and open the template in the editor.
 
 .cl_EB53A2 {
   color: #EB53A2;
+}
+
+.cl_020202 {
+  color: #020202;
+}
+
+.cl_fff {
+  color: #fff;
 }
 
 .cl_E9483E {
@@ -696,6 +708,9 @@ LAYOUT
 .cntPageLxn {
   width: 375px;
   margin: 0 0 0 auto;
+  background: url(../img/bgbase.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 @media screen and (max-width: 767px) {
   .cntPageLxn {
@@ -736,13 +751,14 @@ LAYOUT
   top: 0;
   left: 0;
   z-index: 999;
-  padding: 8px 0;
   margin: -1px 0 0 0;
-  background: #FBEBEC;
 }
 
 .headerBaseTopFxLxn {
   width: 100%;
+  padding: 8px 0;
+  aspect-ratio: 375/55;
+  background: #FBEBEC;
 }
 
 .headerBaseFx {
@@ -756,17 +772,18 @@ LAYOUT
 }
 
 .logoHeaderBase {
-  width: 251px;
+  width: 265px;
 }
 @media screen and (max-width: 1199px) {
   .logoHeaderBase {
-    width: 74.92%;
+    width: 79.1%;
   }
 }
 
 .menuHeaderPc {
   width: 32px;
   cursor: pointer;
+  aspect-ratio: 40/40;
 }
 @media screen and (max-width: 1199px) {
   .menuHeaderPc {
@@ -777,7 +794,7 @@ LAYOUT
 .menuHeaderPcIn {
   width: 100%;
   position: relative;
-  aspect-ratio: 40/21;
+  aspect-ratio: 40/23;
 }
 
 .brdmenuHeaderPc {
@@ -825,7 +842,7 @@ LAYOUT
   width: -moz-fit-content;
   width: fit-content;
   display: block;
-  margin: 18% auto 0 auto;
+  margin: 18% auto 5% auto;
   color: #EB53A2;
 }
 @media screen and (max-width: 767px) {
@@ -835,17 +852,15 @@ LAYOUT
 }
 
 .navHeaderBase {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 0px;
+  padding-right: 0px;
   height: 100vh;
   display: none;
   position: absolute;
   width: 100%;
-}
-
-.navHeaderBaseLxn {
-  padding: 2.66% 0% 0% 0%;
-  width: 100%;
-  right: 0;
-  left: 0;
+  background: linear-gradient(to right, #e8c6d9, #f5e3bc);
   margin: auto;
   height: 100svh;
   overflow: auto;
@@ -854,36 +869,108 @@ LAYOUT
   min-height: 100svh;
   z-index: 999;
 }
-.navHeaderBaseLxn::-webkit-scrollbar {
+@media screen and (max-width: 1199px) {
+  .navHeaderBase {
+    padding: 4.26% 0% 4.26% 0%;
+  }
+}
+.navHeaderBase::-webkit-scrollbar {
   display: none;
 }
 
+.navHeaderBaseLxn {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 354px;
+  margin: auto;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  background-image: url(../img/bgTopAbout.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-color: #FFF;
+  animation: bgMove 2s linear infinite alternate;
+}
+@media screen and (max-width: 1199px) {
+  .navHeaderBaseLxn {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .navHeaderBaseLxn {
+    width: 94.4%;
+  }
+}
+
+@keyframes bgMoveMenu {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0px 8px;
+  }
+}
 .ulNavHeaderBase {
-  width: 335px;
+  width: 337px;
   margin: auto;
 }
 @media screen and (max-width: 1199px) {
   .ulNavHeaderBase {
-    width: 89.33%;
+    width: 95.19%;
   }
 }
 
 .liNavHeaderBase {
-  border-bottom: 1px solid #FFF;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .liNavHeaderBase {
+    padding: 0% 0% 0% 0%;
+  }
+}
+.liNavHeaderBase:after {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, #f7e22b, #f5a14d, #e65d91, #df7a66);
+}
+@media screen and (max-width: 1199px) {
+  .liNavHeaderBase:after {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .btnNavHeaderBase {
   aspect-ratio: 335/60;
   text-decoration: none;
+  background: url(../img/iconBtmInfoReadMore.svg) no-repeat 96% center;
+  background-size: auto 20%;
 }
 
 .secNavHeaderBase {
-  width: 301px;
+  width: 335px;
   margin: 0 0 0 auto;
 }
 @media screen and (max-width: 1199px) {
   .secNavHeaderBase {
-    width: 89.85%;
+    width: 100%;
   }
 }
 
@@ -931,7 +1018,7 @@ LAYOUT
 }
 
 .secBtmNavHeader {
-  margin-top: 24px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -939,7 +1026,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBtmNavHeader {
-    margin-top: 6.4%;
+    margin-top: 11.29%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -947,7 +1034,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBtmNavHeader {
-    width: 89.33%;
+    width: 94.63%;
   }
 }
 
@@ -957,13 +1044,13 @@ LAYOUT
   margin-left: auto;
   margin-right: auto;
   padding-top: 0px;
-  padding-bottom: 140px;
+  padding-bottom: 83px;
   padding-left: 0px;
   padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .secBtmNavHeader02 {
-    margin-top: 9.6%;
+    margin-top: 10.16%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -971,37 +1058,40 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBtmNavHeader02 {
-    padding-top: 0%;
-    padding-bottom: 37.33%;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0% 0% 23.44% 0%;
   }
 }
 
 .h2BtmNavHeader {
-  font-size: 20px;
-  line-height: 1;
+  font-size: 13px;
+  line-height: 1.8461538462;
   letter-spacing: 0em;
-  font-weight: 700;
+  font-weight: 400;
+  width: 53px;
 }
 @media screen and (max-width: 767px) {
   .h2BtmNavHeader {
-    font-size: 5.3333333333vw;
+    font-size: 3.4666666667vw;
   }
 }
 .h2BtmNavHeader::before {
   display: block;
   width: 0;
   height: 0;
-  margin-top: calc((1 - 1) * 0.5em);
+  margin-top: calc((1 - 1.8461538462) * 0.5em);
   content: "";
 }
 .h2BtmNavHeader::after {
   display: block;
   width: 0;
   height: 0;
-  margin-bottom: calc((1 - 1) * 0.5em);
+  margin-bottom: calc((1 - 1.8461538462) * 0.5em);
   content: "";
+}
+@media screen and (max-width: 1199px) {
+  .h2BtmNavHeader {
+    width: 15.77%;
+  }
 }
 
 .addressBtmNavHeader {
@@ -1020,31 +1110,26 @@ LAYOUT
 }
 
 .liAddressBtmNavHeader:nth-child(n+2) {
-  margin-top: 24px;
+  margin-top: 12px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .liAddressBtmNavHeader:nth-child(n+2) {
-    margin: 7.16% 0% 0% 0%;
+    margin: 3.58% 0% 0% 0%;
   }
 }
 
 .h3LiAddressBtmNavHeader {
-  width: 335px;
-  font-size: 14px;
+  width: 25%;
+  font-size: 10px;
   line-height: 1.8461538462;
   letter-spacing: 0em;
 }
-@media screen and (max-width: 1199px) {
-  .h3LiAddressBtmNavHeader {
-    width: 100%;
-  }
-}
 @media screen and (max-width: 767px) {
   .h3LiAddressBtmNavHeader {
-    font-size: 3.7333333333vw;
+    font-size: 2.6666666667vw;
   }
 }
 .h3LiAddressBtmNavHeader::before {
@@ -1062,65 +1147,31 @@ LAYOUT
   content: "";
 }
 
-.dottoLiAddressBtmNavHeader {
+.coron {
   margin-top: 4px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  width: 335px;
-  line-height: 1.8461538462;
+  width: 5%;
   font-size: 10px;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 1199px) {
-  .dottoLiAddressBtmNavHeader {
+  .coron {
     margin: 1.19% 0% 0% 0%;
   }
 }
-@media screen and (max-width: 1199px) {
-  .dottoLiAddressBtmNavHeader {
-    width: 100%;
-  }
-}
-.dottoLiAddressBtmNavHeader::before {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-top: calc((1 - 1.8461538462) * 0.5em);
-  content: "";
-}
-.dottoLiAddressBtmNavHeader::after {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-bottom: calc((1 - 1.8461538462) * 0.5em);
-  content: "";
-}
 @media screen and (max-width: 767px) {
-  .dottoLiAddressBtmNavHeader {
+  .coron {
     font-size: 2.6666666667vw;
   }
 }
 
 .txtLiAddressBtmNavHeader {
-  margin-top: 8px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 335px;
+  width: 70%;
   font-size: 10px;
   line-height: 1.8461538462;
   letter-spacing: 0em;
-}
-@media screen and (max-width: 1199px) {
-  .txtLiAddressBtmNavHeader {
-    margin: 2.38% 0% 0% 0%;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .txtLiAddressBtmNavHeader {
-    width: 100%;
-  }
 }
 @media screen and (max-width: 767px) {
   .txtLiAddressBtmNavHeader {
@@ -1179,34 +1230,40 @@ LAYOUT
 }
 
 .btnAddressBtmNavHeadeLxn {
-  margin-top: 24px;
+  margin-top: 26px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 335px;
 }
 @media screen and (max-width: 1199px) {
   .btnAddressBtmNavHeadeLxn {
-    margin-top: 7.16%;
+    margin-top: 7.76%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
+@media screen and (max-width: 1199px) {
+  .btnAddressBtmNavHeadeLxn {
+    width: 100%;
+  }
+}
 
 .btnAddressBtmNavHeade {
-  aspect-ratio: 335/40;
-  font-size: 16px;
-  letter-spacing: 0em;
+  width: 100%;
   border-radius: 5px;
   /* CSS3草案 */
   -webkit-border-radius: 5px;
   /* Safari,Google Chrome用 */
   -moz-border-radius: 5px;
   /* Firefox用 */
+  aspect-ratio: 335/48;
+  font-size: 16px;
+  letter-spacing: 0em;
+  background: #FBEBEC;
   text-decoration: none;
-  background: #fff;
-  color: #241A08;
+  color: #EB53A2;
 }
 @media screen and (max-width: 767px) {
   .btnAddressBtmNavHeade {
@@ -1214,18 +1271,28 @@ LAYOUT
   }
 }
 
+.iconBtnAddressBtmNavHeade {
+  background-size: auto 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 0 0 0 6%;
+  background: url(../img/iconBtnAccess.svg) no-repeat center left;
+  background-size: auto 100%;
+}
+
 .snSNavHeader {
-  margin-top: 16px;
+  margin-top: 26px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 150px;
+  width: 224px;
   display: flex;
   justify-content: space-between;
 }
 @media screen and (max-width: 1199px) {
   .snSNavHeader {
-    margin-top: 4.77%;
+    margin-top: 7.76%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -1233,12 +1300,12 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .snSNavHeader {
-    width: 44.77%;
+    width: 66.86%;
   }
 }
 
 .liSnSNavHeader {
-  width: 32.81px;
+  width: 49px;
 }
 @media screen and (max-width: 1199px) {
   .liSnSNavHeader {
@@ -1251,25 +1318,14 @@ LAYOUT
 }
 
 .h2BtmNavHeader {
+  width: 100%;
   font-size: 16px;
   letter-spacing: 0em;
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .h2BtmNavHeader {
     font-size: 4.2666666667vw;
-  }
-}
-
-.cntPageLxn {
-  width: 375px;
-  margin: 0 0 0 auto;
-  background: url(../img/bgbase.jpg) no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-@media screen and (max-width: 767px) {
-  .cntPageLxn {
-    width: 100%;
   }
 }
 
@@ -1366,16 +1422,39 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .nowNewsCnt {
-  padding-top: 24px;
-  padding-bottom: 26px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
   padding-left: 0px;
   padding-right: 0px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
   position: relative;
-  background: #FFF;
 }
 @media screen and (max-width: 1199px) {
   .nowNewsCnt {
-    padding: 6.4% 0% 6.93% 0%;
+    margin-top: 10.66%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .nowNewsCnt {
+    padding: 10.66% 0% 10.66% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .nowNewsCnt {
+    width: 94.66%;
   }
 }
 
@@ -1411,14 +1490,24 @@ LAYOUT
 }
 
 .h2NowNewsCnt02 {
-  margin-top: 24px;
+  margin-top: 26px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .h2NowNewsCnt02 {
-    margin: 6.4% 0% 0% 0%;
+    margin: 6.93% 0% 0% 0%;
+  }
+}
+
+.gigh2NowNewsCnt02 {
+  font-size: 22px;
+  letter-spacing: 0em;
+}
+@media screen and (max-width: 767px) {
+  .gigh2NowNewsCnt02 {
+    font-size: 5.8666666667vw;
   }
 }
 
@@ -1517,7 +1606,7 @@ LAYOUT
   right: 0;
   bottom: 0;
   width: 76.4px;
-  animation: 3s fuwafuwa infinite;
+  animation: 4s fuwafuwa infinite;
 }
 @media screen and (max-width: 1199px) {
   .nowNewsCnt img {
@@ -1527,10 +1616,10 @@ LAYOUT
 
 @keyframes fuwafuwa {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(5px, 0) rotate(4deg);
   }
   50% {
-    transform: translateY(20px);
+    transform: translate(0px, 10px) rotate(0deg);
   }
 }
 .topNews {
@@ -1720,11 +1809,19 @@ LAYOUT
 
 .iconbtnTopNewsLoop {
   width: 48px;
+  aspect-ratio: 1/1;
 }
 @media screen and (max-width: 1199px) {
   .iconbtnTopNewsLoop {
     width: 14.32%;
   }
+}
+.iconbtnTopNewsLoop img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .secBtnTopNewsLoop {
@@ -1882,6 +1979,14 @@ LAYOUT
   .topAbout {
     width: 94.66%;
   }
+}
+
+.bgTopAbout {
+  background-image: url(../img/bgTopAbout.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+  background-color: #FFF;
 }
 
 .topAboutLxn {
@@ -2503,7 +2608,7 @@ LAYOUT
 }
 
 .liFloorTentyo {
-  width: 106px;
+  width: 105px;
   margin-top: 8px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -2511,7 +2616,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .liFloorTentyo {
-    width: 31.64%;
+    width: 31.34%;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -3451,6 +3556,7 @@ LAYOUT
   -moz-border-radius: 8px;
   /* Firefox用 */
   background: #FFF;
+  position: relative;
 }
 @media screen and (max-width: 1199px) {
   .instagram {
@@ -3547,6 +3653,18 @@ LAYOUT
 .sbi_btn_text {
   font-family: "Rounded Mplus 1c", sans-serif;
   transform: rotate(0deg);
+}
+
+.iconInstagram {
+  width: 87px;
+  position: absolute;
+  right: 3%;
+  top: 2vw;
+}
+@media screen and (max-width: 1199px) {
+  .iconInstagram {
+    width: 25.97%;
+  }
 }
 
 /* ==========================================================================
@@ -3773,13 +3891,13 @@ LAYOUT
 }
 
 .liAddressAccessMain {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
   .liAddressAccessMain {
-    font-size: 3.2vw;
+    font-size: 2.6666666667vw;
   }
 }
 .liAddressAccessMain::before {
@@ -3797,46 +3915,41 @@ LAYOUT
   content: "";
 }
 .liAddressAccessMain:nth-child(n+2) {
-  margin-top: 24px;
+  margin-top: 16px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .liAddressAccessMain:nth-child(n+2) {
-    margin: 7.16% 0% 0% 0%;
+    margin: 4.77% 0% 0% 0%;
   }
 }
 
 .h3LiAddressAccessMain {
-  font-size: 14px;
-  line-height: 1.5;
+  width: 27%;
+  font-size: 10px;
+  line-height: 1.8461538462;
   letter-spacing: 0em;
-  width: 335px;
 }
 @media screen and (max-width: 767px) {
   .h3LiAddressAccessMain {
-    font-size: 3.7333333333vw;
+    font-size: 2.6666666667vw;
   }
 }
 .h3LiAddressAccessMain::before {
   display: block;
   width: 0;
   height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
+  margin-top: calc((1 - 1.8461538462) * 0.5em);
   content: "";
 }
 .h3LiAddressAccessMain::after {
   display: block;
   width: 0;
   height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
+  margin-bottom: calc((1 - 1.8461538462) * 0.5em);
   content: "";
-}
-@media screen and (max-width: 1199px) {
-  .h3LiAddressAccessMain {
-    width: 100%;
-  }
 }
 
 .dottoLiAddressAccessMain {
@@ -3844,10 +3957,9 @@ LAYOUT
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  font-size: 12px;
+  width: 3%;
+  font-size: 10px;
   line-height: 1.5;
-  letter-spacing: 0em;
-  width: 335px;
 }
 @media screen and (max-width: 1199px) {
   .dottoLiAddressAccessMain {
@@ -3856,7 +3968,7 @@ LAYOUT
 }
 @media screen and (max-width: 767px) {
   .dottoLiAddressAccessMain {
-    font-size: 3.2vw;
+    font-size: 2.6666666667vw;
   }
 }
 .dottoLiAddressAccessMain::before {
@@ -3873,30 +3985,50 @@ LAYOUT
   margin-bottom: calc((1 - 1.5) * 0.5em);
   content: "";
 }
-@media screen and (max-width: 1199px) {
-  .dottoLiAddressAccessMain {
-    width: 100%;
-  }
-}
 
-.txtLiAddressAccessMain {
-  margin-top: 8px;
+.kugiriLiAddressAccessMain {
+  margin-top: -3px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  font-size: 12px;
+  width: 3%;
+  font-size: 10px;
   line-height: 1.5;
-  letter-spacing: 0em;
-  width: 335px;
 }
 @media screen and (max-width: 1199px) {
-  .txtLiAddressAccessMain {
-    margin: 2.38% 0% 0% 0%;
+  .kugiriLiAddressAccessMain {
+    margin: -0.9% 0% 0% 0%;
   }
 }
 @media screen and (max-width: 767px) {
+  .kugiriLiAddressAccessMain {
+    font-size: 2.6666666667vw;
+  }
+}
+.kugiriLiAddressAccessMain::before {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-top: calc((1 - 1.5) * 0.5em);
+  content: "";
+}
+.kugiriLiAddressAccessMain::after {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+  content: "";
+}
+
+.txtLiAddressAccessMain {
+  width: 68%;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0em;
+}
+@media screen and (max-width: 767px) {
   .txtLiAddressAccessMain {
-    font-size: 3.2vw;
+    font-size: 2.6666666667vw;
   }
 }
 .txtLiAddressAccessMain::before {
@@ -3912,11 +4044,6 @@ LAYOUT
   height: 0;
   margin-bottom: calc((1 - 1.5) * 0.5em);
   content: "";
-}
-@media screen and (max-width: 1199px) {
-  .txtLiAddressAccessMain {
-    width: 100%;
-  }
 }
 
 .mapAddressAccessMain {
@@ -3971,7 +4098,7 @@ LAYOUT
   }
 }
 .access .btnAddressBtmNavHeadeLxn span {
-  font-weight: bold;
+  font-weight: 400;
 }
 .access .btnAddressBtmNavHeadeLxn .btnAddressBtmNavHeade {
   width: 100%;
@@ -4021,7 +4148,7 @@ LAYOUT
   margin: -4% 2% 0 auto;
   transition-duration: 0.5s;
   overflow-x: clip;
-  z-index: 999;
+  z-index: 998;
 }
 @media screen and (max-width: 1199px) {
   .btnFooter {
@@ -4888,14 +5015,14 @@ LAYOUT
 }
 
 .liFaq:nth-child(n+2) {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .liFaq:nth-child(n+2) {
-    margin-top: 11.94%;
+    margin-top: 5.97%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -5110,8 +5237,7 @@ LAYOUT
   margin-bottom: 6px;
   margin-left: auto;
   margin-right: auto;
-  height: 1px;
-  background: #A4A4A4;
+  height: 2px;
 }
 @media screen and (max-width: 1199px) {
   .brdSecCatFv {
@@ -5163,20 +5289,20 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .newsTab {
-  width: 335px;
-  margin-top: 40px;
+  width: 355px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .newsTab {
-    width: 89.33%;
+    width: 94.66%;
   }
 }
 @media screen and (max-width: 1199px) {
   .newsTab {
-    margin-top: 10.66%;
+    margin-top: 5.33%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -5188,7 +5314,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .liNewsTab01 {
-    width: 23.88%;
+    width: 22.53%;
   }
 }
 
@@ -5197,7 +5323,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .liNewsTab02 {
-    width: 23.88%;
+    width: 22.53%;
   }
 }
 
@@ -5219,9 +5345,9 @@ LAYOUT
   /* Safari,Google Chrome用 */
   -moz-border-radius: 4px;
   /* Firefox用 */
-  background: #A01D10;
+  background: #EB53A2;
   color: #fff;
-  border: 2px solid #A01D10;
+  border: 2px solid #EB53A2;
 }
 @media screen and (max-width: 767px) {
   .btnliNewsTab {
@@ -5245,23 +5371,53 @@ LAYOUT
 
 .btnliNewsTab.active {
   background: #fff;
-  color: #A01D10;
-  border: 2px solid #A01D10;
+  color: #EB53A2;
+  border: 2px solid #EB53A2;
 }
 
-.ulTopNewsLoop {
-  width: 100%;
+.catNewsLxn {
   margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 355px;
 }
 @media screen and (max-width: 1199px) {
-  .ulTopNewsLoop {
+  .catNewsLxn {
     margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .catNewsLxn {
+    padding: 5.33% 0% 5.33% 0%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .catNewsLxn {
+    width: 94.66%;
+  }
+}
+
+.ulTopNewsLoop {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .ulTopNewsLoop {
+    width: 94.36%;
   }
 }
 
@@ -5483,9 +5639,9 @@ LAYOUT
   }
 }
 .pagerNewsLoop .wp-pagenavi span {
-  border: 1px solid #FBEBEC;
-  background: #FBEBEC;
-  color: #3A3E46;
+  border: 1px solid #EE952D;
+  background: #EE952D;
+  color: #FFF;
 }
 .pagerNewsLoop .wp-pagenavi .nextpostslink,
 .pagerNewsLoop .wp-pagenavi .previouspostslink {
@@ -5496,9 +5652,9 @@ LAYOUT
   /* Safari,Google Chrome用 */
   -moz-border-radius: 30px;
   /* Firefox用 */
-  border: 1px solid #325530;
-  background: #325530;
-  color: #fff;
+  border: 1px solid #FBEBEC;
+  background: #FBEBEC;
+  color: #EB53A2;
 }
 @media screen and (max-width: 1199px) {
   .pagerNewsLoop .wp-pagenavi .nextpostslink,
@@ -5729,22 +5885,32 @@ LAYOUT
 
 .infoSinglePager {
   width: 335px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
+  border-top: 1px solid #D9D9D9;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .infoSinglePager {
-    width: 89.33%;
+    width: 94.36%;
   }
 }
 @media screen and (max-width: 1199px) {
   .infoSinglePager {
-    margin-top: 10.66%;
+    margin-top: 5.63%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .infoSinglePager {
+    padding: 5.63% 0% 2.81% 0%;
   }
 }
 
@@ -5775,7 +5941,7 @@ LAYOUT
 }
 .pagerTopicsMainSingle a {
   text-decoration: none;
-  color: #241A08;
+  color: #EE952D;
 }
 
 .moreTopicsArchive {
@@ -5787,6 +5953,69 @@ LAYOUT
 @media screen and (max-width: 1199px) {
   .moreTopicsArchive {
     margin: 0% 6.4% 0% 6.4%;
+  }
+}
+
+.prevSinglePagerWap {
+  width: 121px;
+}
+@media screen and (max-width: 1199px) {
+  .prevSinglePagerWap {
+    width: 34.08%;
+  }
+}
+.prevSinglePagerWap a {
+  background: url(../img/prevSinglePagerWap.svg) no-repeat left center;
+  background-size: auto 80%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 28px;
+  padding-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .prevSinglePagerWap a {
+    padding: 3.3% 0% 3.3% 23.14%;
+  }
+}
+
+.moreTopicsArchive {
+  width: 105px;
+}
+@media screen and (max-width: 1199px) {
+  .moreTopicsArchive {
+    width: 29.57%;
+  }
+}
+
+.nextSinglePagerWap {
+  width: 121px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: right;
+}
+@media screen and (max-width: 1199px) {
+  .nextSinglePagerWap {
+    width: 34.08%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .nextSinglePagerWap {
+    padding: 1.12% 0% 1.12% 0%;
+  }
+}
+.nextSinglePagerWap a {
+  background: url(../img/nextSinglePagerWap.svg) no-repeat right center;
+  background-size: auto 80%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 0px;
+  padding-right: 28px;
+}
+@media screen and (max-width: 1199px) {
+  .nextSinglePagerWap a {
+    padding: 3.3% 23.14% 3.3% 0%;
   }
 }
 
@@ -5810,6 +6039,24 @@ LAYOUT
 ========================================================================== */
 .menuGenre {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 355px;
+}
+@media screen and (max-width: 1199px) {
+  .menuGenre {
+    margin-top: 2.66%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .menuGenre {
+    width: 94.66%;
+  }
 }
 
 .btnMenuGenre {
@@ -5818,15 +6065,27 @@ LAYOUT
   padding-bottom: 12px;
   padding-left: 0px;
   padding-right: 0px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  transition-duration: 0.5s;
 }
 @media screen and (max-width: 1199px) {
   .btnMenuGenre {
-    padding: 3.2% 0% 3.2% 0%;
+    padding: 3.38% 0% 3.38% 0%;
   }
 }
 
+.btnMenuGenre.on {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .btnMenuGenre {
-  width: 375px;
+  width: 355px;
 }
 @media screen and (max-width: 1199px) {
   .btnMenuGenre {
@@ -5840,7 +6099,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .btnMenuGenreFx {
-    width: 89.33%;
+    width: 94.36%;
   }
 }
 
@@ -5865,7 +6124,7 @@ LAYOUT
 }
 
 .brdBtmBtnMenuGenre {
-  height: 2px;
+  height: 3px;
   width: 14px;
   border-radius: 3px;
   /* CSS3草案 */
@@ -5879,7 +6138,13 @@ LAYOUT
   right: 0;
   bottom: 0;
   margin: auto;
-  background: #fff;
+  background: #EB53A2;
+  border-radius: 1px;
+  /* CSS3草案 */
+  -webkit-border-radius: 1px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 1px;
+  /* Firefox用 */
 }
 
 .brdBtmBtnMenuGenre02 {
@@ -5901,6 +6166,17 @@ LAYOUT
   background: #FBEBEC;
   z-index: 9;
   display: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 1199px) {
+  .menuGenreLxn {
+    padding: 5.33% 0% 5.33% 0%;
+  }
 }
 
 .menuGenreLxnBx {
@@ -5913,10 +6189,17 @@ LAYOUT
   padding-bottom: 20px;
   padding-left: 0px;
   padding-right: 0px;
+  background: #fff;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
 }
 @media screen and (max-width: 1199px) {
   .menuGenreLxnBx {
-    width: 89.33%;
+    width: 94.36%;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -5933,15 +6216,25 @@ LAYOUT
   }
 }
 
+.ulMenuGenreLxnBx {
+  width: 315px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .ulMenuGenreLxnBx {
+    width: 94.02%;
+  }
+}
+
 .liMenuGenreLxnBx:nth-child(n+2) {
-  margin-top: 40px;
+  margin-top: 24px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .liMenuGenreLxnBx:nth-child(n+2) {
-    margin-top: 11.94%;
+    margin-top: 7.61%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -5970,12 +6263,12 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .brdMenuGenreLxnBx {
-    width: 4.17%;
+    width: 4.44%;
   }
 }
 
 .brdbrdMenuGenreLxnBx {
-  height: 2px;
+  height: 3px;
   width: 14px;
   border-radius: 3px;
   /* CSS3草案 */
@@ -5989,7 +6282,7 @@ LAYOUT
   right: 0;
   bottom: 0;
   margin: auto;
-  background: #282828;
+  background: #EE952D;
 }
 
 .brdBtmBtnMenuGenre02 {
@@ -6004,16 +6297,16 @@ LAYOUT
   opacity: 0;
 }
 
-.ulSubMenuGenreLxn {
+.navSubMenuGenreLxn {
   display: none;
-  margin-top: 8px;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
-  .ulSubMenuGenreLxn {
-    margin-top: 2.38%;
+  .navSubMenuGenreLxn {
+    margin-top: 0%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -6021,11 +6314,11 @@ LAYOUT
 }
 
 .liSubMenuGenreLxn {
-  width: 335px;
+  width: 155px;
 }
 @media screen and (max-width: 1199px) {
   .liSubMenuGenreLxn {
-    width: 100%;
+    width: 49.2%;
   }
 }
 
@@ -6036,36 +6329,52 @@ LAYOUT
   padding-left: 0px;
   padding-right: 0px;
   border-bottom: 1px solid #282828;
+  text-decoration: none;
 }
 @media screen and (max-width: 1199px) {
   .btnSubMenuGenreLxn {
-    padding: 2.38% 0% 2.38% 0%;
+    padding: 5.29% 0% 5.29% 0%;
   }
 }
 
 .txtBtnSubMenuGenreLxn {
-  width: 312px;
-  font-size: 12px;
+  width: 126px;
+  font-size: 10px;
   line-height: normal;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 1199px) {
   .txtBtnSubMenuGenreLxn {
-    width: 93.13%;
+    width: 83.44%;
   }
 }
 @media screen and (max-width: 767px) {
   .txtBtnSubMenuGenreLxn {
-    font-size: 3.2vw;
+    font-size: 2.6666666667vw;
   }
 }
 
 .iconBtnSubMenuGenreLxn {
-  width: 24px;
+  width: 36px;
 }
 @media screen and (max-width: 1199px) {
   .iconBtnSubMenuGenreLxn {
-    width: 7.16%;
+    width: 10.74%;
+  }
+}
+
+.menuGenre + .nowNewsCnt {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1199px) {
+  .menuGenre + .nowNewsCnt {
+    margin-top: 3.17%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -6083,9 +6392,9 @@ LAYOUT
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: 355px;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 0px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 0px;
 }
 @media screen and (max-width: 1199px) {
@@ -6095,7 +6404,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .menuAllListNavs {
-    margin: 0% 0% 0% 5.71%;
+    margin: 5.71% 0% 0% 2.85%;
   }
 }
 .menuAllListNavs::-webkit-scrollbar {
@@ -6124,11 +6433,11 @@ LAYOUT
   /* スクロールバーの背景 */
 }
 .ulMenuAllListNavs::-webkit-scrollbar-thumb {
-  background-color: #A01D10;
+  background-color: #EB53A2;
   /* スクロールバーの色 */
   border-radius: 4px;
   /* 角丸 */
-  border: 2px solid #A01D10;
+  border: 2px solid #EB53A2;
   /* 少し余白を作る */
 }
 
@@ -6156,13 +6465,14 @@ LAYOUT
   line-height: 1.1666666667;
   letter-spacing: 0.04em;
   white-space: nowrap;
-  padding: 8px 24px;
+  padding: 12px 24px;
   border-radius: 4px;
   /* CSS3草案 */
   -webkit-border-radius: 4px;
   /* Safari,Google Chrome用 */
   -moz-border-radius: 4px;
   /* Firefox用 */
+  text-decoration: none;
 }
 @media screen and (max-width: 767px) {
   .btnMenuAllListNavs {
@@ -6321,36 +6631,15 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-.menuAllList {
-  margin-top: 40px;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (max-width: 1199px) {
-  .menuAllList {
-    margin-top: 10.66%;
-    margin-bottom: 0%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .menuAllListBx {
-  width: 335px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .menuAllListBx {
-    width: 89.33%;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .menuAllListBx {
-    margin-top: 10.66%;
+    margin-top: 5.33%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -6358,25 +6647,51 @@ LAYOUT
 }
 
 .limenuAllListBx {
-  width: 335px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  width: 355px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1199px) {
   .limenuAllListBx {
-    width: 100%;
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .limenuAllListBx {
+    padding: 5.33% 0% 5.33% 0%;
   }
 }
 .limenuAllListBx:nth-child(n+2) {
-  margin-top: 40px;
+  margin-top: 24px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .limenuAllListBx:nth-child(n+2) {
-    margin-top: 11.94%;
+    margin-top: 7.16%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.seclimenuAllListBx {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .seclimenuAllListBx {
+    width: 94.36%;
   }
 }
 
@@ -6408,11 +6723,15 @@ LAYOUT
 
 .liSubmenuAllList {
   width: 335px;
+  border-bottom: 1px solid #B1B1B1;
 }
 @media screen and (max-width: 1199px) {
   .liSubmenuAllList {
     width: 100%;
   }
+}
+.liSubmenuAllList:last-child {
+  border-bottom: none;
 }
 
 .btnSubmenuAllList {
@@ -6421,7 +6740,7 @@ LAYOUT
   padding-bottom: 12px;
   padding-left: 0px;
   padding-right: 0px;
-  border-bottom: 1px solid #282828;
+  text-decoration: none;
 }
 @media screen and (max-width: 1199px) {
   .btnSubmenuAllList {
@@ -6447,11 +6766,11 @@ LAYOUT
 }
 
 .secSubmenuAllList {
-  width: 221px;
+  width: 211px;
 }
 @media screen and (max-width: 1199px) {
   .secSubmenuAllList {
-    width: 65.97%;
+    width: 62.98%;
   }
 }
 
@@ -6572,18 +6891,39 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-.menuSingle {
+.singleMenuLxn {
   margin-top: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
-  .menuSingle {
+  .singleMenuLxn {
     margin-top: 10.66%;
-    margin-bottom: 0%;
+    margin-bottom: 10.66%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .singleMenuLxn {
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .singleMenuLxn {
+    padding: 5.33% 0% 5.33% 0%;
   }
 }
 
@@ -6593,7 +6933,29 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .menuDetailSingle {
-    width: 89.33%;
+    width: 94.36%;
+  }
+}
+
+.titleMenu {
+  border-bottom: 1px solid #D9D9D9;
+  padding-top: 0px;
+  padding-bottom: 8px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .titleMenu {
+    padding: 0% 0% 2.38% 0%;
+  }
+}
+
+.iconSignleMenu {
+  width: 48px;
+}
+@media screen and (max-width: 1199px) {
+  .iconSignleMenu {
+    width: 14.32%;
   }
 }
 
@@ -6601,11 +6963,7 @@ LAYOUT
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0em;
-  padding-top: 0px;
-  padding-bottom: 8px;
-  padding-left: 0px;
-  padding-right: 0px;
-  border-bottom: 1px solid #D9D9D9;
+  width: 268px;
 }
 @media screen and (max-width: 767px) {
   .h2TitleMenuDetailSingle {
@@ -6628,7 +6986,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .h2TitleMenuDetailSingle {
-    padding: 0% 0% 2.38% 0%;
+    width: 80%;
   }
 }
 
@@ -6657,7 +7015,7 @@ LAYOUT
 }
 
 .cntSMenu {
-  margin-top: 24px;
+  margin-top: 16px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -6667,7 +7025,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .cntSMenu {
-    margin-top: 7.16%;
+    margin-top: 4.77%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7119,115 +7477,268 @@ LAYOUT
   }
 }
 
-/* ==========================================================================
-use＆nameSpace
-========================================================================== */
-/* ==========================================================================
-use＆nameSpace
-========================================================================== */
-/* ==========================================================================
-LAYOUT
-========================================================================== */
-/* ==========================================================================
-use＆nameSpace
-========================================================================== */
-/* ==========================================================================
-use＆nameSpace
-========================================================================== */
-/* ==========================================================================
-LAYOUT
-========================================================================== */
-.secAboutBomCafe {
-  width: 335px;
+.ulShareSingleNewsBoxFx {
   margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 0px;
 }
 @media screen and (max-width: 1199px) {
-  .secAboutBomCafe {
-    width: 89.33%;
+  .ulShareSingleNewsBoxFx {
+    margin-top: 11.94%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: 0%;
   }
 }
+
+.liShareSingleNewsBox {
+  width: 20px;
+}
 @media screen and (max-width: 1199px) {
-  .secAboutBomCafe {
-    margin-top: 11.94%;
+  .liShareSingleNewsBox {
+    width: 5.97%;
+  }
+}
+.liShareSingleNewsBox:nth-child(n+2) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .liShareSingleNewsBox:nth-child(n+2) {
+    margin: 0% 0% 0% 2.98%;
+  }
+}
+
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.catFv {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 355px;
+  aspect-ratio: 355/130;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  background-image: url(../img/catFv.png);
+  background-repeat: no-repeat;
+  animation: bgMove 1s linear infinite alternate;
+  background-size: auto 100%;
+  background-color: #fff;
+}
+@media screen and (max-width: 1199px) {
+  .catFv {
+    margin-top: 5.33%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
-.h2AboutBomCafe {
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-}
-@media screen and (max-width: 767px) {
-  .h2AboutBomCafe {
-    font-size: 5.3333333333vw;
+@media screen and (max-width: 1199px) {
+  .catFv {
+    width: 94.66%;
   }
 }
-.h2AboutBomCafe::before {
+
+@keyframes bgMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -8px -8px;
+  }
+}
+.h2SecCatFv {
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0em;
+}
+@media screen and (max-width: 767px) {
+  .h2SecCatFv {
+    font-size: 5.8666666667vw;
+  }
+}
+.h2SecCatFv::before {
   display: block;
   width: 0;
   height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
+  margin-top: calc((1 - 1) * 0.5em);
   content: "";
 }
-.h2AboutBomCafe::after {
+.h2SecCatFv::after {
   display: block;
   width: 0;
   height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
+  margin-bottom: calc((1 - 1) * 0.5em);
   content: "";
 }
 
-.h3AboutBomCafe {
+.brdSecCatFv {
+  width: 81px;
+  height: 2px;
+  border-radius: 3px;
+  /* CSS3草案 */
+  -webkit-border-radius: 3px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 3px;
+  /* Firefox用 */
   margin-top: 8px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 10px;
-  line-height: 1.5;
-  letter-spacing: 0em;
 }
 @media screen and (max-width: 1199px) {
-  .h3AboutBomCafe {
-    margin-top: 2.38%;
+  .brdSecCatFv {
+    width: 22.81%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .brdSecCatFv {
+    margin-top: 2.13%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
+.h3SecCatFv {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0em;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 3px rgba(233, 72, 62, 0.6);
+}
 @media screen and (max-width: 767px) {
-  .h3AboutBomCafe {
-    font-size: 2.6666666667vw;
+  .h3SecCatFv {
+    font-size: 3.7333333333vw;
   }
 }
-.h3AboutBomCafe::before {
+.h3SecCatFv::before {
   display: block;
   width: 0;
   height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
+  margin-top: calc((1 - 1) * 0.5em);
   content: "";
 }
-.h3AboutBomCafe::after {
+.h3SecCatFv::after {
   display: block;
   width: 0;
   height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
+  margin-bottom: calc((1 - 1) * 0.5em);
   content: "";
+}
+@media screen and (max-width: 1199px) {
+  .h3SecCatFv {
+    margin-top: 2.13%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+use＆nameSpace
+========================================================================== */
+/* ==========================================================================
+LAYOUT
+========================================================================== */
+.aboutBom {
+  width: 355px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .aboutBom {
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .aboutBom {
+    margin-top: 5.33%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .aboutBom {
+    padding: 5.33% 0% 5.33% 0%;
+  }
+}
+
+.aboutBomLxn {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .aboutBomLxn {
+    width: 94.36%;
+  }
 }
 
 .pointAboutBomCafe {
-  margin-top: 40px;
+  margin-top: 24px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .pointAboutBomCafe {
+    margin-top: 7.16%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.liPointAboutBomCafe {
+  width: 162px;
+}
+@media screen and (max-width: 1199px) {
+  .liPointAboutBomCafe {
+    width: 48.35%;
+  }
+}
+.liPointAboutBomCafe:nth-child(n+3) {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1199px) {
+  .liPointAboutBomCafe:nth-child(n+3) {
     margin-top: 11.94%;
     margin-bottom: 0%;
     margin-left: auto;
@@ -7235,39 +7746,21 @@ LAYOUT
   }
 }
 
-.liPointAboutBomCafe:nth-child(n+2) {
-  margin-top: 12px;
+.txtPointAboutBomCafe {
+  margin-top: 8px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-}
-@media screen and (max-width: 1199px) {
-  .liPointAboutBomCafe:nth-child(n+2) {
-    margin-top: 3.58%;
-    margin-bottom: 0%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.iconPointAboutBomCafe {
-  width: 60px;
-}
-@media screen and (max-width: 1199px) {
-  .iconPointAboutBomCafe {
-    width: 17.91%;
-  }
-}
-
-.txtPointAboutBomCafe {
-  width: 264px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 150%;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 1199px) {
   .txtPointAboutBomCafe {
-    width: 78.8%;
+    margin-top: 4.93%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (max-width: 767px) {
@@ -7275,101 +7768,25 @@ LAYOUT
     font-size: 3.2vw;
   }
 }
-.txtPointAboutBomCafe::before {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
-.txtPointAboutBomCafe::after {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
 
-.zehiBomCafe {
-  margin-top: 20px;
+.secZehiBomCafe {
+  margin-top: 36px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 0px;
-  padding-right: 0px;
-  position: relative;
-  border-radius: 10px;
-  /* CSS3草案 */
-  -webkit-border-radius: 10px;
-  /* Safari,Google Chrome用 */
-  -moz-border-radius: 10px;
-  /* Firefox用 */
-  overflow: hidden;
-  z-index: 0;
 }
 @media screen and (max-width: 1199px) {
-  .zehiBomCafe {
-    margin-top: 5.97%;
+  .secZehiBomCafe {
+    margin-top: 10.74%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media screen and (max-width: 1199px) {
-  .zehiBomCafe {
-    padding: 7.16% 0% 7.16% 0%;
-  }
-}
-
-.iconPointAboutBomCafeLT {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 1px;
-  border-radius: 10px;
-  /* CSS3草案 */
-  -webkit-border-radius: 10px;
-  /* Safari,Google Chrome用 */
-  -moz-border-radius: 10px;
-  /* Firefox用 */
-  background: linear-gradient(135deg, transparent 0%, transparent 3%, #D9D9D9 3%, #D9D9D9 97%, transparent 97%, transparent 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 1;
-}
-
-.iconPointAboutBomCafeRB {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 1px;
-  border-radius: 10px;
-  /* CSS3草案 */
-  -webkit-border-radius: 10px;
-  /* Safari,Google Chrome用 */
-  -moz-border-radius: 10px;
-  /* Firefox用 */
-  background: linear-gradient(135deg, #A01D10 0%, #A01D10 3%, transparent 3%, transparent 97%, #A01D10 97%, #A01D10 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 2;
-}
-
-.secZehiBomCafe {
-  width: 100%;
-}
 
 .h3ZehiBomCafe {
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 175%;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
@@ -7377,65 +7794,41 @@ LAYOUT
     font-size: 5.3333333333vw;
   }
 }
-.h3ZehiBomCafe::before {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
-.h3ZehiBomCafe::after {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
 
 .txtZehiBomCafe {
-  margin-top: 16px;
+  margin-top: 6px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 0em;
 }
 @media screen and (max-width: 1199px) {
   .txtZehiBomCafe {
-    margin-top: 4.77%;
+    margin-top: 1.79%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media screen and (max-width: 767px) {
-  .txtZehiBomCafe {
-    font-size: 5.3333333333vw;
-  }
-}
-.txtZehiBomCafe::before {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-top: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
-.txtZehiBomCafe::after {
-  display: block;
-  width: 0;
-  height: 0;
-  margin-bottom: calc((1 - 1.5) * 0.5em);
-  content: "";
-}
 
 .bigTxtZehiBomCafe {
   font-size: 30px;
+  line-height: 175%;
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
   .bigTxtZehiBomCafe {
     font-size: 8vw;
+  }
+}
+
+.littleTxtZehiBomCafe {
+  font-size: 20px;
+  line-height: 175%;
+  letter-spacing: 0em;
+}
+@media screen and (max-width: 767px) {
+  .littleTxtZehiBomCafe {
+    font-size: 5.3333333333vw;
   }
 }
 
@@ -7449,15 +7842,25 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .secBomCafeDate {
-  margin-top: 64px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 335px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .secBomCafeDate {
-    margin-top: 17.06%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7465,7 +7868,22 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBomCafeDate {
-    width: 89.33%;
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafeDate {
+    padding: 5.33% 0% 5.33% 0%;
+  }
+}
+
+.secBomCafeDateLxn {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafeDateLxn {
+    width: 94.36%;
   }
 }
 
@@ -7509,7 +7927,7 @@ LAYOUT
 }
 
 .h3BomCafeDate {
-  margin-top: 24px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -7519,7 +7937,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .h3BomCafeDate {
-    margin-top: 7.16%;
+    margin-top: 5.97%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7555,7 +7973,7 @@ LAYOUT
 }
 
 .txtBomCafeDate {
-  margin-top: 24px;
+  margin-top: 16px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -7565,7 +7983,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .txtBomCafeDate {
-    margin-top: 7.16%;
+    margin-top: 4.77%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7601,15 +8019,25 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .secBomCafePrice {
-  margin-top: 64px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 335px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .secBomCafePrice {
-    margin-top: 17.06%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7617,7 +8045,22 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBomCafePrice {
-    width: 89.33%;
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePrice {
+    padding: 5.33% 0% 0% 0%;
+  }
+}
+
+.secBomCafePriceLxn {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePriceLxn {
+    width: 94.36%;
   }
 }
 
@@ -7715,16 +8158,19 @@ LAYOUT
 }
 
 .tdBomCafePrice {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   padding-left: 0px;
   padding-right: 0px;
   border-bottom: 1px solid #D9D9D9;
 }
 @media screen and (max-width: 1199px) {
   .tdBomCafePrice {
-    padding: 3.58% 0% 3.58% 0%;
+    padding: 4.77% 0% 4.77% 0%;
   }
+}
+.tdBomCafePrice + .tdBomCafePrice {
+  border-bottom: none;
 }
 
 .coseBomCafePrice {
@@ -7811,15 +8257,25 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .secBomCafePrace {
-  margin-top: 64px;
+  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  width: 335px;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media screen and (max-width: 1199px) {
   .secBomCafePrace {
-    margin-top: 17.06%;
+    margin-top: 10.66%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7827,7 +8283,22 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .secBomCafePrace {
-    width: 89.33%;
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePrace {
+    padding: 5.33% 0% 5.33% 0%;
+  }
+}
+
+.secBomCafePraceLxn {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePraceLxn {
+    width: 94.36%;
   }
 }
 
@@ -7871,7 +8342,7 @@ LAYOUT
 }
 
 .h3BomCafePrace {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -7881,7 +8352,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .h3BomCafePrace {
-    margin-top: 5.97%;
+    margin-top: 2.98%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7908,7 +8379,7 @@ LAYOUT
 }
 
 .ggmapBomCafePrace {
-  margin-top: 10px;
+  margin-top: 16px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -7924,7 +8395,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .ggmapBomCafePrace {
-    margin-top: 2.98%;
+    margin-top: 4.77%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7942,7 +8413,7 @@ LAYOUT
 }
 
 .txtBomCafePrace {
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -7952,7 +8423,7 @@ LAYOUT
 }
 @media screen and (max-width: 1199px) {
   .txtBomCafePrace {
-    margin-top: 2.38%;
+    margin-top: 3.58%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -7987,15 +8458,61 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+.secBomCafePrace {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 355px;
+  border-radius: 8px;
+  /* CSS3草案 */
+  -webkit-border-radius: 8px;
+  /* Safari,Google Chrome用 */
+  -moz-border-radius: 8px;
+  /* Firefox用 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePrace {
+    margin-top: 10.66%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePrace {
+    width: 94.66%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePrace {
+    padding: 5.33% 0% 5.33% 0%;
+  }
+}
+
+.secBomCafePraceLxn {
+  width: 335px;
+  margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .secBomCafePraceLxn {
+    width: 94.36%;
+  }
+}
+
 .pointBomCafePrace {
-  margin-top: 24px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .pointBomCafePrace {
-    margin-top: 7.16%;
+    margin-top: 5.97%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -8027,14 +8544,14 @@ LAYOUT
   content: "";
 }
 .liPointBomCafePrace:nth-child(n+2) {
-  margin-top: 16px;
+  margin-top: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   .liPointBomCafePrace:nth-child(n+2) {
-    margin-top: 4.77%;
+    margin-top: 5.97%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: auto;

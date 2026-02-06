@@ -6,3 +6,47 @@ use＆nameSpace
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
+.catFv {
+    @include mi.marginPercent(375, 20, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
+    aspect-ratio: 355 / 130;
+    @include mi.kadomaru(8px);
+    background-image: url(../img/catFv.png);
+    background-repeat: no-repeat;
+    animation: bgMove 1s linear infinite alternate;
+    background-size: auto 100%;
+    background-color: #fff;
+}
+
+@keyframes bgMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -8px -8px;
+    }
+}
+
+.h2SecCatFv {
+    @include mi.fontSizePc(22);
+    @include mi.lineheight(22, 22);
+    @include mi.letterSpacing(0);
+}
+
+.brdSecCatFv {
+    @include mi.ontenerWidth(355, 81);
+    height: 2px;
+    @include mi.kadomaru(3px);
+    @include mi.marginPercent(375, 8, auto, 0, auto);
+}
+
+
+.h3SecCatFv {
+    @include mi.fontSizePc(14);
+    @include mi.lineheight(14, 14);
+    @include mi.letterSpacing(0);
+    @include mi.marginPercent(375, 8, auto, 0, auto);
+    text-shadow: 0 0 3px rgba(233, 72, 62, 0.60);
+
+}

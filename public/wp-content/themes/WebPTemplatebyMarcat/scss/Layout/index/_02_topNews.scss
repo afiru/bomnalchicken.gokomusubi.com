@@ -7,9 +7,11 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .nowNewsCnt {
-    @include mi.paddingPercent(375, 24, 0, 26, 0);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+    @include mi.ontenerWidth(375, 355);
+    @include mi.kadomaru(8px);
     position: relative;
-    background: #FFF;
 
 }
 
@@ -27,7 +29,12 @@ LAYOUT
 }
 
 .h2NowNewsCnt02 {
-    @include mi.marginPercent(375, 24, 0, 0, 0);
+    @include mi.marginPercent(375, 26, 0, 0, 0);
+}
+
+.gigh2NowNewsCnt02 {
+    @include mi.fontSizePc(22);
+    @include mi.letterSpacing(0);
 }
 
 .ulNowNewsCnt {
@@ -74,26 +81,29 @@ LAYOUT
     right: 0;
     bottom: 0;
     @include mi.ontenerWidth(375, 76.4);
-    animation: 3s fuwafuwa infinite;
+    animation: 4s fuwafuwa infinite;
 }
+
 @keyframes fuwafuwa {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
+
+    0%,
+    100% {
+        transform: translate(5px, 0) rotate(4deg);
+    }
+
+    50% {
+        transform: translate(0px, 10px) rotate(0deg);
+    }
 }
 
 .topNews {
     @include mi.paddingPercent(375, 40, 0, 34, 0);
-    @include mi.marginPercent(375, 40,auto ,0 ,auto );
-    @include mi.ontenerWidth( 375, 355 );
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.ontenerWidth(375, 355);
     @include mi.kadomaru(8px);
 }
 
-.topNewsTitle {
-}
+.topNewsTitle {}
 
 .h2TopNews {
     @include mi.fontSizePc(22);
@@ -130,9 +140,10 @@ LAYOUT
 
 .liTopNewsLoop {
     @include mi.paddingPercent(335, 11, 0, 0, 0);
-    &:after{
-        @include mi.marginPercent(335, 11,auto ,0 ,auto );
-        content:"";
+
+    &:after {
+        @include mi.marginPercent(335, 11, auto, 0, auto);
+        content: "";
         display: block;
         height: 1px;
         width: 100%;
@@ -148,6 +159,14 @@ LAYOUT
 
 .iconbtnTopNewsLoop {
     @include mi.ontenerWidth(335, 48);
+    aspect-ratio: 1 /1;
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .secBtnTopNewsLoop {
