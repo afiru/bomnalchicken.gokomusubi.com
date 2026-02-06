@@ -14,7 +14,7 @@
                 <?php endif; ?>
             </figure>
             <section class="secFloorTentyo">
-                <p class="cl_282828 Mochiy text_justify fw_500 txtFloorTentyo">
+                <p class="cl_282828 text_justify fw_500 txtFloorTentyo">
                     <?php echo nl2br(esc_html(scf::get('txtFloorMain'))); ?>
                 </p>
             </section>
