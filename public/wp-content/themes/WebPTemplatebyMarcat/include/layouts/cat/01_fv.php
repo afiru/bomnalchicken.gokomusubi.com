@@ -1,13 +1,8 @@
 <div class="d_flex j_center ali_center catFv">
-    <!--
-    bg:../img/catFv.jpg
-    -->
+    <!-- bg:../img/catFv.png -->
     <section class="secCatFv">
-        <h2 class="cl_fff fw_800 h2SecCatFv">新着情報</h2>
+        <h2 class="cl_EE952D Mochiy t_center fw_400 h2SecCatFv"><?php echo esc_html('新着情報'); ?></h2>
         <div class="bg_fff brdSecCatFv"></div>
-        <h3 class="cl_fff fw_800 en h3SecCatFv">NEWS</h3>
+        <h3 class="cl_E9483E t_center fw_800 en h3SecCatFv"><?php echo esc_html('NEWS'); ?></h3>
     </section>
-    <figure class="iconCatFv">
-        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconCatFv.png" alt="" width="74" height="60">
-    </figure>
 </div>

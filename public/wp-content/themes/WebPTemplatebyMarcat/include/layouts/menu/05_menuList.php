@@ -1,21 +1,9 @@
 <div class="bg_fff menuAllList">
-    <?php $terms = get_terms('menu_category', 'get=all'); ?>
-    <nav class="menuAllListNavs">
-        <ul class="d_flex j_start ali_center nowap ulMenuAllListNavs">
-            <?php foreach ($terms as $term): ?>
-                <li class="liMenuAllListNavs">
-                    <a class="undernone bg_A01D10 cl_fff fw_700 btnMenuAllListNavs" href="#limenuAllListBx<?php echo $term->term_id; ?>"><?php echo $term->name; ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-
-    </nav>
-
     <div class="menuAllListBx">
         <ul class="ulmenuAllListBx">
             <?php foreach ($terms as $term): ?>
-                <li id="limenuAllListBx<?php echo $term->term_id; ?>" class="limenuAllListBx">
-                    <h2 class="cl_282828 fw_700 h2BtnmenuAllListBx"><?php echo $term->name; ?></h2>
+                <li id="limenuAllListBx<?php echo esc_attr($term->term_id); ?>" class="limenuAllListBx">
+                    <h2 class="cl_E9483E fw_700 h2BtnmenuAllListBx">■<?php echo esc_html($term->name); ?></h2>
 
                     <?php
                     $args = [
@@ -27,43 +15,43 @@
                         'tax_query'      => [
                             [
                                 'taxonomy' => 'menu_category',
-                                'field'    => 'term_id', // ← タームIDで絞り込む！
-                                'terms'    => $term->term_id,   // ← タームIDを配列または単体で渡す
+                                'field'    => 'term_id',
+                                'terms'    => $term->term_id,
                             ],
                         ],
                     ];
+                    $query1 = new WP_Query($args);
                     ?>
-                    <?php $query1 = new WP_Query($args); ?>
+
                     <?php if ($query1->have_posts()): ?>
                         <ul class="d_flex j_between row ulSubmenuAllList">
-                            <?php while ($query1->have_posts()): ?>
-                                <?php $query1->the_post(); ?>
-                                <?php $img = get_post_thumbsdata($post->ID); ?>
+                            <?php while ($query1->have_posts()): $query1->the_post(); ?>
+                                <?php $img = get_post_thumbsdata(get_the_ID()); ?>
                                 <li class="liSubmenuAllList">
-                                    <a class="d_flex j_between ali_center undernone btnSubmenuAllList" href="<?php echo get_permalink($post->ID); ?>">
+                                    <a class="d_flex j_between ali_center undernone btnSubmenuAllList" href="<?php echo esc_url(get_permalink()); ?>">
                                         <figure class="thumbsSubmenuAllList">
                                             <?php if (!empty($img[0])): ?>
-                                                <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                                                <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                                             <?php else: ?>
-                                                <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/nonthumbs.png" alt="<?php echo get_the_title($post->ID); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                                                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/nonthumbs.png'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                                             <?php endif; ?>
                                         </figure>
                                         <section class="secSubmenuAllList">
-                                            <p class="cl_282828 fw_500 txtBtnSubmenuAllList">
-                                                <?php echo get_the_title($post->ID); ?>
-                                            </p>
+                                            <h3 class="cl_EE952D fw_500 txtBtnSubmenuAllList">
+                                                <?php echo esc_html(get_the_title()); ?>
+                                            </h3>
                                             <?php if (!empty(scf::get('tdMenu'))): ?>
                                                 <p class="cl_282828 fw_500 priceBtnSubmenuAllList">
-                                                    お値段：<?php echo scf::get('tdMenu'); ?>
+                                                    お値段：<?php echo esc_html(scf::get('tdMenu')); ?>
                                                 </p>
                                             <?php endif; ?>
                                             <p class="cl_282828 fw_500 tyusyakuBtnSubmenuAllList">
-                                                <?php echo scf::get('alertMenu'); ?>
+                                                <?php echo esc_html(scf::get('alertMenu')); ?>
                                             </p>
                                         </section>
 
                                         <figure class="iconBtnSubmenuAllList">
-                                            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconBtnSubMenuGenreLxn.svg" alt="" width="24" height="24">
+                                            <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/iconBtnSubMenuGenreLxn.svg'); ?>" alt="" width="24" height="24">
                                         </figure>
                                     </a>
                                 </li>

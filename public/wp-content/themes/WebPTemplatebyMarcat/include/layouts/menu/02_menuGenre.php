@@ -1,25 +1,29 @@
-<div class="pore menuGenre">
-    <div class="bg_A01D10 btnMenuGenre jsbtnMenuGenre off">
+<div class="bg_FBEBEC pore menuGenre">
+    <div class="btnMenuGenre jsbtnMenuGenre off">
         <section class="d_flex j_between btnMenuGenreFx">
-            <h2 class="cl_fff fw_800 h2btnMenuGenre">メニューをジャンルで選ぶ！</h2>
+            <h2 class="cl_EB53A2 fw_800 h2btnMenuGenre">
+                <?php echo esc_html('メニューをジャンルで選ぶ'); ?>
+            </h2>
             <div class="pore brdBtnMenuGenre">
-                <span class="bg_fff brdBtmBtnMenuGenre brdBtmBtnMenuGenre01"></span>
-                <span class="bg_fff brdBtmBtnMenuGenre brdBtmBtnMenuGenre02"></span>
+                <span class="bg_EB53A2 brdBtmBtnMenuGenre brdBtmBtnMenuGenre01"></span>
+                <span class="bg_EB53A2 brdBtmBtnMenuGenre brdBtmBtnMenuGenre02"></span>
             </div>
         </section>
     </div>
 
-    <div class="bg_FBEBEC menuGenreLxn jsmenuGenreLxn">
-        <?php $terms = get_terms('menu_category', 'get=all'); ?>
+    <div class="bg_fff menuGenreLxn jsmenuGenreLxn">
+        <?php $terms = get_terms(['taxonomy' => 'menu_category', 'hide_empty' => false]); ?>
         <div class="menuGenreLxnBx">
             <ul class="ulMenuGenreLxnBx">
                 <?php foreach ($terms as $term): ?>
                     <li class="liMenuGenreLxnBx">
                         <div class="d_flex j_between ali_center c_pointer btnMenuGenreLxnBx jsbtnMenuGenreLxnBx off">
-                            <h2 class="cl_282828 fw_700 h2BtnMenuGenreLxnBx">■<?php echo $term->name; ?></h2>
+                            <h2 class="cl_E9483E fw_700 h2BtnMenuGenreLxnBx">
+                                ■<?php echo esc_html($term->name); ?>
+                            </h2>
                             <div class="pore brdMenuGenreLxnBx">
-                                <span class="bg_fff brdbrdMenuGenreLxnBx brdbrdMenuGenreLxnBx01"></span>
-                                <span class="bg_fff brdbrdMenuGenreLxnBx brdbrdMenuGenreLxnBx02"></span>
+                                <span class="bg_E9483E brdbrdMenuGenreLxnBx brdbrdMenuGenreLxnBx01"></span>
+                                <span class="bg_E9483E brdbrdMenuGenreLxnBx brdbrdMenuGenreLxnBx02"></span>
                             </div>
                         </div>
 
@@ -33,30 +37,30 @@
                             'tax_query'      => [
                                 [
                                     'taxonomy' => 'menu_category',
-                                    'field'    => 'term_id', // ← タームIDで絞り込む！
-                                    'terms'    => $term->term_id,   // ← タームIDを配列または単体で渡す
+                                    'field'    => 'term_id',
+                                    'terms'    => $term->term_id,
                                 ],
                             ],
                         ];
+                        $query1 = new WP_Query($args);
                         ?>
-                        <?php $query1 = new WP_Query($args); ?>
+
                         <?php if ($query1->have_posts()): ?>
                             <ul class="d_flex j_between row ulSubMenuGenreLxn jsulSubMenuGenreLxn">
-                                <?php while ($query1->have_posts()): ?>
-                                    <?php $query1->the_post(); ?>
+                                <?php while ($query1->have_posts()): $query1->the_post(); ?>
                                     <li class="liSubMenuGenreLxn">
-                                        <a class="d_flex j_between ali_center undernone btnSubMenuGenreLxn" href="<?php echo get_permalink($post->ID); ?>">
+                                        <a class="d_flex j_between ali_center undernone btnSubMenuGenreLxn" href="<?php echo esc_url(get_permalink()); ?>">
                                             <p class="cl_282828 fw_500 txtBtnSubMenuGenreLxn">
-                                                -&nbsp;<?php echo get_the_title($post->ID); ?>&nbsp;<?php echo scf::get('tdMenu'); ?>
+                                                -&nbsp;<?php echo esc_html(get_the_title()); ?>&nbsp;<?php echo esc_html(scf::get('tdMenu')); ?>
                                             </p>
                                             <figure class="iconBtnSubMenuGenreLxn">
-                                                <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconBtnSubMenuGenreLxn.svg" alt="" width="24" height="24">
+                                                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/iconBtnSubMenuGenreLxn.svg'); ?>" alt="<?php echo esc_attr(get_the_title() . 'のアイコン'); ?>" width="24" height="24">
                                             </figure>
                                         </a>
                                     </li>
-                                <?php endwhile; ?>
+                                <?php endwhile;
+                                wp_reset_postdata(); ?>
                             </ul>
-                            <?php wp_reset_postdata(); ?>
                         <?php endif; ?>
                     </li>
                 <?php endforeach; ?>

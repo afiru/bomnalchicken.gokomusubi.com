@@ -1,24 +1,21 @@
-<div id="floor" class="bg_FBEBEC topFloor bgTopFloor">
-    <!--
-    bg:../img/bgTopFloorPc.png
-    -->
+<div id="floor" class="bg_fff topFloor bgTopFloor">
     <div class="pore topFloorLxn">
         <section class="titleTopFloor">
-            <h2 class="cl_282828 fw_800 h2TopFloor">こんな雰囲気です!</h2>
-            <div class="bg_B1B1B1 brdTopFloor"></div>
-            <p class="cl_282828 fw_800 en rybyTopFloor">Floor</p>
+            <h2 class="cl_EE952D t_right Mochiy fw_400 h2TopFloor"><?php echo esc_html('こんな雰囲気です!'); ?></h2>
+            <div class="bg_F4DB17 brdTopFloor"></div>
+            <p class="cl_E9483E t_right fw_800 en ryshyadow rybyTopFloor"><?php echo esc_html('Floor'); ?></p>
         </section>
-        <figure class="iconTopFloor">
-            <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/iconTopFloor.png" alt="" width="" height="">
-        </figure>
+
         <div class="d_flex j_between topFloorTentyo">
             <figure class="photoFloorTentyo">
                 <?php $img = get_scf_img_url('imgFloorMain'); ?>
-                <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo bloginfo('name'); ?>画像" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                <?php if (!empty($img[0])): ?>
+                    <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                <?php endif; ?>
             </figure>
             <section class="secFloorTentyo">
-                <p class="cl_282828 text_justify fw_500 txtFloorTentyo">
-                    <?php echo nl2br(scf::get('txtFloorMain')); ?>
+                <p class="cl_282828 Mochiy text_justify fw_500 txtFloorTentyo">
+                    <?php echo nl2br(esc_html(scf::get('txtFloorMain'))); ?>
                 </p>
             </section>
         </div>
@@ -28,8 +25,8 @@
                 <?php $img = get_scf_img_loop_url_id($fields['imgFloorLoop']); ?>
                 <?php if (!empty($img[0])): ?>
                     <li class="liFloorTentyo">
-                        <a class="btnFloorTentyo" href="<?php echo $img[0]; ?>" data-lightbox="image-1" data-title="<?php echo $fields['txtFloorLoop']; ?> ">
-                            <img loading="lazy" src="<?php echo $img[0]; ?>" alt="<?php echo $fields['txtFloorLoop']; ?>についての画像" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
+                        <a class="btnFloorTentyo" href="<?php echo esc_url($img[0]); ?>" data-lightbox="image-1" data-title="<?php echo esc_attr($fields['txtFloorLoop']); ?>">
+                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr($fields['txtFloorLoop']); ?>についての画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
                             <figure class="iconFloorTentyo">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_1320_1840" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">

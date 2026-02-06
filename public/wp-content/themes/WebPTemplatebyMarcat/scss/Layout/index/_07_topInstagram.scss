@@ -7,7 +7,11 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .instagram {
-    @include mi.marginPercent(375, 80, auto, 0, auto);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
+    @include mi.paddingPercent(375, 40, 0, 40, 0);
+     @include mi.ontenerWidth(375 ,355 );
+    @include mi.kadomaru(8px);
+    background: #FFF;
 }
 
 .h2Instagram {
@@ -27,8 +31,8 @@ LAYOUT
 
 .instagramLxn #sb_instagram #sbi_load .sbi_load_btn {
     @include mi.ontenerWidth(335, 335);
-    background: #325530;
-    color: #fff;
+    background: #FBEBEC;
+    color: #EB53A2;
     @include mi.fontSizePc(16);
     @include mi.letterSpacing(0);
     font-weight: 700;

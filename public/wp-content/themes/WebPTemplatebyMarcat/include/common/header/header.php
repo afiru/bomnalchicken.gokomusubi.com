@@ -16,11 +16,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="copyright" content="<?php bloginfo('name'); ?>" />
   <meta name="viewport" content="viewport-fit=cover,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="thumbnail" content="<?php echo get_bloginfo('template_url'); ?>/img/thumbs.png" />
+  <meta name="thumbnail" content="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/thumbs.png" />
   <!--
   <PageMap>
     <DataObject type="thumbnail">
-      <Attribute name="src" value="<?php echo get_bloginfo('template_url'); ?>/img/thumbs.png"/>
+      <Attribute name="src" value="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/thumbs.png"/>
       <Attribute name="width" value="100"/>
       <Attribute name="height" value="100"/>
     </DataObject>
@@ -55,11 +55,11 @@
         "description": "<?php echo $the_content; ?>",
         "author": {
           "@type": "Person",
-          "name": "<?php echo bloginfo('name'); ?>"
+          "name": "<?php echo esc_html(get_bloginfo('name')); ?>"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "<?php echo bloginfo('name'); ?>",
+          "name": "<?php echo esc_html(get_bloginfo('name')); ?>",
           "logo": {
             "@type": "ImageObject",
             "url": "<?php echo $ogthumbs; ?>"
@@ -79,7 +79,7 @@
 
   <script>
     var home_url = "<?php echo home_url('/'); ?>";
-    var theme_url = "<?php echo get_bloginfo('template_url'); ?>";
+    var theme_url = "<?php echo esc_url(get_bloginfo('template_url')); ?>";
     var rest_url = "<?php echo home_url('/wp-json/wp/v2/'); ?>";
     var calendar_y = "<?php echo date('Y'); ?>";
     var calendar_m = "<?php echo date('m'); ?>";
@@ -103,7 +103,7 @@
         <!--
       bg:../bgCntPageLxn.png
     -->
-        <h1 class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</h1>
+        <p class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</p>
         <header id="scrolltop" class="bg_A01D10 baseheader" data-lenis-prevent>
           <?php get_template_part('include/common/header/00_header'); ?>
         </header>

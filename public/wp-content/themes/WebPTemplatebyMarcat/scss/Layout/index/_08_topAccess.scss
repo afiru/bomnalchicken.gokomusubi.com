@@ -7,8 +7,9 @@ use＆nameSpace
 LAYOUT
 ========================================================================== */
 .access {
-    @include mi.marginPercent(375, 80, auto, 0, auto);
+    @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
+    border-radius: 8px 8px 0 0;
 }
 
 .accessLxn {
@@ -131,7 +132,7 @@ LAYOUT
 }
 
 .access .btnAddressBtmNavHeadeLxn {
-    @include mi.marginPercent(335, 24, auto, 0, auto);
+    @include mi.marginPercent(335, 26, auto, 0, auto);
     @include mi.ontenerWidth(335, 335);
 
     span {
@@ -139,12 +140,21 @@ LAYOUT
     }
 
     .btnAddressBtmNavHeade {
+        width: 100%;
+        @include mi.kadomaru(5px);
         aspect-ratio: 335/48;
         @include mi.fontSizePc(16);
         @include mi.letterSpacing(0);
-        @include mi.kadomaru(5px);
+        background: #FBEBEC;
         text-decoration: none;
-        background: #325530;
-        color: #fff;
+        color: #EB53A2;
     }
+}
+.iconBtnAddressBtmNavHeade{
+    background-size: auto 100%;
+    width: fit-content;
+    margin: auto;
+    padding: 0 0 0 6%;
+    background: url(../img/iconBtnAccess.svg) no-repeat center left;
+    background-size: auto 100%;
 }

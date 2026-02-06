@@ -21,7 +21,7 @@ LAYOUT
 }
 
 .btnSnsFooterLxn {
-    @include mi.ontenerWidth(375, 203);
+    @include mi.ontenerWidth(334, 203);
 }
 
 .btnSnsFooter {
@@ -34,20 +34,21 @@ LAYOUT
 
 
 .snsCheack {
-    @include mi.ontenerWidth(375, 128);
+    @include mi.ontenerWidth(334, 128);
 }
 
 
 
 .ulSnsCheack {
     @include mi.ontenerWidth(128, 128);
+     gap: 4px;
 }
 
 .liSnsCheack {
     @include mi.ontenerWidth(128, 28);
 
     &:nth-child(n+2) {
-        @include mi.marginPercent(128, 0, 0, 0, 4);
+
     }
 
     svg {

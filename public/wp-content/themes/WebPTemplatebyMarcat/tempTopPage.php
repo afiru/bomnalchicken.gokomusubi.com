@@ -17,14 +17,15 @@
         <?php get_template_part('include/layouts/index/03_topAbout'); ?>
         <?php get_template_part('include/layouts/index/04_topFloor'); ?>
         <?php get_template_part('include/layouts/index/05_topCalendar'); ?>
-        <?php get_template_part('include/layouts/index/06_topPriceN'); ?>
         <?php get_template_part('include/layouts/index/07_topInstagram'); ?>
 
-    <?php endwhile; ?>
 
+    <?php endwhile; ?>
+    <?php get_template_part('include/layouts/index/100_faq'); ?>
+    <?php get_template_part('include/layouts/index/99_booking'); ?>
 </main>
-<?php get_template_part('include/layouts/index/100_faq'); ?>
-<?php get_template_part('include/layouts/index/99_booking'); ?>
+
+
 <?php get_template_part('include/layouts/index/08_topAccess'); ?>
 <?php get_template_part('include/layouts/index/09_topCopy'); ?>
 <?php get_template_part('include/layouts/index/10_snsFixed'); ?>

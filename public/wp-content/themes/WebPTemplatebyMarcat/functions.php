@@ -1,170 +1,99 @@
 <?php
-// ============================
-// Google Fonts 読み込み（preconnect付き）
-// ============================
-function theme_enqueue_google_fonts()
-{
-    // preconnect
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 
-    // フォント本体
-    wp_enqueue_style(
-        'google-fonts',
-        'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap',
-        [],
-        null
-    );
-}
-add_action('wp_head', 'theme_enqueue_google_fonts', 1); // headに先に出力
-// ============================
-// CSS 読み込み
-// ============================
-function theme_enqueue_styles()
-{
+/**
+ * Theme Functions – Final Optimized Version (Google Fonts 追加)
+ * WP6.x / PHP8.x
+ */
 
-    // jQuery UI CSS
-    wp_enqueue_style(
-        'jquery-ui-css',
-        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css',
-        [],
-        '1.12.1'
-    );
+/* =====================================================
+ * 基本設定
+ * ===================================================== */
+add_filter('big_image_size_threshold', '__return_false');
+add_theme_support('post-thumbnails');
+add_filter('jetpack_implode_frontend_css', '__return_false');
 
-    // Swiper CSS
-    wp_enqueue_style(
-        'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css',
-        [],
-        '8'
-    );
+/* =====================================================
+ * 不要な head 要素を削除
+ * ===================================================== */
+remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
+remove_action('wp_head', 'wp_generator');
 
-    // テーマCSS
-    wp_enqueue_style(
-        'theme-common',
-        get_template_directory_uri() . '/css/common.css',
-        [],
-        filemtime(get_template_directory() . '/css/common.css')
-    );
-}
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+/* =====================================================
+ * 不要CSS削除
+ * ===================================================== */
+add_action('wp_enqueue_scripts', function () {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('dashicons');
+    wp_dequeue_style('wp-pagenavi');
+    wp_dequeue_style('addtoany');
+    wp_dequeue_style('bodhi-svgs-attachment');
+}, 100);
 
+/* =====================================================
+ * JS / CSS 読み込み
+ * ===================================================== */
+add_action('wp_enqueue_scripts', function () {
 
-// ============================
-// JS 読み込み
-// ============================
-function theme_enqueue_scripts()
-{
-    // WordPress同梱の jQuery を使用
-    wp_enqueue_script('jquery');
+    // 1. Google Fonts
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mochiy+Pop+One&display=swap', [], null);
 
-    // jQuery UI
+    // 2. jQuery (CDN)
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js', [], null, true);
+
+    // 3. Lenis (CDN)
+    wp_enqueue_script('lenis', 'https://unpkg.com/lenis@1.2.3/dist/lenis.min.js', [], null, true);
+
+    // 4. Swiper (CDN)
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', [], null, true);
+
+    // 5. Theme CSS
+    wp_enqueue_style('theme-common', get_template_directory_uri() . '/css/common.css', [], filemtime(get_template_directory() . '/css/common.css'));
+
+    // 6. Theme JS (config.js)
+    // ここで lenis と swiper-js への依存を明記します
     wp_enqueue_script(
-        'jquery-ui',
-        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
-        ['jquery'],
-        '1.12.1',
-        true
-    );
-
-    wp_enqueue_script(
-        'jquery-ui-i18n',
-        'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js',
-        ['jquery-ui'],
-        '1.12.1',
-        true
-    );
-
-    // Lenis スクロール
-    wp_enqueue_script(
-        'lenis',
-        'https://unpkg.com/lenis@1.2.3/dist/lenis.min.js',
-        [],
-        '1.2.3',
-        true
-    );
-
-    // Swiper
-    wp_enqueue_script(
-        'swiper',
-        'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
-        [],
-        '8',
-        true
-    );
-
-    // アニメーション用テーマJS
-    wp_enqueue_script(
-        'animsition',
-        get_template_directory_uri() . '/js/animsition.min.js',
-        ['jquery'],
-        filemtime(get_template_directory() . '/js/animsition.min.js'),
-        true
-    );
-
-    wp_enqueue_script(
-        'config',
+        'theme-config',
         get_template_directory_uri() . '/js/config.js',
-        ['jquery'],
+        ['jquery', 'lenis', 'swiper-js'],
         filemtime(get_template_directory() . '/js/config.js'),
         true
     );
+}, 20);
+/* =====================================================
+ * defer 制御（絶対にURLを壊さない決定版）
+ * ===================================================== */
+add_filter('script_loader_tag', function ($tag, $handle) {
+    // 自分の JS だけを指定
+    $target_handles = ['lenis', 'swiper-js', 'theme-config'];
 
-    // Footer用 JS（非同期）
-    wp_enqueue_script(
-        'lightbox',
-        get_template_directory_uri() . '/js/lightbox.min.js',
-        [],
-        filemtime(get_template_directory() . '/js/lightbox.min.js'),
-        true
-    );
-
-    wp_enqueue_script(
-        'inview',
-        get_template_directory_uri() . '/js/inview.min.js',
-        [],
-        filemtime(get_template_directory() . '/js/inview.min.js'),
-        true
-    );
-
-    wp_enqueue_script(
-        'inview-setting',
-        get_template_directory_uri() . '/js/inview_setting.js',
-        ['inview'],
-        filemtime(get_template_directory() . '/js/inview_setting.js'),
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
-
-
-// ============================
-// Footer JS を async に
-// ============================
-function add_async_attribute($tag, $handle)
-{
-    $async_scripts = ['lightbox', 'inview', 'inview-setting'];
-    if (in_array($handle, $async_scripts)) {
-        return str_replace(' src', ' async src', $tag);
+    if (in_array($handle, $target_handles, true)) {
+        // もしすでに defer が付いていたら何もしない
+        if (strpos($tag, ' defer') !== false) {
+            return $tag;
+        }
+        // <script の直後に defer を差し込む。
+        // これなら src や ver の中のクォートを壊す心配がありません。
+        return str_replace('<script ', '<script defer ', $tag);
     }
     return $tag;
-}
-add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+}, 10, 2);
 
-
-// ============================
-// 不要 CSS・インライン削除
-// ============================
-// Jetpack CSS 削除
-add_filter('jetpack_implode_frontend_css', '__return_false');
-
-// Recent Comments ウィジェットのインラインCSS削除
-function remove_recent_comments_style()
-{
+/* =====================================================
+ * Recent Comments CSS 削除
+ * ===================================================== */
+add_action('widgets_init', function () {
     global $wp_widget_factory;
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-}
-add_action('widgets_init', 'remove_recent_comments_style');
+    if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+        remove_action(
+            'wp_head',
+            [$wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style']
+        );
+    }
+});
 
 // WordPress 5.3+ の big image サイズ自動縮小無効
 add_filter('big_image_size_threshold', '__return_false');
@@ -201,20 +130,7 @@ if (is_admin()) {
     add_action('wp_enqueue_scripts', 'my_delete_local_jquery');
 }
 
-//レンダリングをブロックするのを止めましょう。
-if (!(is_admin())) {
-
-    function add_defer_to_enqueue_script($url)
-    {
-        if (FALSE === strpos($url, '.js'))
-            return $url;
-        if (strpos($url, 'jquery.min.js'))
-            return $url;
-        return "$url' defer charset='UTF-8";
-    }
-
-    add_filter('clean_url', 'add_defer_to_enqueue_script', 11, 1);
-}
+// 注意: defer 属性は script_loader_tag フィルターで正しく適用済み（69-83行目）
 
 remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_discovery_links');

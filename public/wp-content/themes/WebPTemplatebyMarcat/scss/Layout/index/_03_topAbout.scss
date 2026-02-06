@@ -9,11 +9,13 @@ LAYOUT
 .topAbout {
     @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
+    @include mi.ontenerWidth(375 ,355 );
+    @include mi.kadomaru(8px);
 }
 
 
 .topAboutLxn {
-    @include mi.ontenerWidth(375, 335);
+    @include mi.ontenerWidth(355 ,333 );
     margin: auto;
 }
 

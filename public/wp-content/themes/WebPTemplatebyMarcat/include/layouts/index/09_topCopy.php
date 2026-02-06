@@ -1,6 +1,6 @@
 <div class="btnFooter" data-lenis-prevent>
     <a href="#scrolltop">
-        <img loading="lazy" src="<?php echo get_bloginfo('template_url'); ?>/img/btnFooterTop.svg" alt="ページトップに戻る" width="30" height="30">
+        <img loading="lazy" src="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/btnFooterTop.svg" alt="ページトップに戻る" width="30" height="30">
     </a>
 </div>
 <footer class="bg_A01D10 t_center cl_fff fw_400 maru footer">
