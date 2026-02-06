@@ -1241,3 +1241,5 @@ function get_adjacent_custom_post($in_same_term = false, $excluded_terms = '', $
     $adjacent = get_posts($args);
     return $adjacent ? $adjacent[0] : null;
 }
+
+add_theme_support('title-tag');

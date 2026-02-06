@@ -10,7 +10,7 @@ add_action('init', 'menu_init');
 function menu_init()
 {
     $labels = array(
-        'name'               => _x('menu', 'post type general name', 'your-plugin-textdomain'),
+        'name'               => _x('メニュー', 'post type general name', 'your-plugin-textdomain'),
         'singular_name'      => _x('メニュー', 'post type singular name', 'your-plugin-textdomain'),
         'menu_name'          => _x('メニュー', 'your-plugin-textdomain'),
         'name_admin_bar'     => _x('メニュー', 'add new on admin bar', 'your-plugin-textdomain'),
