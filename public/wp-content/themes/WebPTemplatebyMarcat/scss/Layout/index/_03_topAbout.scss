@@ -9,10 +9,11 @@ LAYOUT
 .topAbout {
     @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
-    @include mi.ontenerWidth(375 ,355 );
+    @include mi.ontenerWidth(375, 355);
     @include mi.kadomaru(8px);
 }
-.bgTopAbout{
+
+.bgTopAbout {
     background-image: url(../img/bgTopAbout.png);
     background-repeat: no-repeat;
     background-position: center top;
@@ -21,7 +22,7 @@ LAYOUT
 }
 
 .topAboutLxn {
-    @include mi.ontenerWidth(355 ,333 );
+    @include mi.ontenerWidth(355, 333);
     margin: auto;
 }
 
@@ -145,7 +146,7 @@ LAYOUT
 .ulAboutTentyo {}
 
 .liAboutTentyo {
-    @include mi.ontenerWidth(335, 105);
+    @include mi.ontenerWidth(335, 104);
     @include mi.marginPercent(335, 0, 10, 8, 0);
 
     &:nth-child(3n) {
