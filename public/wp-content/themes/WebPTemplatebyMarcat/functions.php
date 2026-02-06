@@ -1244,30 +1244,6 @@ function get_adjacent_custom_post($in_same_term = false, $excluded_terms = '', $
 
 add_theme_support('title-tag');
 
-
-// menu 投稿タイプに「価格」列を追加
-function add_menu_price_column($columns)
-{
-    $columns['tdMenu_price'] = '価格';
-    return $columns;
-}
-add_filter('manage_menu_posts_columns', 'add_menu_price_column');
-
-// 列の中身を表示
-function show_menu_price_column($column, $post_id)
-{
-    if ($column === 'tdMenu_price') {
-        $price = get_post_meta($post_id, 'tdMenu', true);
-
-        if ($price !== '') {
-            echo esc_html($price) . '';
-        } else {
-            echo '—';
-        }
-    }
-}
-add_action('manage_menu_posts_custom_column', 'show_menu_price_column', 10, 2);
-
 // menu 投稿一覧の列の並びを変更
 // menu 投稿一覧の列を並び替え＆追加
 function reorder_menu_columns($columns)
@@ -1322,7 +1298,7 @@ function show_menu_custom_columns($column, $post_id)
         $price = get_post_meta($post_id, 'tdMenu', true);
 
         if ($price !== '') {
-            echo esc_html($price) . ' 円';
+            echo esc_html($price) . '';
         } else {
             echo '—';
         }
