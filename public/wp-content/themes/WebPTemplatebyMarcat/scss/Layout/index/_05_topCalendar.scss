@@ -9,11 +9,12 @@ LAYOUT
 .calendarLxn {
     @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
-     @include mi.ontenerWidth(375 ,355 );
+    @include mi.ontenerWidth(375, 355);
     @include mi.kadomaru(8px);
 }
-.calendarLxnL{
-     @include mi.ontenerWidth(355 ,333 );
+
+.calendarLxnL {
+    @include mi.ontenerWidth(355, 333);
     margin: auto;
     position: relative;
 }
@@ -93,7 +94,7 @@ LAYOUT
             }
 
             .logokyujitu {
-                width: 60%;
+                width: 90%;
             }
 
             a {
@@ -181,16 +182,17 @@ LAYOUT
     @include mi.ontenerWidth(375, 335);
     @include mi.marginPercent(375, 18, auto, 0, auto);
     @include mi.fontSizePc(10);
-    @include mi.lineheight(20, 25);
+    @include mi.lineheight(20, 30);
     @include mi.letterSpacing(0);
 }
 
 //ボタン
-.btnMenuTopLxn{
+.btnMenuTopLxn {
     @include mi.marginPercent(335, 26, auto, 0, auto);
     @include mi.ontenerWidth(335, 335);
 }
-.btnbtnMenuTop{
+
+.btnbtnMenuTop {
     width: 100%;
     @include mi.kadomaru(5px);
     aspect-ratio: 335/48;
