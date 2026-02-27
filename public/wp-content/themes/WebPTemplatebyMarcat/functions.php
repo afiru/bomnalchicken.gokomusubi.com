@@ -642,7 +642,7 @@ class MarcatCalendarsAPI
                         $events .= '<img class="logokyujitu jstitleCalendarPosts"  data-opendetail=".bgcalendaridLxn' . $date . '" src="' . $myfield[0] . '" width="' . $myfield[1] . '" height="' . $myfield[2] . '" alt="' . $posttype . get_the_title($id) . '">';
                     }
                     if (!empty(scf::get('timeEvents', $id))) {
-                        $events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts jstitleCalendarPosts" data-opendetail=".bgcalendaridLxn' . $date . '" >' . get_the_title($id) . '</p>';
+                        //$events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts jstitleCalendarPosts" data-opendetail=".bgcalendaridLxn' . $date . '" >' . get_the_title($id) . '</p>';
                         $events .= '<div class="bgCalendarLxn jsbgCalendarLxn bgcalendaridLxn' . $date . '">';
                         $events .= '<div class="bgCalendar jsbgCalendar">';
                         $events .= '<div class="closeCalenda jsCloseCalendar">';
@@ -657,12 +657,31 @@ class MarcatCalendarsAPI
                     } else {
                         $events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts">' . get_the_title($id) . '</p>';
                     }
-                } else {
+                } elseif ($id == 269) {
                     if (!empty($myfield[0])) {
                         $events .= '<img class="logokyujitu jstitleCalendarPosts"  data-opendetail=".bgcalendaridLxn' . $date . '" src="' . $myfield[0] . '" width="' . $myfield[1] . '" height="' . $myfield[2] . '" alt="' . $posttype . get_the_title($id) . '">';
                     }
                     if (!empty(scf::get('timeEvents', $id))) {
-                        $events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts jstitleCalendarPosts" data-opendetail=".bgcalendaridLxn' . $date . '" >' . get_the_title($id) . '</p>';
+                        //$events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts jstitleCalendarPosts" data-opendetail=".bgcalendaridLxn' . $date . '" >' . get_the_title($id) . '</p>';
+                        $events .= '<div class="bgCalendarLxn jsbgCalendarLxn bgcalendaridLxn' . $date . '">';
+                        $events .= '<div class="bgCalendar jsbgCalendar">';
+                        $events .= '<div class="closeCalenda jsCloseCalendar">';
+                        $events .= '<img class="" loading="lazy" src="' . get_bloginfo('template_url') . '/img/close.svg" alt="" width="" height="">';
+                        $events .= '</div>';
+                        $events .= '<p class="bg_fff t_center cl_241A08 txtCalendartime">';
+                        $events .= date("Y年m月d日", strtotime($date)) . 'の営業時間は<br>' . $this->SetCalendarsTime($id, $date) . 'です。';
+                        $events .= '</p>';
+                        $events .= '</div>';
+                        $events .= '</div>';
+                    } else {
+                        $events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts">' . get_the_title($id) . '</p>';
+                    }
+                } else {
+                    if (!empty($myfield[0])) {
+                        $events .= '<img class="logokyujitu "  data-opendetail=".bgcalendaridLxn' . $date . '" src="' . $myfield[0] . '" width="' . $myfield[1] . '" height="' . $myfield[2] . '" alt="' . $posttype . get_the_title($id) . '">';
+                    }
+                    if (!empty(scf::get('timeEvents', $id))) {
+                        //$events .= '<p class="cl_FF0000 fw_400 t_center titleCalendarPosts jstitleCalendarPosts" data-opendetail=".bgcalendaridLxn' . $date . '" >' . get_the_title($id) . '</p>';
                         $events .= '<div class="bgCalendarLxn jsbgCalendarLxn bgcalendaridLxn' . $date . '">';
                         $events .= '<div class="bgCalendar jsbgCalendar">';
                         $events .= '<div class="closeCalenda jsCloseCalendar">';
