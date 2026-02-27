@@ -83,6 +83,7 @@ LAYOUT
     @include mi.fontSizePc(10);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
+    align-items: baseline;
 
     &:nth-child(n+2) {
         @include mi.marginPercent(335, 16, 0, 0, 0);
@@ -104,16 +105,16 @@ LAYOUT
 }
 
 .kugiriLiAddressAccessMain {
-    @include mi.marginPercent(335, -3, 0, 0, 0);
+    @include mi.marginPercent(335, 0, 0, 0, 0);
     width: 3%;
     @include mi.fontSizePc(10);
-    @include mi.lineheight(10, 15);
+        line-height: 1.8461538462;
 }
 
 .txtLiAddressAccessMain {
     width: 68%;
     @include mi.fontSizePc(10);
-    @include mi.lineheight(10, 15);
+    line-height: 1.8461538462;
     @include mi.letterSpacing(0);
 }
 

@@ -2,7 +2,7 @@
 </div>
 </div>
 </div>
-
+<script async src="<?php echo get_bloginfo('template_url'); ?>/js/lightbox.min.js"></script>
 <?php wp_footer(); ?>
 </body>
 

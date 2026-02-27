@@ -202,6 +202,36 @@ borderRadius
     border-bottom-left-radius: $btmLeft;
     border-bottom-right-radius: $btmRight;
 }
+//%角丸
+@function px-to-percent($radius, $base-width) {
+    @return math.div($radius, $base-width) * 100%;
+}
+
+@mixin pxpermaru($radius, $base-width) {
+    border-radius: px-to-percent($radius, $base-width);
+}
+//%4角
+@mixin pxpermaruBlob(
+    $base-width,
+    $base-height,
+    $tl-x,
+    $tr-x,
+    $br-x,
+    $bl-x,
+    $tl-y,
+    $tr-y,
+    $br-y,
+    $bl-y
+) {
+    border-radius: #{px-to-percent($tl-x, $base-width)}
+        #{px-to-percent($tr-x, $base-width)}
+        #{px-to-percent($br-x, $base-width)}
+        #{px-to-percent($bl-x, $base-width)} /
+        #{px-to-percent($tl-y, $base-height)}
+        #{px-to-percent($tr-y, $base-height)}
+        #{px-to-percent($br-y, $base-height)}
+        #{px-to-percent($bl-y, $base-height)};
+}
 
 /* ==========================================================================
 _marginSettings

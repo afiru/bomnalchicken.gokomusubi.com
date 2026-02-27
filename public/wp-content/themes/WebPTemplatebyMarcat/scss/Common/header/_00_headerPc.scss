@@ -240,28 +240,29 @@ LAYOUT
 }
 
 .liAddressBtmNavHeader {
+    align-items: baseline;
     &:nth-child(n+2) {
         @include mi.marginPercent(335, 12, 0, 0, 0);
     }
 }
 
 .h3LiAddressBtmNavHeader {
-    width: 25%;
+    width: 28%;
     @include mi.fontSizePc(10);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);
 }
 
 .coron {
-    @include mi.marginPercent(335, 4, 0, 0, 0);
-    width: 5%;
+    width: 3%;
+    @include mi.lineheight(13, 24);
     @include mi.fontSizePc(10);
     @include mi.letterSpacing(0);
 }
 
 
 .txtLiAddressBtmNavHeader {
-    width: 70%;
+    width: 68%;
     @include mi.fontSizePc(10);
     @include mi.lineheight(13, 24);
     @include mi.letterSpacing(0);

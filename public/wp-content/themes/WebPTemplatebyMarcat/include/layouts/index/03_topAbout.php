@@ -14,7 +14,7 @@
         <div class="d_flex j_between topAboutTentyo">
             <section class="secAboutTentyo">
                 <h3 class="cl_282828 Mochiy fw_400 h3AboutTentyo"><?php echo esc_html(scf::get('nameTentyo')); ?></h3>
-                <p class="cl_282828 fw_500 text_justify txtAboutTentyo"><?php echo nl2br(esc_html(scf::get('txtTencho'))); ?></p>
+                <p class="cl_282828 fw_400 text_justify txtAboutTentyo"><?php echo nl2br(esc_html(scf::get('txtTencho'))); ?></p>
 
                 <?php if (! empty($iframe = scf::get('iframeTentyo'))): ?>
                     <div class="pore iframeTentyo">
