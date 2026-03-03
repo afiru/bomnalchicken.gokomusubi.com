@@ -1,16 +1,72 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin"as mi;
+@use "../../Functions/mixin" as mi;
 
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-
+.wap {
+    overflow: clip;
+}
 .bgbase {
-    background: url(../img/bgbase2.jpg) no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
+}
+.sliderLxn {
+    @include mi.marginPercent(1570, 33, 0, 0, 0);
+
+    @include mi.mq(sp) {
+        @include mi.marginPercent(375, 29, 0, 0, 0);
+    }
+}
+.loopSlideWap {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+.loopRow {
+    display: flex;
+    overflow: hidden;
+
+    @include mi.mq(sp) {
+    }
+}
+.offset1 {
+}
+
+.offset2 {
+}
+
+.loopTrack {
+    display: flex;
+    animation: loopMove 60s linear infinite;
+}
+
+.loopTrack.is-reverse {
+    animation-direction: reverse;
+}
+
+.loopItem {
+    width: 10vw;
+    aspect-ratio: 1/1;
+
+    @include mi.mq(sp) {
+        min-width: 58px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@keyframes loopMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .cntPageLxn {
@@ -40,17 +96,15 @@ LAYOUT
     left: 0;
     z-index: 999;
     margin: -1px 0 0 0;
-
 }
-.header{
-
+.header {
 }
 
 .headerBaseTopFxLxn {
     width: 100%;
     padding: 8px 0;
     aspect-ratio: 375/55;
-    background: #FBEBEC;
+    background: #fbebec;
 }
 
 .headerBaseFx {
@@ -72,12 +126,11 @@ LAYOUT
     width: 100%;
     position: relative;
     aspect-ratio: 40/23;
-
 }
 
 .brdmenuHeaderPc {
     aspect-ratio: 33/3;
-    background: #EB53A2;
+    background: #eb53a2;
     position: absolute;
     left: 0;
     right: 0;
@@ -124,7 +177,7 @@ LAYOUT
     width: fit-content;
     display: block;
     margin: 18% auto 5% auto;
-    color: #EB53A2;
+    color: #eb53a2;
 }
 
 .navHeaderBase {
@@ -142,7 +195,6 @@ LAYOUT
     min-height: 100svh;
     z-index: 999;
 
-
     &::-webkit-scrollbar {
         display: none;
     }
@@ -156,7 +208,7 @@ LAYOUT
     background-image: url(../img/bgTopAbout.png);
     background-repeat: no-repeat;
     background-size: 100% auto;
-    background-color: #FFF;
+    background-color: #fff;
     animation: bgMove 2s linear infinite alternate;
 }
 
@@ -184,14 +236,20 @@ LAYOUT
         display: block;
         height: 1px;
         width: 100%;
-        background: linear-gradient(to right, #f7e22b, #f5a14d, #e65d91, #df7a66);
+        background: linear-gradient(
+            to right,
+            #f7e22b,
+            #f5a14d,
+            #e65d91,
+            #df7a66
+        );
     }
 }
 
 .btnNavHeaderBase {
     aspect-ratio: 335/60;
     text-decoration: none;
-    background: url(../img/iconBtmInfoReadMore.svg)no-repeat 96% center;
+    background: url(../img/iconBtmInfoReadMore.svg) no-repeat 96% center;
     background-size: auto 20%;
 }
 
@@ -241,7 +299,7 @@ LAYOUT
 
 .liAddressBtmNavHeader {
     align-items: baseline;
-    &:nth-child(n+2) {
+    &:nth-child(n + 2) {
         @include mi.marginPercent(335, 12, 0, 0, 0);
     }
 }
@@ -259,7 +317,6 @@ LAYOUT
     @include mi.fontSizePc(10);
     @include mi.letterSpacing(0);
 }
-
 
 .txtLiAddressBtmNavHeader {
     width: 68%;
@@ -299,9 +356,9 @@ LAYOUT
     aspect-ratio: 335/48;
     @include mi.fontSizePc(16);
     @include mi.letterSpacing(0);
-    background: #FBEBEC;
+    background: #fbebec;
     text-decoration: none;
-    color: #EB53A2;
+    color: #eb53a2;
 }
 
 .iconBtnAddressBtmNavHeade {

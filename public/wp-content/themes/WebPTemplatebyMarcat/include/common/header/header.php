@@ -2,22 +2,22 @@
 <html>
 
 <head>
-  <meta charset="<?php bloginfo('charset'); ?>">
-  <meta content="text/css" http-equiv="Content-Style-Type" />
-  <meta content="text/javascript" http-equiv="Content-Script-Type" />
-  <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-  <meta http-equiv="expires" content="86400">
-  <meta http-equiv="Content-Language" content="<?php bloginfo('language'); ?>">
-  <?php $user = get_user_by('id', 1); ?>
-  <?php if (!empty($user->first_name)): ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta content="text/css" http-equiv="Content-Style-Type" />
+    <meta content="text/javascript" http-equiv="Content-Script-Type" />
+    <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+    <meta http-equiv="expires" content="86400">
+    <meta http-equiv="Content-Language" content="<?php bloginfo('language'); ?>">
+    <?php $user = get_user_by('id', 1); ?>
+    <?php if (!empty($user->first_name)): ?>
     <meta name="Author" content="<?php echo $user->first_name . $user->last_name; ?>">
-  <?php endif; ?>
-  <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="copyright" content="<?php bloginfo('name'); ?>" />
-  <meta name="viewport" content="viewport-fit=cover,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="thumbnail" content="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/thumbs.png" />
-  <!--
+    <?php endif; ?>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="copyright" content="<?php bloginfo('name'); ?>" />
+    <meta name="viewport" content="viewport-fit=cover,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="thumbnail" content="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/thumbs.png" />
+    <!--
   <PageMap>
     <DataObject type="thumbnail">
       <Attribute name="src" value="<?php echo esc_url(get_bloginfo('template_url')); ?>/img/thumbs.png"/>
@@ -26,12 +26,12 @@
     </DataObject>
   </PageMap>
 -->
-  <?php //タイトルの設定。【トップページ】カスタマイザーのSEOタイトル　【下層】ページタイトル｜カスタマイザーのSEOタイトル　
+    <?php //タイトルの設定。【トップページ】カスタマイザーのSEOタイトル　【下層】ページタイトル｜カスタマイザーのSEOタイトル　
   ?>
-  <?php wp_head(); ?>
-  <title><?php echo get_the_site_title(get_php_customzer('seo_title')); ?></title>
+    <?php wp_head(); ?>
+    <title><?php echo get_the_site_title(get_php_customzer('seo_title')); ?></title>
 
-  <?php if (is_single()): ?>
+    <?php if (is_single()): ?>
     <?php
     $the_content = get_post(get_the_ID())->post_content;
     $the_content = strip_tags($the_content);
@@ -48,36 +48,36 @@
     }
     ?>
     <script type="application/ld+json">
-      {
+    {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "<?php echo get_the_title(get_the_ID()); ?>",
         "description": "<?php echo $the_content; ?>",
         "author": {
-          "@type": "Person",
-          "name": "<?php echo esc_html(get_bloginfo('name')); ?>"
+            "@type": "Person",
+            "name": "<?php echo esc_html(get_bloginfo('name')); ?>"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "<?php echo esc_html(get_bloginfo('name')); ?>",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "<?php echo $ogthumbs; ?>"
-          }
+            "@type": "Organization",
+            "name": "<?php echo esc_html(get_bloginfo('name')); ?>",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "<?php echo $ogthumbs; ?>"
+            }
         },
         "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "<?php echo home_url('/'); ?>"
+            "@type": "WebPage",
+            "@id": "<?php echo home_url('/'); ?>"
         },
         "datePublished": "<?php echo get_the_date('y-m-d'); ?>",
         "dateModified": "<?php echo get_the_date('y-m-d'); ?>"
-      }
+    }
     </script>
-  <?php endif; ?>
+    <?php endif; ?>
 
 
 
-  <script>
+    <script>
     var home_url = "<?php echo home_url('/'); ?>";
     var theme_url = "<?php echo esc_url(get_bloginfo('template_url')); ?>";
     var rest_url = "<?php echo home_url('/wp-json/wp/v2/'); ?>";
@@ -89,21 +89,53 @@
         <?php endforeach; ?>
         */
     <?php if (!empty($result[0])): ?>
-      var holiday = [<?php echo implode(',', $result); ?>];
+    var holiday = [<?php echo implode(',', $result); ?>];
     <?php else: ?>
-      var holiday = [""];
+    var holiday = [""];
     <?php endif; ?>
-  </script>
+    </script>
 </head>
 
 <body id="body">
-  <div id="scrolltop" class="bgbase wap">
-    <div class="wapper pageWap">
-      <div class="cntPageLxn bgCntPageLxn">
-        <!--
+    <div id="scrolltop" class="bgbase wap">
+        <div class="loopSlideWap">
+            <?php
+function render_loop($class, $prefix, $reverse = false) {
+?>
+            <div class="<?php echo $class; ?>">
+                <ul class="loopTrack <?php echo $reverse ? 'is-reverse' : ''; ?>">
+                    <?php for ($loop = 0; $loop < 2; $loop++) : ?>
+                    <?php for ($i = 1; $i <= 12; $i++) : ?>
+                    <li class="loopItem">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/<?php echo $prefix; ?>_<?php echo sprintf('%02d', $i); ?>.jpg" alt="">
+                    </li>
+                    <?php endfor; ?>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+            <?php } ?>
+            <?php render_loop('loopRow', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn02', true); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
+            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
+            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
+        </div>
+
+
+
+        <div class="wapper pageWap">
+            <div class="cntPageLxn bgCntPageLxn">
+                <!--
       bg:../bgCntPageLxn.png
     -->
-        <p class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</p>
-        <header id="scrolltop" class="bg_A01D10 baseheader" data-lenis-prevent>
-          <?php get_template_part('include/common/header/00_header'); ?>
-        </header>
+                <p class="t_center bg_A01D10 cl_fff fw_500 h1PageTop">西新町駅より徒歩3分｜韓国チキン テイクアウト専門店</p>
+                <header id="scrolltop" class="bg_A01D10 baseheader" data-lenis-prevent>
+                    <?php get_template_part('include/common/header/00_header'); ?>
+                </header>

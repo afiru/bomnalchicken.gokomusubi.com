@@ -1,7 +1,7 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin"as mi;
+@use "../../Functions/mixin" as mi;
 
 /* ==========================================================================
 LAYOUT
@@ -13,7 +13,8 @@ LAYOUT
     @include mi.paddingPercent(375, 20, 0, 20, 0);
 }
 
-.menuSingle {}
+.menuSingle {
+}
 
 .menuDetailSingle {
     @include mi.ontenerWidth(355, 335);
@@ -21,7 +22,7 @@ LAYOUT
 }
 
 .titleMenu {
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid #d9d9d9;
     @include mi.paddingPercent(335, 0, 0, 8, 0);
 }
 
@@ -38,14 +39,13 @@ LAYOUT
 
 .thumbsDetailSingle {
     @include mi.marginPercent(335, 12, auto, 0, auto);
-    aspect-ratio: 335 / 251;
+
     position: relative;
 
     img {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
-        max-width: auto;
     }
 }
 
@@ -81,11 +81,11 @@ LAYOUT
         @include mi.lineheight(10, 15);
         @include mi.letterSpacing(0);
 
-        &+p {
+        & + p {
             @include mi.marginPercent(335, 8, auto, 0, auto);
         }
 
-        &+img {
+        & + img {
             @include mi.marginPercent(335, 8, auto, 0, auto);
         }
     }
@@ -104,7 +104,6 @@ LAYOUT
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
 }
-
 
 .btnTitleMenuDetailSingleLxn {
     @include mi.fontSizePc(12);
@@ -178,7 +177,6 @@ LAYOUT
     right: 5px;
 }
 
-
 .ulShareSingleNewsBoxFx {
     @include mi.marginPercent(335, 40, 0, 0, auto);
 }
@@ -186,7 +184,7 @@ LAYOUT
 .liShareSingleNewsBox {
     @include mi.ontenerWidth(335, 20);
 
-    &:nth-child(n+2) {
+    &:nth-child(n + 2) {
         @include mi.marginPercent(335, 0, 0, 0, 10);
     }
 }
