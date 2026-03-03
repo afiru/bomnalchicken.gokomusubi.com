@@ -22,7 +22,7 @@
         </ul>
 
         <div class="btnMenuTopLxn">
-            <a class="d_flex j_center ali_center fw_800 cl_EB53A2 bg_FBEBEC Mochiy btnbtnMenuTop" href="<?php echo esc_url(get_category_link(1)); ?>">
+            <a class="d_flex j_center ali_center fw_800 cl_EB53A2 bg_FBEBEC Mochiy btnbtnMenuTop" href="<?php echo home_url('/menu/'); ?>">
                 <?php echo esc_html('もっとメニューを見る！'); ?>
             </a>
         </div>
