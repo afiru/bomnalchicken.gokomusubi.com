@@ -164,8 +164,8 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
 
             cntents = '';
             nowcnt = '';
-            if (results['menu'] && results['menu'].trim() !== "") {
-                cntents = '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2><p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + 'です。</p>';
+            if (!results['menu']) {
+                cntents = '';
             } else {
                 cntents = '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2><p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + 'です。</p>';
             }
