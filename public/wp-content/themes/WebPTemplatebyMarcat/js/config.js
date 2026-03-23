@@ -1,9 +1,9 @@
 // config.js
 window.addEventListener('load', () => { // DOMContentLoaded から load に変更
     if (typeof Lenis !== 'undefined') {
-    lenis = new Lenis({
-        autoRaf: true,
-    });
+        lenis = new Lenis({
+            autoRaf: true,
+        });
 
         // もし autoRaf が効かない旧バージョンの場合は以下を継続
         function raf(time) {
@@ -143,6 +143,8 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
     let counterText;
     let table2Text;
     let table4Text;
+    let cntents;
+    let nowcnt;
 
     function nl2br(str) {
         if (!str) return "";
@@ -159,12 +161,23 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
             counterText = results.counter == 0 ? "満席" : `残り<span class="fw_800">${results.counter}</span>席`;
             table2Text = results.table2 == 0 ? "満席" : `残り<span class="fw_800">${results.table2}</span>卓`;
             table4Text = results.table4 == 0 ? "満席" : `残り<span class="fw_800">${results.table4}</span>卓`;
-            $('.jsnowNewsCnt').append('\
-            <h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2>\n\
-            <p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + '</p>\n\
-            <h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt02">現在お店は　<span class="gigh2NowNewsCnt02 cl_E9483E">' + results['status'] + '</span>　です!</h2>\n\
-            <img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">\n\
-            ');
+
+            cntents = '';
+            nowcnt = '';
+            if (results['menu'] && results['menu'].trim() !== "") {
+                cntents = '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2><p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + 'です。</p>';
+            } else {
+                cntents = '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2><p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + 'です。</p>';
+            }
+            if (results['status'] === "一人対応中") {
+                nowcnt = '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt ">現在<span class="gigh2NowNewsCnt02 cl_E9483E ">' + results['status'] + '</span>です!</h2>';
+                nowcnt += '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">DM・LINE返信不可となります。<br>ご予約は下記よりお願い致します。</p>';
+                nowcnt += '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop"><a class="cl_E9483E undernone " style="" href="tel:078-995-8420">078-995-8420</a></p>';
+                nowcnt += '<img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+            } else {
+                nowcnt = '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt">現在お店は　<span class="gigh2NowNewsCnt02 cl_E9483E">' + results['status'] + '</span>　です!</h2><img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+            }
+            $('.jsnowNewsCnt').append(cntents + nowcnt);
         });
     }
 
