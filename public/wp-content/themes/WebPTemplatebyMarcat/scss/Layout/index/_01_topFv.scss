@@ -1,13 +1,13 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin"as mi;
+@use "../../Functions/mixin" as mi;
 
 /* ==========================================================================
 LAYOUT
 ========================================================================== */
-.bgCntPageLxn{
-background: linear-gradient(to right, #e8c6d9, #f5e3bc);
+.bgCntPageLxn {
+    background: linear-gradient(to right, #e8c6d9, #f5e3bc);
 }
 .mainIndex {
     overflow-x: clip;
@@ -26,6 +26,8 @@ background: linear-gradient(to right, #e8c6d9, #f5e3bc);
         right: 0;
         bottom: 0;
         top: 0;
+        width: auto;
+        height: 100%;
         width: 100%;
         object-fit: cover;
     }

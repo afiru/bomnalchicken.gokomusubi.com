@@ -1542,6 +1542,8 @@ LAYOUT
   right: 0;
   bottom: 0;
   top: 0;
+  width: auto;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
