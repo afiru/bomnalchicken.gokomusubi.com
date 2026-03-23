@@ -1,9 +1,9 @@
 // config.js
 window.addEventListener('load', () => { // DOMContentLoaded から load に変更
     if (typeof Lenis !== 'undefined') {
-    lenis = new Lenis({
-        autoRaf: true,
-    });
+        lenis = new Lenis({
+            autoRaf: true,
+        });
 
         // もし autoRaf が効かない旧バージョンの場合は以下を継続
         function raf(time) {
@@ -217,6 +217,7 @@ window.addEventListener('load', function () {
             delay: 4000, // 4秒ごとに自動スライド
             disableOnInteraction: false, // ユーザー操作後も自動再生を継続
         },
+
         allowTouchMove: true,
     });
 

@@ -13,22 +13,23 @@ LAYOUT
     overflow-x: clip;
 }
 
+.swiper-wrapper {
+    align-items: stretch;
+}
 .swiper-slide {
-    aspect-ratio: 1080 / 1350;
     position: relative;
     width: 100%;
-    overflow: hidden;
-
+    height: auto;
+    background: #fff;
+    a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
     img,
     video {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        width: auto;
-        height: 100%;
-        width: 100%;
+        display: block;
+        margin: auto;
         object-fit: cover;
     }
 }
