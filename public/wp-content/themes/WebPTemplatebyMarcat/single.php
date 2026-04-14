@@ -6,8 +6,6 @@
         <?php get_template_part('include/layouts/top/05_calendar'); ?>
         <?php get_template_part('include/layouts/top/07_instagram'); ?>
     </main>
-
-    <?php get_template_part('include/layouts/index/07_topInstagram'); ?>
     <?php get_template_part('include/layouts/index/100_faq'); ?>
     <?php get_template_part('include/layouts/index/99_booking'); ?>
     <?php get_template_part('include/layouts/index/08_topAccess'); ?>

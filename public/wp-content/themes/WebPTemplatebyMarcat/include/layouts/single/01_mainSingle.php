@@ -46,14 +46,8 @@
                 </li>
             </ul>
         </div>
-        <?php endwhile;
-        endif; ?>
-
+        <?php endwhile; endif; ?>
     </div>
-
-
-
-
     <?php
     $prev = get_adjacent_post(true, '', true, 'category');
     $next = get_adjacent_post(true, '', false, 'category');
