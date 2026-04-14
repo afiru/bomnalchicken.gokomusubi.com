@@ -66,15 +66,6 @@ if (is_home() or is_front_page()) {
                     </li>
 
                     <li class="liNavHeaderBase">
-                        <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo $homeurl; ?>#event">
-                            <section class="secNavHeaderBase">
-                                <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">イベント</h2>
-                                <p class="en cl_282828 fw_500 rubyNavHeaderBase">event</p>
-                            </section>
-                        </a>
-                    </li>
-
-                    <li class="liNavHeaderBase">
                         <a class="d_flex j_between ali_center undernone btnNavHeaderBase" href="<?php echo home_url('/menu/'); ?>">
                             <section class="secNavHeaderBase">
                                 <h2 class="cl_EE945C Mochiy fw_400 h2NavHeaderBase">メニュー</h2>
