@@ -1,7 +1,7 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin"as mi;
+@use "../../Functions/mixin" as mi;
 
 /* ==========================================================================
 LAYOUT
@@ -16,44 +16,42 @@ LAYOUT
     width: 100%;
     height: 1px;
     @include mi.marginPercent(375, 16, auto, 16, auto);
-    background: #B1B1B1;
+    background: #b1b1b1;
 }
 
 .cntSingleCat {
-
     h1,
     h2 {
         @include mi.fontSizePc(14);
-        @include mi.lineheight(10, 15);
+        line-height: 1.5;
         @include mi.letterSpacing(0);
         @include mi.marginPercent(335, 0, auto, 8, auto);
     }
 
     p,
-    figure {
+    iframe {
         @include mi.fontSizePc(12);
-        @include mi.lineheight(10, 15);
+        line-height: 1.5;
         @include mi.letterSpacing(0);
-
     }
 
-    p+h1 {
+    p + h1 {
         @include mi.marginPercent(335, 24, auto, 8, auto);
     }
 
-    p+h2 {
+    p + h2 {
         @include mi.marginPercent(335, 22, auto, 8, auto);
     }
 
-    p+h3 {
+    p + h3 {
         @include mi.marginPercent(335, 20, auto, 8, auto);
     }
 
-    p+h4 {
+    p + h4 {
         @include mi.marginPercent(335, 16, auto, 8, auto);
     }
 
-    p+p {
+    p + p {
         @include mi.marginPercent(335, 12, auto, 0, auto);
     }
 
@@ -63,10 +61,127 @@ LAYOUT
         height: auto;
         @include mi.marginPercent(335, 8, auto, 8, auto);
     }
+    .aligncenter {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .alignleft {
+        float: left;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .alignright {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
 
     iframe {
         @include mi.marginPercent(335, 8, auto, 8, auto);
         width: 100%;
+    }
+    /*ulリスト*/
+    ul {
+        li {
+            display: flex;
+            justify-content: flex-start;
+            @include mi.fontSizePc(12);
+            line-height: 1.5;
+            @include mi.letterSpacing(0);
+            &::before {
+                content: "・";
+                display: block;
+            }
+            &:nth-child(n + 2) {
+                @include mi.marginPercent(335, 12, auto, 0, auto);
+            }
+        }
+    }
+    ul {
+        @include mi.marginPercent(335, 12, auto, 8, auto);
+    }
+    ul + h1 {
+        @include mi.marginPercent(335, 24, auto, 8, auto);
+    }
+
+    ul + h2 {
+        @include mi.marginPercent(335, 22, auto, 8, auto);
+    }
+
+    ul + h3 {
+        @include mi.marginPercent(335, 20, auto, 8, auto);
+    }
+
+    ul + h4 {
+        @include mi.marginPercent(335, 16, auto, 8, auto);
+    }
+
+    ul + p {
+        @include mi.marginPercent(335, 12, auto, 0, auto);
+    }
+    /*olリスト*/
+    ol {
+        @include mi.paddingPercent(1150, 0, 0, 0, 20);
+
+        @include mi.mq(sp) {
+            @include mi.paddingPercent(341, 0, 0, 0, 20);
+        }
+
+        li {
+            list-style: decimal;
+            @include mi.fontSizePc(12);
+            line-height: 1.5;
+            @include mi.letterSpacing(0);
+        }
+    }
+    ol {
+        @include mi.marginPercent(335, 12, auto, 8, auto);
+    }
+    ol + h1 {
+        @include mi.marginPercent(335, 24, auto, 8, auto);
+    }
+
+    ol + h2 {
+        @include mi.marginPercent(335, 22, auto, 8, auto);
+    }
+
+    ol + h3 {
+        @include mi.marginPercent(335, 20, auto, 8, auto);
+    }
+
+    ol + h4 {
+        @include mi.marginPercent(335, 16, auto, 8, auto);
+    }
+
+    ol + p {
+        @include mi.marginPercent(335, 12, auto, 0, auto);
+    }
+
+    b {
+        @include mi.fontSizePc(12);
+        line-height: 1.5;
+        @include mi.letterSpacing(0);
+    }
+
+    b + h1 {
+        @include mi.marginPercent(335, 24, auto, 8, auto);
+    }
+
+    b + h2 {
+        @include mi.marginPercent(335, 22, auto, 8, auto);
+    }
+
+    b + h3 {
+        @include mi.marginPercent(335, 20, auto, 8, auto);
+    }
+
+    b + h4 {
+        @include mi.marginPercent(335, 16, auto, 8, auto);
+    }
+
+    b + p {
+        @include mi.marginPercent(335, 12, auto, 0, auto);
     }
 }
 
@@ -74,7 +189,7 @@ LAYOUT
 .infoSinglePager {
     @include mi.ontenerWidth(355, 335);
     @include mi.marginPercent(355, 20, auto, 0, auto);
-    border-top: 1px solid #D9D9D9;
+    border-top: 1px solid #d9d9d9;
     @include mi.paddingPercent(355, 20, 0, 10, 0);
 }
 
@@ -86,7 +201,7 @@ LAYOUT
 
     a {
         text-decoration: none;
-        color: #EE952D;
+        color: #ee952d;
     }
 }
 
