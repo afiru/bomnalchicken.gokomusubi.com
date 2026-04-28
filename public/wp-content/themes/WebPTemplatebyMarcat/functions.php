@@ -796,7 +796,7 @@ function gokomusubi_status_widget_render()
             <label>ステータス:<br>
                 <select name="gokomusubi_open_status">
                     <?php
-                    $statuses = ['開店中', 'もうすぐ閉店', '一人対応中', '閉店'];
+                    $statuses = ['開店中', '準備中', 'もうすぐ閉店', '一人対応中', '一時CLOSE', '閉店'];
                     foreach ($statuses as $s) {
                         $selected = ($data['status'] === $s) ? 'selected' : '';
                         echo "<option value='$s' $selected>$s</option>";
