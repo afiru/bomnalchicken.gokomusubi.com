@@ -785,32 +785,32 @@ function gokomusubi_status_widget_render()
     ]);
 
 ?>
-<form method="post">
-    <?php wp_nonce_field('gokomusubi_status_save', 'gokomusubi_status_nonce'); ?>
-    <p>
-        <label>今日のおすすめメニュー:<br>
-            <textarea name="gokomusubi_menu" rows="4" style="width:100%;"><?php echo esc_textarea($data['menu']); ?></textarea>
-        </label>
-    </p>
-    <p>
-        <label>ステータス:<br>
-            <select name="gokomusubi_open_status">
-                <?php
-                    $statuses = ['準備中','開店中', 'もうすぐ閉店', '一人対応中','一時CLOSE', '閉店'];
+    <form method="post">
+        <?php wp_nonce_field('gokomusubi_status_save', 'gokomusubi_status_nonce'); ?>
+        <p>
+            <label>今日のおすすめメニュー:<br>
+                <textarea name="gokomusubi_menu" rows="4" style="width:100%;"><?php echo esc_textarea($data['menu']); ?></textarea>
+            </label>
+        </p>
+        <p>
+            <label>ステータス:<br>
+                <select name="gokomusubi_open_status">
+                    <?php
+                    $statuses = ['開店中', '準備中', 'もうすぐ閉店', '一人対応中', '一時CLOSE', '閉店'];
                     foreach ($statuses as $s) {
                         $selected = ($data['status'] === $s) ? 'selected' : '';
                         echo "<option value='$s' $selected>$s</option>";
                     }
                     ?>
-            </select>
-        </label>
-    </p>
+                </select>
+            </label>
+        </p>
 
-    <p>
-        <input type="submit" class="button-primary" value="保存">
-    </p>
-</form>
-<p>最終更新: <?php echo esc_html($data['updated']); ?></p>
+        <p>
+            <input type="submit" class="button-primary" value="保存">
+        </p>
+    </form>
+    <p>最終更新: <?php echo esc_html($data['updated']); ?></p>
 <?php
 }
 
@@ -840,13 +840,13 @@ add_action('rest_api_init', function () {
 add_shortcode('gokomusubi_status_auto', function () {
     ob_start();
 ?>
-<div id="gokomusubi-status">読み込み中...</div>
-<script>
-async function updateStatus() {
-    try {
-        const res = await fetch('/wp-json/gokomusubi/v1/status');
-        const data = await res.json();
-        document.getElementById('gokomusubi-status').innerHTML = `
+    <div id="gokomusubi-status">読み込み中...</div>
+    <script>
+        async function updateStatus() {
+            try {
+                const res = await fetch('/wp-json/gokomusubi/v1/status');
+                const data = await res.json();
+                document.getElementById('gokomusubi-status').innerHTML = `
                 <strong>おすすめメニュー:</strong><br>${data.menu.replace(/\n/g,'<br>')}<br>
                 <strong>ステータス:</strong> ${data.status}<br>
                 <strong>カウンター席:</strong> ${data.counter}席<br>
@@ -854,13 +854,13 @@ async function updateStatus() {
                 <strong>4人テーブル席:</strong> ${data.table4}卓<br>
                 <em>最終更新: ${data.updated}</em>
             `;
-    } catch (err) {
-        console.error(err);
-    }
-}
-updateStatus();
-setInterval(updateStatus, 60000); // 60秒ごとに更新
-</script>
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        updateStatus();
+        setInterval(updateStatus, 60000); // 60秒ごとに更新
+    </script>
 <?php
     return ob_get_clean();
 });
