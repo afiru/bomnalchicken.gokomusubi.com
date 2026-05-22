@@ -9,7 +9,7 @@ LAYOUT
 .price {
     @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
-    @include mi.ontenerWidth(375 ,355 );
+    @include mi.ontenerWidth(375, 355);
     @include mi.kadomaru(8px);
 }
 
@@ -20,7 +20,7 @@ LAYOUT
 }
 
 .priceLxn {
-    @include mi.ontenerWidth(355 ,333 );
+    @include mi.ontenerWidth(355, 333);
     margin: auto;
 }
 
@@ -142,7 +142,7 @@ LAYOUT
     display: block;
     width: 100%;
     height: 100%;
-
+    position: relative;
     overflow: hidden;
 
     img {
@@ -156,6 +156,19 @@ LAYOUT
         height: 100%;
         object-fit: cover;
     }
+}
+
+.topFeadMenu .h3TopFeadMenu {
+    @include mi.fontSizePc(8);
+    @include mi.lineheight(10, 10);
+    @include mi.letterSpacing(0);
+    background: rgba($color: #e9483e, $alpha: 0.6);
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    padding: 3px 0;
+    bottom: 0;
+    left: 0;
 }
 
 .liTopFeadMenu1 {

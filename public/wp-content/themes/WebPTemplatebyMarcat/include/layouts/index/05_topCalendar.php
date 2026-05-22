@@ -12,11 +12,12 @@
         <ul class="topFeadMenu">
             <?php $i = 1;
             foreach ($menus as $key => $val): ?>
-            <li class="liTopFeadMenu liTopFeadMenu<?php echo $i; ?>">
-                <a class="btnliTopFeadMenu" href="<?php echo $val['permalink']; ?>">
-                    <img src="<?php echo esc_url($val['img_url']); ?>" alt="<?php echo esc_html($val['text']); ?>">
-                </a>
-            </li>
+                <li class="liTopFeadMenu liTopFeadMenu<?php echo $i; ?>">
+                    <a class="pore btnliTopFeadMenu" href="<?php echo $val['permalink']; ?>">
+                        <img src="<?php echo esc_url($val['img_url']); ?>" alt="<?php echo esc_html(get_the_title($val['text']) . '画像'); ?>">
+                        <h3 class="t_center cl_fff fw_500 h3TopFeadMenu"><?php echo esc_html(get_the_title($val['text']) . ''); ?></h3>
+                    </a>
+                </li>
             <?php $i++;
             endforeach; ?>
         </ul>
