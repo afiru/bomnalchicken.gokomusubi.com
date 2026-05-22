@@ -1,7 +1,7 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin"as mi;
+@use "../../Functions/mixin" as mi;
 
 /* ==========================================================================
 LAYOUT
@@ -9,18 +9,18 @@ LAYOUT
 .topFloor {
     @include mi.marginPercent(375, 40, auto, 0, auto);
     @include mi.paddingPercent(375, 40, 0, 40, 0);
-     @include mi.ontenerWidth(375 ,355 );
+    @include mi.ontenerWidth(375, 355);
     @include mi.kadomaru(8px);
-
 }
 
 .topFloorLxn {
-    @include mi.ontenerWidth(355 ,333 );
+    @include mi.ontenerWidth(355, 333);
     margin: auto;
     position: relative;
 }
 
-.titleTopFloor {}
+.titleTopFloor {
+}
 
 .h2TopFloor {
     @include mi.fontSizePc(22);
@@ -78,15 +78,30 @@ LAYOUT
     @include mi.ontenerWidth(335, 105);
     @include mi.marginPercent(335, 8, 0, 0, 0);
 
-    &:nth-child(3n+2) {
+    &:nth-child(3n + 2) {
         @include mi.marginPercent(335, 8, 8, 0, 8);
     }
-
 }
 
 .btnFloorTentyo {
-    position: relative;
     display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+
+    img {
+        max-width: unset;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .iconFloorTentyo {
