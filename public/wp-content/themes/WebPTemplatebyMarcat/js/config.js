@@ -139,7 +139,9 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
 
 
 //緊急お知らせ
+//緊急お知らせ
 (function ($) {
+
     let counterText;
     let table2Text;
     let table4Text;
@@ -150,44 +152,105 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
         if (!str) return "";
         return String(str).replace(/\r\n|\r|\n/g, "<br>");
     }
-    //初期
+
+    // 初期
     setRestCnt();
 
-    function setRestCnt() {
-        $('.jsnowNewsCnt').empty();
-        nowurl = home_url + '/wp-json/gokomusubi/v1/status';
+    async function setRestCnt() {
 
-        $.getJSON(nowurl, function (results) {
-            counterText = results.counter == 0 ? "満席" : `残り<span class="fw_800">${results.counter}</span>席`;
-            table2Text = results.table2 == 0 ? "満席" : `残り<span class="fw_800">${results.table2}</span>卓`;
-            table4Text = results.table4 == 0 ? "満席" : `残り<span class="fw_800">${results.table4}</span>卓`;
+        $('.jsnowNewsCnt').empty();
+
+        const nowurl = home_url + '/wp-json/gokomusubi/v1/status';
+
+        const results = await $.getJSON(nowurl);
+
+        counterText = results.counter == 0 ?
+            "満席" :
+            `残り<span class="fw_800">${results.counter}</span>席`;
+
+        table2Text = results.table2 == 0 ?
+            "満席" :
+            `残り<span class="fw_800">${results.table2}</span>卓`;
+
+        table4Text = results.table4 == 0 ?
+            "満席" :
+            `残り<span class="fw_800">${results.table4}</span>卓`;
+
+        const holiday = await getHoliday();
+
+        cntents = '';
+        nowcnt = '';
+
+        if (!results['menu']) {
 
             cntents = '';
-            nowcnt = '';
-            if (!results['menu']) {
-                cntents = '';
-            } else {
-                cntents = '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2><p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' + nl2br(results['menu']) + 'です。</p>';
-            }
+
+        } else {
+
+            cntents =
+                '<h2 class="t_center cl_EE945C Mochiy fw_400 h2NowNewsCnt">今日のおすすめメニュー</h2>' +
+                '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">' +
+                nl2br(results['menu']) +
+                'です。</p>';
+        }
+
+        if (holiday === true) {
+
+            nowcnt =
+                '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt">今日は　<span class="gigh2NowNewsCnt02 cl_E9483E">休業日</span>です!</h2>' +
+                '<img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+
+        } else {
+
             if (results['status'] === "一人対応中") {
-                nowcnt = '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt ">現在<span class="gigh2NowNewsCnt02 cl_E9483E ">' + results['status'] + '</span>です!</h2>';
-                nowcnt += '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">DM・LINE返信不可となります。<br>ご予約は下記よりお願い致します。</p>';
-                nowcnt += '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop"><a class="cl_E9483E undernone " style="" href="tel:078-995-8420">078-995-8420</a></p>';
-                nowcnt += '<img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+
+                nowcnt =
+                    '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt ">現在<span class="gigh2NowNewsCnt02 cl_E9483E ">' +
+                    results['status'] +
+                    '</span>です!</h2>';
+
+                nowcnt +=
+                    '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop">DM・LINE返信不可となります。<br>ご予約は下記よりお願い致します。</p>';
+
+                nowcnt +=
+                    '<p class="t_center cl_020202 Mochiy fw_400 txtNowNewsCntTop"><a class="cl_E9483E undernone " href="tel:078-995-8420">078-995-8420</a></p>';
+
+                nowcnt +=
+                    '<img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+
             } else {
-                nowcnt = '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt">現在お店は　<span class="gigh2NowNewsCnt02 cl_E9483E">' + results['status'] + '</span>　です!</h2><img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
+
+                nowcnt =
+                    '<h2 class="t_center cl_020202 Mochiy fw_400 h2NowNewsCnt">現在お店は　<span class="gigh2NowNewsCnt02 cl_E9483E">' +
+                    results['status'] +
+                    '</span>　です!</h2>' +
+                    '<img loading="lazy" src="' + theme_url + '/img/nowstatuscara.png" alt="" width="76.4" height="76.4">';
             }
-            $('.jsnowNewsCnt').append(cntents + nowcnt);
-        });
+        }
+
+        $('.jsnowNewsCnt').append(cntents + nowcnt);
     }
 
     setInterval(function () {
-        setNowNews();
+        setRestCnt();
     }, 30000);
 
-    function setNowNews() {
-        setRestCnt();
+    async function getHoliday() {
+
+        const restHoliday = home_url + '/wp-json/wp/v2/calendar/226/?_embed';
+
+        const results = await $.getJSON(restHoliday);
+
+        const today = new Date();
+
+        const todayStr =
+            today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+
+        return results['post_meta']['eventdate'].includes(todayStr);
     }
+
 })(jQuery);
 
 (function ($) {

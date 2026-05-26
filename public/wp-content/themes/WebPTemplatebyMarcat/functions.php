@@ -818,10 +818,12 @@ function gokomusubi_status_widget_render()
 // REST API
 // ------------------------------
 add_action('rest_api_init', function () {
+
     register_rest_route('gokomusubi/v1', '/status', [
         'methods' => 'GET',
         'callback' => function () {
-            return get_option('gokomusubi_status', [
+
+            $data = get_option('gokomusubi_status', [
                 'menu' => '',
                 'status' => '開店中',
                 'counter' => 0,
@@ -829,6 +831,86 @@ add_action('rest_api_init', function () {
                 'table4' => 0,
                 'updated' => ''
             ]);
+
+            // ------------------------------
+            // 祝日取得（1日キャッシュ）
+            // ------------------------------
+            $holidays = get_transient('gokomusubi_holidays');
+
+            if ($holidays === false) {
+
+                $response = wp_remote_get(
+                    'https://holidays-jp.github.io/api/v1/date.json'
+                );
+
+                if (!is_wp_error($response)) {
+
+                    $body = wp_remote_retrieve_body($response);
+
+                    $holidays = json_decode($body, true);
+
+                    set_transient(
+                        'gokomusubi_holidays',
+                        $holidays,
+                        DAY_IN_SECONDS
+                    );
+                } else {
+
+                    $holidays = [];
+                }
+            }
+
+            // ------------------------------
+            // 今日情報
+            // ------------------------------
+            $today = current_time('Y-m-d');
+            $hour  = (int) current_time('G');
+            $day   = (int) current_time('w');
+
+            // 土日 or 祝日
+            $isHoliday = (
+                $day === 0 ||
+                $day === 6 ||
+                isset($holidays[$today])
+            );
+
+            // ------------------------------
+            // 自動営業判定
+            // ------------------------------
+            if ($isHoliday) {
+
+                // 土日祝
+                $auto_status = (
+                    $hour >= 12 &&
+                    $hour < 18
+                )
+                    ? '開店中'
+                    : '閉店中';
+            } else {
+
+                // 平日
+                $auto_status = (
+                    $hour >= 11 &&
+                    $hour < 19
+                )
+                    ? '開店中'
+                    : '閉店中';
+            }
+
+            // ------------------------------
+            // 今日手動変更された？
+            // ------------------------------
+            $updated = !empty($data['updated'])
+                ? strtotime($data['updated'])
+                : 0;
+
+            // 今日更新されてなければ自動営業状態
+            if ($updated < strtotime('today')) {
+
+                $data['status'] = $auto_status;
+            }
+
+            return $data;
         },
         'permission_callback' => '__return_true'
     ]);
