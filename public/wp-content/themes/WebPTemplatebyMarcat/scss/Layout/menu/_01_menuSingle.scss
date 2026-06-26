@@ -1,7 +1,7 @@
 /* ==========================================================================
 use＆nameSpace
 ========================================================================== */
-@use "../../Functions/mixin" as mi;
+@use "../../Functions/mixin"as mi;
 
 /* ==========================================================================
 LAYOUT
@@ -13,8 +13,7 @@ LAYOUT
     @include mi.paddingPercent(375, 20, 0, 20, 0);
 }
 
-.menuSingle {
-}
+.menuSingle {}
 
 .menuDetailSingle {
     @include mi.ontenerWidth(355, 335);
@@ -50,10 +49,14 @@ LAYOUT
 }
 
 .cntSMenu {
-    @include mi.marginPercent(335, 16, auto, 0, auto);
+    @include mi.marginPercent(335, 40, auto, 0, auto);
     @include mi.fontSizePc(12);
     @include mi.lineheight(10, 15);
     @include mi.letterSpacing(0);
+
+    .cntSMenuMain {
+        @include mi.marginPercent(335, 24, auto, 0, auto);
+    }
 
     h1 {
         @include mi.fontSizePc(16);
@@ -81,11 +84,11 @@ LAYOUT
         @include mi.lineheight(10, 15);
         @include mi.letterSpacing(0);
 
-        & + p {
+        &+p {
             @include mi.marginPercent(335, 8, auto, 0, auto);
         }
 
-        & + img {
+        &+img {
             @include mi.marginPercent(335, 8, auto, 0, auto);
         }
     }

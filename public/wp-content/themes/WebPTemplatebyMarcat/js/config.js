@@ -11,11 +11,8 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
             requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
-
-        console.log('Lenis initialized!');
     } else {
         // ここでエラーが出るなら、そもそも lenis.min.js の読み込み自体に失敗しています
-        console.error('Lenis is not defined. Check your script tags.');
     }
 });
 
@@ -111,7 +108,6 @@ window.addEventListener('load', () => { // DOMContentLoaded から load に変�
 
     function get_calendar(calendar_y, calendar_m) {
         urlname = rest_url + "MarcatCalendarsAPI/?year=" + calendar_y + '&month=' + calendar_m;
-        console.log(urlname);
         $.getJSON(urlname, function (results) {
             $('.js_main_sidebar_eventcalendar').empty();
             setTimeout(() => {

@@ -1,86 +1,91 @@
 <div class="bg_fff singleMenuLxn">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php
+            <?php
             $img = get_post_thumbsdata(get_the_ID());
             $url_encode   = urlencode(get_permalink());
             $title_encode = urlencode(get_the_title());
             ?>
-    <div class="menuSingle">
-        <div class="menuDetailSingle">
-            <div class="d_flex j_between ali_center titleMenu">
-                <figure class="iconSignleMenu">
-                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/iconSignleMenuTop.png'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                </figure>
-                <h1 class="cl_EE952D Mochiy fw_400 h2TitleMenuDetailSingle"><?php echo esc_html(get_the_title()); ?></h1>
-            </div>
-
-            <figure class="thumbsDetailSingle">
-                <?php if (!empty($img[0])): ?>
-                <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
-                <?php else: ?>
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/nonthumbs.svg'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                <?php endif; ?>
-            </figure>
-
-            <div class="cntSMenu">
-                <?php the_content(); ?>
-            </div>
-
-            <?php if (!empty(scf::get('tdMenu'))): ?>
-            <p class="cl_282828 fw_400 txtset alertSMenu">
-                お値段：<?php echo esc_html(scf::get('tdMenu')); ?>
-            </p>
-            <?php endif; ?>
-
-            <?php if (!empty(scf::get('alertMenu'))): ?>
-            <p class="cl_282828 fw_400 txtset alertSMenu alertSMenu02">
-                <?php echo esc_html(scf::get('alertMenu')); ?>
-            </p>
-            <?php endif; ?>
-
-            <ul class="d_flex j_between row photosMenuDetailSingle">
-                <?php foreach (scf::get('imgsPriceMenu') as $fields): ?>
-                <?php $img = get_scf_img_loop_url_id($fields['imgPriceMenu']); ?>
-                <?php if (!empty($img[0])): ?>
-                <li class="liPhotosMenuDetailSingle">
-                    <a class="btnPhotosMenuDetailSingle" href="<?php echo esc_url($img[0]); ?>" data-lightbox="image-1" data-title="<?php echo esc_attr($fields['txtPriceMenu']); ?>">
-                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr($fields['txtPriceMenu']); ?>についての画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
-                        <figure class="iconPhotosMenuDetailSingle">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <mask id="mask0_1320_1840" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
-                                    <rect width="20" height="20" fill="#D9D9D9" />
-                                </mask>
-                                <g mask="url(#mask0_1320_1840)">
-                                    <rect width="20" height="20" fill="white" />
-                                    <path d="M3.33398 16.6668V12.5002H4.16732V15.2437L7.16732 12.2437L7.75711 12.8335L4.75711 15.8335H7.50065V16.6668H3.33398ZM12.5007 16.6668V15.8335H15.2442L12.2442 12.8335L12.834 12.2437L15.834 15.2437V12.5002H16.6673V16.6668H12.5007ZM7.16732 7.75662L4.16732 4.75662V7.50016H3.33398V3.3335H7.50065V4.16683H4.75711L7.75711 7.16683L7.16732 7.75662ZM12.834 7.75662L12.2442 7.16683L15.2442 4.16683H12.5007V3.3335H16.6673V7.50016H15.834V4.75662L12.834 7.75662ZM10.0007 11.106C9.69662 11.106 9.43628 10.9977 9.21961 10.7812C9.00308 10.5645 8.89482 10.3042 8.89482 10.0002C8.89482 9.69614 9.00308 9.43579 9.21961 9.21912C9.43628 9.00259 9.69662 8.89433 10.0007 8.89433C10.3047 8.89433 10.565 9.00259 10.7817 9.21912C10.9982 9.43579 11.1065 9.69614 11.1065 10.0002C11.1065 10.3042 10.9982 10.5645 10.7817 10.7812C10.565 10.9977 10.3047 11.106 10.0007 11.106Z" fill="#282828" />
-                                </g>
-                            </svg>
+            <div class="menuSingle">
+                <div class="menuDetailSingle">
+                    <div class="d_flex j_between ali_center titleMenu">
+                        <figure class="iconSignleMenu">
+                            <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/iconSignleMenuTop.png'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
                         </figure>
-                    </a>
-                </li>
-                <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
+                        <h1 class="cl_EE952D Mochiy fw_400 h2TitleMenuDetailSingle"><?php echo esc_html(get_the_title()); ?></h1>
+                    </div>
 
-            <ul class="d_flex j_end ulShareSingleNewsBoxFx">
-                <li class="liShareSingleNewsBox">
-                    <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://line.me/R/msg/text/?' . $title_encode . '%0A' . $url_encode); ?>">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsLine.svg'); ?>" alt="Lineでシェア" width="20" height="20">
-                    </a>
-                </li>
-                <li class="liShareSingleNewsBox">
-                    <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://www.facebook.com/share.php?u=' . $url_encode); ?>">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsFaceBook.svg'); ?>" alt="Facebookでシェア" width="20" height="20">
-                    </a>
-                </li>
-                <li class="liShareSingleNewsBox">
-                    <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://twitter.com/share?url=' . $url_encode . '&text=' . $title_encode); ?>">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsX.svg'); ?>" alt="Xでシェア" width="20" height="20">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+                    <figure class="thumbsDetailSingle">
+                        <?php if (!empty($img[0])): ?>
+                            <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                        <?php else: ?>
+                            <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/nonthumbs.svg'); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php endif; ?>
+                    </figure>
+
+                    <?php if (!empty(scf::get('tdMenu'))): ?>
+                        <p class="cl_282828 fw_400 txtset alertSMenu">
+                            お値段：<?php echo esc_html(scf::get('tdMenu')); ?>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty(scf::get('alertMenu'))): ?>
+                        <p class="cl_282828 fw_400 txtset alertSMenu alertSMenu02">
+                            <?php echo esc_html(scf::get('alertMenu')); ?>
+                        </p>
+                    <?php endif; ?>
+
+                    <section class="cntSMenu">
+                        <h2 class="cl_EB53A2 fw_800">こちらのメニューについて</h2>
+                        <div class="cntSMenuMain">
+                            <?php the_content(); ?>
+                        </div>
+                    </section>
+
+
+
+                    <ul class="d_flex j_between row photosMenuDetailSingle">
+                        <?php foreach (scf::get('imgsPriceMenu') as $fields): ?>
+                            <?php $img = get_scf_img_loop_url_id($fields['imgPriceMenu']); ?>
+                            <?php if (!empty($img[0])): ?>
+                                <li class="liPhotosMenuDetailSingle">
+                                    <a class="btnPhotosMenuDetailSingle" href="<?php echo esc_url($img[0]); ?>" data-lightbox="image-1" data-title="<?php echo esc_attr($fields['txtPriceMenu']); ?>">
+                                        <img loading="lazy" src="<?php echo esc_url($img[0]); ?>" alt="<?php echo esc_attr($fields['txtPriceMenu']); ?>についての画像" width="<?php echo esc_attr($img[1]); ?>" height="<?php echo esc_attr($img[2]); ?>">
+                                        <figure class="iconPhotosMenuDetailSingle">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <mask id="mask0_1320_1840" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                    <rect width="20" height="20" fill="#D9D9D9" />
+                                                </mask>
+                                                <g mask="url(#mask0_1320_1840)">
+                                                    <rect width="20" height="20" fill="white" />
+                                                    <path d="M3.33398 16.6668V12.5002H4.16732V15.2437L7.16732 12.2437L7.75711 12.8335L4.75711 15.8335H7.50065V16.6668H3.33398ZM12.5007 16.6668V15.8335H15.2442L12.2442 12.8335L12.834 12.2437L15.834 15.2437V12.5002H16.6673V16.6668H12.5007ZM7.16732 7.75662L4.16732 4.75662V7.50016H3.33398V3.3335H7.50065V4.16683H4.75711L7.75711 7.16683L7.16732 7.75662ZM12.834 7.75662L12.2442 7.16683L15.2442 4.16683H12.5007V3.3335H16.6673V7.50016H15.834V4.75662L12.834 7.75662ZM10.0007 11.106C9.69662 11.106 9.43628 10.9977 9.21961 10.7812C9.00308 10.5645 8.89482 10.3042 8.89482 10.0002C8.89482 9.69614 9.00308 9.43579 9.21961 9.21912C9.43628 9.00259 9.69662 8.89433 10.0007 8.89433C10.3047 8.89433 10.565 9.00259 10.7817 9.21912C10.9982 9.43579 11.1065 9.69614 11.1065 10.0002C11.1065 10.3042 10.9982 10.5645 10.7817 10.7812C10.565 10.9977 10.3047 11.106 10.0007 11.106Z" fill="#282828" />
+                                                </g>
+                                            </svg>
+                                        </figure>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <ul class="d_flex j_end ulShareSingleNewsBoxFx">
+                        <li class="liShareSingleNewsBox">
+                            <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://line.me/R/msg/text/?' . $title_encode . '%0A' . $url_encode); ?>">
+                                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsLine.svg'); ?>" alt="Lineでシェア" width="20" height="20">
+                            </a>
+                        </li>
+                        <li class="liShareSingleNewsBox">
+                            <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://www.facebook.com/share.php?u=' . $url_encode); ?>">
+                                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsFaceBook.svg'); ?>" alt="Facebookでシェア" width="20" height="20">
+                            </a>
+                        </li>
+                        <li class="liShareSingleNewsBox">
+                            <a class="btnSingleColumnSnS" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url('https://twitter.com/share?url=' . $url_encode . '&text=' . $title_encode); ?>">
+                                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/img/snsX.svg'); ?>" alt="Xでシェア" width="20" height="20">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     <?php endwhile;
     endif; ?>
 
@@ -93,9 +98,9 @@
 
             <p class="prevSinglePagerWap">
                 <?php if (!empty($prev)): ?>
-                <a class="maru d_flex j_between ali_center cl_EE952D fw_500 undernone txtset prevSinglePager" href="<?php echo esc_url(get_permalink($prev->ID)); ?>">
-                    前のメニュー
-                </a>
+                    <a class="maru d_flex j_between ali_center cl_EE952D fw_500 undernone txtset prevSinglePager" href="<?php echo esc_url(get_permalink($prev->ID)); ?>">
+                        前のメニュー
+                    </a>
                 <?php endif; ?>
             </p>
 
@@ -107,9 +112,9 @@
 
             <p class="nextSinglePagerWap">
                 <?php if (!empty($next)): ?>
-                <a class="maru d_flex j_between ali_center cl_EE952D fw_500 undernone txtset nextSinglePager" href="<?php echo esc_url(get_permalink($next->ID)); ?>">
-                    次のメニュー
-                </a>
+                    <a class="maru d_flex j_between ali_center cl_EE952D fw_500 undernone txtset nextSinglePager" href="<?php echo esc_url(get_permalink($next->ID)); ?>">
+                        次のメニュー
+                    </a>
                 <?php endif; ?>
             </p>
         </div>

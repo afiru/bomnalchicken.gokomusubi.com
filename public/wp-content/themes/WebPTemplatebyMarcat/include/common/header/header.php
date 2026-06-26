@@ -2,6 +2,25 @@
 <html>
 
 <head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "ボムナルチキン",
+  "url": "https://bomnalchicken.machimusubi.com",
+  "image": "https://bomnalchicken.machimusubi.com/wp-content/uploads/2025/11/Frame-5-2.jpg",
+  "description": "兵庫・明石市のテイクアウト専門店「ボムナルチキン」公式サイト。ヤンニョムチキン・ハニーバターチキン・サクサクフライドなど韓国人気メニューを持ち帰りOK。ランチや夕食、お土産にもぴったり。Instagramでも最新メニュー＆キャンペーン発信中！",
+  "servesCuisine": "Korean Chicken",
+  "sameAs": [
+    "https://www.instagram.com/bomnalchicken/?hl=ja"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "明石市",
+    "addressCountry": "JP"
+  }
+}
+</script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta content="text/css" http-equiv="Content-Style-Type" />
     <meta content="text/javascript" http-equiv="Content-Script-Type" />
