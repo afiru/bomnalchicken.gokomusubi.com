@@ -569,6 +569,20 @@ class MarcatCalendarsAPI
         //月末日の曜日を取得
         $last_week = date('w', strtotime($year . $month . $end_month));
 
+        // ===== 祝日取得（キャッシュ付き）=====
+        $holidays = get_transient('jp_holidays');
+
+        if ($holidays === false) {
+            $json = @file_get_contents('https://holidays-jp.github.io/api/v1/date.json');
+            $holidays = json_decode($json, true);
+
+            if (!is_array($holidays)) {
+                $holidays = [];
+            }
+
+            set_transient('jp_holidays', $holidays, DAY_IN_SECONDS);
+        }
+
         $aryCalendar = [];
         $j = 0;
 
@@ -608,7 +622,30 @@ class MarcatCalendarsAPI
         foreach ($aryCalendar as $tr) {
             $Calendar .=    '<tr>';
             foreach ($tr as $td) {
-                $Calendar .= '<td class="date">';
+                if ($td === '') {
+                    $Calendar .= '<td class="date empty">';
+                    $Calendar .= '</td>';
+                    continue;
+                }
+
+                $timestamp = strtotime($year . '-' . $month . '-' . sprintf('%02d', $td));
+                $week = date('w', $timestamp);
+
+                $class = 'date';
+
+                $dateStr = sprintf('%04d-%02d-%02d', $year, $month, $td);
+                $week = (int)date('w', strtotime($dateStr));
+                if ($week == 0) {
+                    $class .= ' sun';
+                } elseif ($week == 6) {
+                    $class .= ' sat';
+                }
+                // 祝日
+                if (isset($holidays[$dateStr])) {
+                    $class .= ' sat';
+                }
+
+                $Calendar .= '<td class="date ' . $class . '">';
                 $Calendar .= $td;
                 $Calendar .= $this->SetCalendarPosts($year, $month, $td);
                 $Calendar .= '</td>';
