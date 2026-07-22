@@ -2,25 +2,25 @@
 <html>
 
 <head>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "ボムナルチキン",
-  "url": "https://bomnalchicken.machimusubi.com",
-  "image": "https://bomnalchicken.machimusubi.com/wp-content/uploads/2025/11/Frame-5-2.jpg",
-  "description": "兵庫・明石市のテイクアウト専門店「ボムナルチキン」公式サイト。ヤンニョムチキン・ハニーバターチキン・サクサクフライドなど韓国人気メニューを持ち帰りOK。ランチや夕食、お土産にもぴったり。Instagramでも最新メニュー＆キャンペーン発信中！",
-  "servesCuisine": "Korean Chicken",
-  "sameAs": [
-    "https://www.instagram.com/bomnalchicken/?hl=ja"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "明石市",
-    "addressCountry": "JP"
-  }
-}
-</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "ボムナルチキン",
+        "url": "https://bomnalchicken.machimusubi.com",
+        "image": "https://bomnalchicken.machimusubi.com/wp-content/uploads/2025/11/Frame-5-2.jpg",
+        "description": "兵庫・明石市のテイクアウト専門店「ボムナルチキン」公式サイト。ヤンニョムチキン・ハニーバターチキン・サクサクフライドなど韓国人気メニューを持ち帰りOK。ランチや夕食、お土産にもぴったり。Instagramでも最新メニュー＆キャンペーン発信中！",
+        "servesCuisine": "Korean Chicken",
+        "sameAs": [
+            "https://www.instagram.com/bomnalchicken/?hl=ja"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "明石市",
+            "addressCountry": "JP"
+        }
+    }
+    </script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta content="text/css" http-equiv="Content-Style-Type" />
     <meta content="text/javascript" http-equiv="Content-Script-Type" />
@@ -46,26 +46,26 @@
   </PageMap>
 -->
     <?php //タイトルの設定。【トップページ】カスタマイザーのSEOタイトル　【下層】ページタイトル｜カスタマイザーのSEOタイトル　
-  ?>
+    ?>
     <?php wp_head(); ?>
     <title><?php echo get_the_site_title(get_php_customzer('seo_title')); ?></title>
 
     <?php if (is_single()): ?>
     <?php
-    $the_content = get_post(get_the_ID())->post_content;
-    $the_content = strip_tags($the_content);
-    $the_content = stripslashes($the_content);
-    $the_content = preg_replace('/(\s\s|　)/', '', $the_content);
-    $the_content = preg_replace("/^\xC2\xA0/", "", $the_content);
-    $the_content = str_replace("&nbsp;", '', $the_content);
-    $img = get_post_thumbsdata(get_the_ID());
-    $ogthumbs = get_aioseo_global_og_image();
-    if (!empty($img)) {
-      $ogthumbs = $img[0];
-    } else {
-      $ogthumbs = $ogthumbs;
-    }
-    ?>
+        $the_content = get_post(get_the_ID())->post_content;
+        $the_content = strip_tags($the_content);
+        $the_content = stripslashes($the_content);
+        $the_content = preg_replace('/(\s\s|　)/', '', $the_content);
+        $the_content = preg_replace("/^\xC2\xA0/", "", $the_content);
+        $the_content = str_replace("&nbsp;", '', $the_content);
+        $img = get_post_thumbsdata(get_the_ID());
+        $ogthumbs = get_aioseo_global_og_image();
+        if (!empty($img)) {
+            $ogthumbs = $img[0];
+        } else {
+            $ogthumbs = $ogthumbs;
+        }
+        ?>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -117,35 +117,7 @@
 
 <body id="body">
     <div id="scrolltop" class="bgbase wap">
-        <div class="loopSlideWap">
-            <?php
-function render_loop($class, $prefix, $reverse = false) {
-?>
-            <div class="<?php echo $class; ?>">
-                <ul class="loopTrack <?php echo $reverse ? 'is-reverse' : ''; ?>">
-                    <?php for ($loop = 0; $loop < 2; $loop++) : ?>
-                    <?php for ($i = 1; $i <= 12; $i++) : ?>
-                    <li class="loopItem">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/<?php echo $prefix; ?>_<?php echo sprintf('%02d', $i); ?>.jpg" alt="">
-                    </li>
-                    <?php endfor; ?>
-                    <?php endfor; ?>
-                </ul>
-            </div>
-            <?php } ?>
-            <?php render_loop('loopRow', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn02', true); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
-            <?php render_loop('loopRow offset1', 'liSliderLxn01'); ?>
-            <?php render_loop('loopRow offset2', 'liSliderLxn02', true); ?>
-        </div>
+
 
 
 
